@@ -15,6 +15,9 @@
 # production
 /build
 
+# renders
+/public/assets/
+
 # misc
 .DS_Store
 *.pem

@@ -4,19 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "css": "yarn tailwindcss -i ./src/app/globals.css -o ./public/app/globals.css --watch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/three": "9.6.1",
+    "@react-spring/web": "^9.7.2",
+    "@react-three/drei": "^9.60.0",
+    "@react-three/fiber": "^8.12.0",
+    "@studio-freight/lenis": "^1.0.6",
     "@types/node": "18.15.10",
     "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
+    "@types/three": "^0.150.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "three": "^0.151.0",
     "typescript": "5.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "tailwindcss": "^3.3.1"
   }
 }
