@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 const useIntersectionObserver = (
   elementRef: RefObject<HTMLElement>,
@@ -9,14 +9,17 @@ const useIntersectionObserver = (
   },
   callback?: () => void
 ) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  // const [intersectionEntry, setIntersectionEntry] =
+  //   useState<IntersectionObserverEntry | null>(null);
+  const intersectionEntryRef = useRef<IntersectionObserverEntry>();
 
   useEffect(() => {
     const element = elementRef.current;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!isIntersecting && entry.isIntersecting) {
-        setIsIntersecting(entry.isIntersecting);
-        // callback && callback();
+      console.log(entry);
+      if (!intersectionEntryRef.current && entry.isIntersecting) {
+        intersectionEntryRef.current = entry;
+        callback && callback();
       }
     }, options);
 
@@ -28,9 +31,10 @@ const useIntersectionObserver = (
         observer.unobserve(element);
       }
     };
-  }, [elementRef, options, isIntersecting, callback]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [elementRef, options, intersectionEntryRef.current?.isIntersecting]);
 
-  return isIntersecting;
+  return intersectionEntryRef.current;
 };
 
 export default useIntersectionObserver;

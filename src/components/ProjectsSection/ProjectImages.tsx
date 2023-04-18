@@ -5,49 +5,68 @@ import { v4 as uuid } from 'uuid';
 import { projects } from '@/assets';
 import ScrollImage from '@/components/UI/ScrollImage/ScrollImage';
 import useIntersectionObserver from '@/useIntersectionObserver';
-import { useTrail } from '@react-spring/three';
+import { easings, useTrail } from '@react-spring/three';
+import { useScroll } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 type ProjectImagesProps = {
   className?: string;
 };
 
 const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
+  const scrollEntry = useRef<number>();
+  const scroll = useScroll();
+
   const pos = [
-    { top: '200px', left: '-140px', right: '0px' },
-    { top: '100px', left: '0px', right: '50px' },
-    { top: '600px', left: '50px', right: '0px' },
-    { top: '400px', left: '280px', right: '0px' },
+    { top: `${200}px`, right: '20px' },
+    { top: `${100}px`, left: '0px', right: '50px' },
+    { top: `${500}px`, left: '50px', right: '0px' },
+    { top: `${400}px`, left: '280px', right: '0px' },
   ];
   const images = Object.entries(projects);
 
   const sectionRef = React.useRef<HTMLDivElement>(null);
-  const isIntersect = useIntersectionObserver(sectionRef);
-  // isIntersect && animateImages();
+  // const observer = true;
+  const observer = useIntersectionObserver(sectionRef, {
+    root: null,
+    rootMargin: '200px',
+    threshold: 0.5,
+  });
+  const [trails, entryAnimation] = useTrail(images.length, () => ({
+    opacity: 0,
+    transform: 'translate3d(0, 200px, 0)',
+    config: { duration: 800, easing: easings.easeOutCubic },
+  }));
 
-  const [trails, api] = useTrail(
-    images.length,
-    () => ({
-      from: { opacity: 0, transform: 'translate3d(0, 60px, 0)' },
-      to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-    }),
-    [isIntersect]
-  );
+  function animateImages() {
+    // setScrollEntry(scroll.offset);
+    entryAnimation.start({
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+    });
+  }
+  // console.log(scroll.offset);
+  useFrame(() => {
+    if (observer?.isIntersecting && scrollEntry.current === undefined) {
+      scrollEntry.current = scroll.offset;
+    }
+    observer?.isIntersecting && animateImages();
+  });
+
+  // observer && animateImages();
 
   return (
-    <div className="relative" ref={sectionRef}>
+    <div className={`relative h-[600px] w-full`} ref={sectionRef}>
       {trails.map((props, i) => (
         <ScrollImage
           image={images[i][1]}
           //@ts-expect-error
           style={{ ...pos[i], ...props }}
           alt={images[i][0]}
-          className="w-56 duration-700 ease-in-out"
+          className="w-80 rounded-md"
           key={uuid()}
         />
       ))}
-
-      {/* {images} */}
-      {/* <ScrollImage image={projects} top="200px" className="w-96" /> */}
     </div>
   );
 };

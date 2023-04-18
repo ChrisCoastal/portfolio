@@ -1,7 +1,7 @@
 import React, { CSSProperties, FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
-import { animated } from '@react-spring/web';
+import { animated, SpringValue } from '@react-spring/web';
 type ImagePath = string;
 type ImageAlt = string;
 
