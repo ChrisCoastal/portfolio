@@ -1,18 +1,20 @@
+import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+
 import {
   Float,
   PerspectiveCamera,
   useAnimations,
   useGLTF,
   useScroll,
+  useTexture,
 } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
 
-const TextModel = () => {
+const Model = () => {
   const sceneGroup = useRef(null);
-  // @ts-expect-error useGLTF is not typed correctly
-  const { nodes, materials, animations } = useGLTF('/assets/never-scene2.glb');
+  // @ts-expect-error useGLTF is mistyped from drei
+  const { nodes, materials, animations } = useGLTF('/assets/render.glb');
 
   const scroll = useScroll();
 
@@ -39,11 +41,11 @@ const TextModel = () => {
       <group name="Scene">
         <group name="Camera" position={[0, 19.63, 0]}>
           <PerspectiveCamera
-            name="Camera"
+            name="Camera_Orientation"
             makeDefault={true}
             far={1000}
             near={0.01}
-            fov={20}
+            fov={22.9}
             rotation={[-Math.PI / 2, 0, 0]}
           />
         </group>
@@ -55,243 +57,252 @@ const TextModel = () => {
         />
         <group name="Empty001" position={[-0.93, 0, 1.26]} />
         <mesh
-          name="Plane003"
+          name="char13n"
           castShadow
           receiveShadow
-          geometry={nodes.Plane003.geometry}
+          geometry={nodes.char13n.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane001"
+          name="emissionSphere"
           castShadow
           receiveShadow
-          geometry={nodes.Plane001.geometry}
-          material={materials.ink}
-          position={[0, -0.07, 0]}
-          scale={3.68}
-        />
-        <mesh
-          name="Plane005"
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005.geometry}
-          material={materials.ink}
-          position={[0, -0.07, 0]}
-          scale={3.68}
-        />
-        <mesh
-          name="Sphere"
-          castShadow
-          receiveShadow
-          geometry={nodes.Sphere.geometry}
+          geometry={nodes.emissionSphere.geometry}
           material={materials['Material.001']}
           position={[3.03, -2.34, -2.71]}
         />
+        <Float>
+          <mesh
+            name="emissionSphere"
+            castShadow
+            receiveShadow
+            geometry={nodes.emissionSphere.geometry}
+            material={materials['Material.001']}
+            position={[1, -5, -2.71]}
+          />
+        </Float>
         <mesh
-          name="Plane006"
+          name="char9f"
           castShadow
           receiveShadow
-          geometry={nodes.Plane006.geometry}
+          geometry={nodes.char9f.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane010"
+          name="char16o"
           castShadow
           receiveShadow
-          geometry={nodes.Plane010.geometry}
+          geometry={nodes.char16o.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane004"
+          name="char6a"
           castShadow
           receiveShadow
-          geometry={nodes.Plane004.geometry}
+          geometry={nodes.char6a.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane009"
+          name="char4r"
           castShadow
           receiveShadow
-          geometry={nodes.Plane009.geometry}
+          geometry={nodes.char4r.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane014"
+          name="char10o"
           castShadow
           receiveShadow
-          geometry={nodes.Plane014.geometry}
+          geometry={nodes.char10o.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane008"
+          name="char8t"
           castShadow
           receiveShadow
-          geometry={nodes.Plane008.geometry}
+          geometry={nodes.char8t.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane013"
+          name="char72i"
           castShadow
           receiveShadow
-          geometry={nodes.Plane013.geometry}
+          geometry={nodes.char72i.geometry}
+          material={materials.ink}
+          position={[0, -0.07, 0]}
+          scale={3.68}
+        />
+
+        <mesh
+          name="char20"
+          castShadow
+          receiveShadow
+          geometry={nodes.char20.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane020"
+          name="char5w"
           castShadow
           receiveShadow
-          geometry={nodes.Plane020.geometry}
+          geometry={nodes.char5w.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane012"
+          name="char71i"
           castShadow
           receiveShadow
-          geometry={nodes.Plane012.geometry}
+          geometry={nodes.char71i.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane019"
+          name="char18r"
           castShadow
           receiveShadow
-          geometry={nodes.Plane019.geometry}
+          geometry={nodes.char18r.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane002"
+          name="char15t"
           castShadow
           receiveShadow
-          geometry={nodes.Plane002.geometry}
+          geometry={nodes.char15t.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane015"
+          name="char122i"
           castShadow
           receiveShadow
-          geometry={nodes.Plane015.geometry}
+          geometry={nodes.char122i.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane017"
+          name="char19y"
           castShadow
           receiveShadow
-          geometry={nodes.Plane017.geometry}
+          geometry={nodes.char19y.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane022"
+          name="char2v"
           castShadow
           receiveShadow
-          geometry={nodes.Plane022.geometry}
+          geometry={nodes.char2v.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane007"
+          name="char18d"
           castShadow
           receiveShadow
-          geometry={nodes.Plane007.geometry}
+          geometry={nodes.char18d.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane018"
+          name="char1e"
           castShadow
           receiveShadow
-          geometry={nodes.Plane018.geometry}
+          geometry={nodes.char1e.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <mesh
-          name="Plane023"
+          name="char3e"
           castShadow
           receiveShadow
-          geometry={nodes.Plane023.geometry}
-          material={materials.ink}
-          position={[0, -0.07, 0]}
-          scale={3.68}
-        />
-        <mesh
-          name="Plane011"
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane011.geometry}
-          material={materials.ink}
-          position={[0, -0.07, 0]}
-          scale={3.68}
-        />
-        <mesh
-          name="Plane016"
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane016.geometry}
-          material={materials.ink}
-          position={[0, -0.07, 0]}
-          scale={3.68}
-        />
-        <mesh
-          name="Plane021"
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane021.geometry}
+          geometry={nodes.char3e.geometry}
           material={materials.ink}
           position={[0, -0.07, 0]}
           scale={3.68}
         />
         <Float>
           <mesh
-            name="Mball002"
+            name="meta001"
             castShadow
             receiveShadow
-            geometry={nodes.Mball002.geometry}
+            geometry={nodes.meta001.geometry}
             material={materials.ink}
             position={[3.55, 1.06, -2.34]}
             scale={0.88}
-            onPointerOver={(e) => console.log('over')}
           />
           <mesh
-            name="Mball003"
+            name="meta002"
             castShadow
             receiveShadow
-            geometry={nodes.Mball003.geometry}
+            geometry={nodes.meta002.geometry}
             material={materials.ink}
             position={[-4.19, 3.17, 1.52]}
             scale={0.38}
-            onPointerOver={(e) => console.log('over')}
           />
         </Float>
-        <group name="Plane" scale={12.49}>
+        <mesh
+          name="char14k"
+          castShadow
+          receiveShadow
+          geometry={nodes.char14k.geometry}
+          material={materials.ink}
+          position={[0, -0.07, 0]}
+          scale={3.68}
+        />
+        <mesh
+          name="char0n"
+          castShadow
+          receiveShadow
+          geometry={nodes.char0n.geometry}
+          material={materials.ink}
+          position={[0, -0.07, 0]}
+          scale={3.68}
+        />
+        <mesh
+          name="char11r"
+          castShadow
+          receiveShadow
+          geometry={nodes.char11r.geometry}
+          material={materials.ink}
+          position={[0, -0.07, 0]}
+          scale={3.68}
+        />
+        <mesh
+          name="char121i"
+          castShadow
+          receiveShadow
+          geometry={nodes.char121i.geometry}
+          material={materials.ink}
+          position={[0, -0.07, 0]}
+          scale={3.68}
+        />
+        <group name="ground" scale={12.49}>
           <mesh
             name="Plane025"
             castShadow
@@ -312,6 +323,6 @@ const TextModel = () => {
   );
 };
 
-useGLTF.preload('/assets/never-scene2.glb');
+useGLTF.preload('/assets/render.glb');
 
-export default TextModel;
+export default Model;

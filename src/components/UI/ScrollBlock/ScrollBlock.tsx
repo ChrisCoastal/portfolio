@@ -1,16 +1,22 @@
-import type { FC } from 'react';
 import React from 'react';
+import type { FC } from 'react';
 
 type ScrollBlockProps = {
+  top: string;
+  rowGap?: string;
   className?: string;
+  children?: React.ReactNode;
 };
 
-const ScrollBlock: FC<ScrollBlockProps> = ({ className }) => {
+const ScrollBlock: FC<ScrollBlockProps> = ({ top, className, children }) => {
   return (
     <div
-      className={`${className} absolute top-[240vh] flex h-full w-full items-center justify-center bg-pink-500/50`}
+      style={{ top }}
+      className={`bg-pink-500/00 absolute flex w-full items-center justify-center`}
     >
-      ScrollBlock
+      <div className={`${className} mx-12 w-full `}>
+        <div className="mx-auto flex max-w-5xl flex-col gap-40">{children}</div>
+      </div>
     </div>
   );
 };
