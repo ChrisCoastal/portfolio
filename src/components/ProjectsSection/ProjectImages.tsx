@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { projects } from '@/assets';
 import ScrollImage from '@/components/UI/ScrollImage/ScrollImage';
 import useIntersectionObserver from '@/useIntersectionObserver';
-import { easings, useSprings, useTrail } from '@react-spring/three';
+import { animated, easings, useSprings, useTrail } from '@react-spring/three';
 import { useScroll } from '@react-three/drei';
 
 type ProjectImagesProps = {
@@ -16,6 +16,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const [isVisible, setIsVisible] = useState(false);
   // const [isHover, setIsHover] = useState<number | null>(null);
   const hoverRef = useRef<number | null>(null);
+  const imageOpacityRef = useRef<number>(0);
   const scrollEntry = useRef<number>();
   const scroll = useScroll();
 
@@ -30,23 +31,27 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const sectionRef = React.useRef<HTMLDivElement>(null);
   const observer = useIntersectionObserver(sectionRef, {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.3,
+    rootMargin: '100px',
+    threshold: 0.2,
   });
 
   const [hoverStyles, hoverAnimation] = useSprings(images.length, () => ({
-    from: { transform: 'scale(1)', opacity: 1 },
-    to: { transform: 'scale(1.1)' },
-    config: { duration: 600, easing: easings.easeOutCubic },
+    from: {
+      transform: 'scale(1)',
+      opacity: 1,
+      zIndex: 1,
+    },
+    to: { transform: 'scale(1.1)', zIndex: 10 },
+    config: { duration: 1000, easing: easings.easeOutCubic },
   }));
 
   function setHover(index: number | null) {
     if (index !== null) {
       hoverAnimation.start((i) => {
         if (i === index) {
-          return { transform: 'scale(1.1)' };
+          return { transform: 'scale(1.1)', zIndex: 10 };
         }
-        return { transform: 'scale(1)', opacity: 0.3 };
+        return { transform: 'scale(1)', opacity: 0.1, zIndex: 1 };
       });
     } else {
       hoverAnimation.start({ transform: 'scale(1)', opacity: 1 });
@@ -60,8 +65,8 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   // };
 
   const [entryStyles, entryAnimation] = useTrail(images.length, () => ({
-    opacity: 0,
-    transform: 'translate3d(0, 200px, 0)',
+    // opacity: 0,
+    transform: 'translate3d(0, 250px, 0) rotateX(60deg)',
     config: { duration: 600, easing: easings.easeOutCubic },
   }));
 
@@ -70,15 +75,17 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
     switch (direction) {
       case 'in':
         entryAnimation.start({
-          opacity: 1,
-          transform: 'translate3d(0, 0, 0)',
+          // opacity: 1,
+          transform: 'translate3d(0, 0, 0) rotateX(0deg)',
         });
+        imageOpacityRef.current = 1;
         break;
       case 'out':
         entryAnimation.start({
-          opacity: 0,
-          transform: 'translate3d(0, 200px, 0)',
+          // opacity: 0,
+          transform: 'translate3d(0, 250px, 0) rotateX(60deg)',
         });
+        imageOpacityRef.current = 0;
         break;
       default:
         null;
@@ -88,24 +95,31 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   observer?.isIntersecting ? animateImageEntry('in') : animateImageEntry('out');
 
   return (
-    <div className={`relative h-[1600px] w-full`} ref={sectionRef}>
-      {entryStyles.map((entryStyles, i) => (
-        <ScrollImage
-          image={images[i][1]}
-          index={i}
-          setHover={setHover}
-          //@ts-expect-error
-          style={{
-            ...pos[i],
-            ...entryStyles,
-            ...hoverStyles[i],
-            // ...siblingHover(i),
-          }}
-          alt={images[i][0]}
-          className="w-80 rounded-md"
-          key={uuid()}
-        />
-      ))}
+    <div
+      style={{ perspective: '800px' }}
+      className={`relative h-[1600px] w-full`}
+      ref={sectionRef}
+    >
+      {entryStyles.map((entryStyles, i) => {
+        console.log(hoverStyles);
+        return (
+          <ScrollImage
+            image={images[i][1]}
+            index={i}
+            setHover={setHover}
+            //@ts-expect-error
+            style={{
+              ...pos[i],
+              ...hoverStyles[i],
+              ...entryStyles,
+              // ...siblingHover(i),
+            }}
+            alt={images[i][0]}
+            className="w-80 rounded-md"
+            key={uuid()}
+          />
+        );
+      })}
     </div>
   );
 };

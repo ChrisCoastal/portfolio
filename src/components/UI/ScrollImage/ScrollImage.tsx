@@ -25,7 +25,7 @@ const ScrollImage: FC<ScrollImageProps> = ({
   return (
     <animated.span
       style={{ ...style }}
-      className={`${className} absolute overflow-hidden`}
+      className={`${className} absolute overflow-hidden shadow-md`}
       onMouseEnter={() => setHover(index)}
       onMouseLeave={() => setHover(null)}
     >
