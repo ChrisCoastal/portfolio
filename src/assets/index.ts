@@ -8,7 +8,10 @@ import figmaLogo from './logos/figma-logo.png';
 import gitLogo from './logos/git-logo.png';
 import gitHubLogo from './logos/gitHub-logo.png';
 import testingLibraryLogo from './logos/testing-library-logo.png';
-import lowercase from './projects/tolowercase/test.jpg';
+import cribbageMonster from './projects/cribbage-monster/cribbageMonster.png';
+import rainbeau from './projects/rainbeau/rainbeau.png';
+import takefive from './projects/takefive/takefive.jpg';
+import lowercase from './projects/tolowercase/tolowercase.png';
 
 export const logos = {
   apolloLogo,
@@ -25,7 +28,7 @@ export const logos = {
 
 export const projects = {
   lowercase,
-  lowercase2: lowercase,
-  lowercase3: lowercase,
-  lowercase4: lowercase,
+  cribbageMonster,
+  rainbeau,
+  takefive,
 };

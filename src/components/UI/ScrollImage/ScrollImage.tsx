@@ -11,6 +11,7 @@ type ScrollImageProps = {
   alt: string;
   style: { [key: string]: string };
   setHover: (index: number | null) => void;
+  dimensions?: { width: number; height: number };
   className?: string;
 };
 
@@ -20,6 +21,7 @@ const ScrollImage: FC<ScrollImageProps> = ({
   alt,
   style,
   setHover,
+  dimensions,
   className,
 }) => {
   return (
@@ -29,7 +31,12 @@ const ScrollImage: FC<ScrollImageProps> = ({
       onMouseEnter={() => setHover(index)}
       onMouseLeave={() => setHover(null)}
     >
-      <Image src={image} alt={alt} />
+      <Image
+        src={image}
+        alt={alt}
+        width={dimensions?.width}
+        height={dimensions?.height}
+      />
     </animated.span>
   );
 };

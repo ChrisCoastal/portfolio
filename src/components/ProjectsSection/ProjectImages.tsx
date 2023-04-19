@@ -37,11 +37,10 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
 
   const [hoverStyles, hoverAnimation] = useSprings(images.length, () => ({
     from: {
-      transform: 'scale(1)',
       opacity: 1,
       zIndex: 1,
     },
-    to: { transform: 'scale(1.1)', zIndex: 10 },
+    to: { zIndex: 10 },
     config: { duration: 1000, easing: easings.easeOutCubic },
   }));
 
@@ -49,12 +48,12 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
     if (index !== null) {
       hoverAnimation.start((i) => {
         if (i === index) {
-          return { transform: 'scale(1.1)', zIndex: 10 };
+          return { zIndex: 10 };
         }
-        return { transform: 'scale(1)', opacity: 0.1, zIndex: 1 };
+        return { opacity: 0.1, zIndex: 1 };
       });
     } else {
-      hoverAnimation.start({ transform: 'scale(1)', opacity: 1 });
+      hoverAnimation.start({ opacity: 1 });
     }
   }
 
