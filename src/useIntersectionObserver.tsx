@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 const useIntersectionObserver = (
   elementRef: RefObject<HTMLElement>,
@@ -9,18 +9,28 @@ const useIntersectionObserver = (
   },
   callback?: () => void
 ) => {
-  // const [intersectionEntry, setIntersectionEntry] =
-  //   useState<IntersectionObserverEntry | null>(null);
-  const intersectionEntryRef = useRef<IntersectionObserverEntry>();
+  const [intersectionEntry, setIntersectionEntry] =
+    useState<IntersectionObserverEntry | null>(null);
 
   useEffect(() => {
     const element = elementRef.current;
     const observer = new IntersectionObserver(([entry]) => {
+      // intersectionEntryRef.current = entry;
       console.log(entry);
-      if (!intersectionEntryRef.current && entry.isIntersecting) {
-        intersectionEntryRef.current = entry;
-        callback && callback();
+      if (!intersectionEntry && entry.isIntersecting) {
+        setIntersectionEntry(entry);
       }
+      if (intersectionEntry && !entry.isIntersecting) {
+        setIntersectionEntry(null);
+      }
+      // if (!intersectionEntryRef.current && entry.isIntersecting) {
+      //   intersectionEntryRef.current = entry;
+      //   // callback && callback();
+      // }
+      // if (intersectionEntryRef.current && !entry.isIntersecting) {
+      //   intersectionEntryRef.current = entry;
+      //   // callback && callback();
+      // }
     }, options);
 
     if (element) {
@@ -32,9 +42,9 @@ const useIntersectionObserver = (
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [elementRef, options, intersectionEntryRef.current?.isIntersecting]);
+  }, [elementRef, options, intersectionEntry?.isIntersecting]);
 
-  return intersectionEntryRef.current;
+  return intersectionEntry;
 };
 
 export default useIntersectionObserver;

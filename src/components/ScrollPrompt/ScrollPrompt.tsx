@@ -13,14 +13,14 @@ const ScrollPrompt = (props: Props) => {
   const scrollTopRef = useRef(true);
 
   // note: useScroll does not work when destructured
-  const data = useScroll();
+  const scroll = useScroll();
 
   const [springs, api] = useSpring(() => ({
     from: { opacity: 1 },
   }));
 
   useFrame(() => {
-    if (data.offset > 0.02 && scrollTopRef.current) {
+    if (scroll.offset > 0.02 && scrollTopRef.current) {
       scrollTopRef.current = false;
       api.start({
         from: { opacity: 1 },
@@ -28,7 +28,7 @@ const ScrollPrompt = (props: Props) => {
       });
     }
 
-    if (data.offset === 0 && !scrollTopRef.current) {
+    if (scroll.offset === 0 && !scrollTopRef.current) {
       scrollTopRef.current = true;
       const timer = setTimeout(() => {
         api.start({
