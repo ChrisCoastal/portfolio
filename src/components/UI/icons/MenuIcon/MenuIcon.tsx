@@ -36,11 +36,8 @@ const MenuIcon: FC<MenuIconProps> = ({
           C45.28,34.47,47,36.02,47,37.94L47,37.94z"
         />
       </g>
-      {/* <path d="M5.5 36.8v-3.95h37v3.95Zm0-10.8v-4h37v4Zm0-10.85V11.2h37v3.95Z" /> */}
     </svg>
   );
 };
-
-// <?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
 
 export default MenuIcon;

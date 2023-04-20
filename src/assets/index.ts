@@ -9,6 +9,7 @@ import gitLogo from './logos/git-logo.png';
 import gitHubLogo from './logos/gitHub-logo.png';
 import testingLibraryLogo from './logos/testing-library-logo.png';
 import cribbageMonster from './projects/cribbage-monster/cribbageMonster.png';
+import focusTrap from './projects/focustrap/focustrap.jpg';
 import rainbeau from './projects/rainbeau/rainbeau.png';
 import takefive from './projects/takefive/takefive.jpg';
 import lowercase from './projects/tolowercase/tolowercase.png';
@@ -31,4 +32,5 @@ export const projects = {
   cribbageMonster,
   rainbeau,
   takefive,
+  focusTrap,
 };

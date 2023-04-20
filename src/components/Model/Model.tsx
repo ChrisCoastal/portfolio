@@ -14,7 +14,7 @@ import { useFrame } from '@react-three/fiber';
 const Model = () => {
   const sceneGroup = useRef(null);
   // @ts-expect-error useGLTF is mistyped from drei
-  const { nodes, materials, animations } = useGLTF('/assets/render.glb');
+  const { nodes, materials, animations } = useGLTF('/assets/rendertest.glb');
 
   const scroll = useScroll();
 
@@ -323,6 +323,6 @@ const Model = () => {
   );
 };
 
-useGLTF.preload('/assets/render.glb');
+useGLTF.preload('/assets/rendertest.glb');
 
 export default Model;
