@@ -27,10 +27,10 @@ export const logos = {
   testingLibraryLogo,
 };
 
-export const projects = {
-  lowercase,
-  cribbageMonster,
-  rainbeau,
-  takefive,
-  focusTrap,
-};
+// export const projects = {
+//   lowercase,
+//   cribbageMonster,
+//   rainbeau,
+//   takefive,
+//   focusTrap,
+// };

@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
-import { logos } from '@/assets';
 import Gallery from '@/components/UI/Gallery/Gallery';
+import { logos } from '@/utils/content';
 import { useTrail } from '@react-spring/three';
 
 type StackGalleryProps = {};
@@ -17,7 +17,7 @@ const StackGallery: FC<StackGalleryProps> = ({}) => {
       <Image
         src={logo[1]}
         alt={logo[0]}
-        className={`grayscale-[40%] transition-all duration-700 ease-in-out hover:scale-110 hover:grayscale-0`}
+        className={`transition-all duration-700 ease-in-out hover:scale-110 hover:grayscale-0`}
       />
     </span>
   ));

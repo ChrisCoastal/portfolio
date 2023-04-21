@@ -11,7 +11,7 @@ import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import StackSection from '@/components/StackSection/StackSection';
 import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainPage } from '@/utils/textContent';
+import { mainSections } from '@/utils/content';
 import { animated, config, useSpring } from '@react-spring/three';
 import {
   Backdrop,

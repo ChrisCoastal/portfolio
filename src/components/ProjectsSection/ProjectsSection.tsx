@@ -4,17 +4,17 @@ import ProjectsCarousel from '@/components/ProjectsCarousel/ProjectsCarousel';
 import ProjectImages from '@/components/ProjectsSection/ProjectImages';
 import StackGallery from '@/components/StackGallery/StackGallery';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainPage } from '@/utils/textContent';
+import { mainSections } from '@/utils/content';
 
 type Props = {};
 
 const ProjectsSection = (props: Props) => {
   return (
-    <div>
-      <SectionTitle text={mainPage.projectsSection.title} />
+    <section>
+      <SectionTitle text={mainSections.projectsSection.title} />
       {/* <ProjectsCarousel /> */}
       <ProjectImages />
-    </div>
+    </section>
   );
 };
 

@@ -3,15 +3,17 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { logos } from '@/assets';
+import type { ProjectContent } from '@/utils/content';
 import { animated, SpringValue } from '@react-spring/web';
 
 import GitHubIcon from '../UI/icons/GitHubIcon/GitHubIcon';
 import LinkIcon from '../UI/icons/LinkIcon/LinkIcon';
 
 export type ScrollImageProps = {
-  image: StaticImageData;
+  // image: StaticImageData;
+  content: ProjectContent;
   index: number;
-  alt: string;
+  // alt: string;
   width: number;
   height: number;
   className?: string;
@@ -20,9 +22,10 @@ export type ScrollImageProps = {
 };
 
 const ScrollImage: FC<ScrollImageProps> = ({
-  image,
+  // image,
+  content,
   index,
-  alt,
+  // alt,
   className,
   height,
   width,
@@ -42,61 +45,75 @@ const ScrollImage: FC<ScrollImageProps> = ({
   }
 
   return (
-    // <div
-    //   style={{
-    //     top: style?.top,
-    //     bottom: style?.bottom,
-    //     left: style?.left,
-    //     right: style?.right,
-    //     zIndex: style?.zIndex,
-    //     perspective: '1000px',
-    //   }}
-    //   // className={`group absolute flex`}
-    //   className={`group absolute flex`}
-    // >
-    <div style={{ perspective: '800px' }} className="group">
+    <>
       <animated.span
-        style={{ ...style }}
-        className={`${className} absolute overflow-hidden shadow-md `}
+        style={{ ...style, position: 'absolute' }}
+        className={`${className} absolute overflow-hidden shadow-md`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <Image src={image} alt={alt} width={width} height={height} />
+        <Image
+          src={content.image}
+          alt={content.alt}
+          width={width}
+          height={height}
+        />
       </animated.span>
       {isHover && (
         <div
           style={{
+            top: style?.top - 30,
+            left: style?.left,
+            right: style?.right,
+            zIndex: 20,
+          }}
+          className={`absolute flex w-[320px] items-center gap-2 opacity-0 transition-all duration-[1000] group-hover:opacity-100`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <h4 className="pr-4 text-lg font-bold text-white">{content.title}</h4>
+          <span className="rounded-lg bg-white px-1 text-xs backdrop-blur-md">
+            <p>{content.kind}</p>
+          </span>
+          <span className="rounded-lg bg-white px-1 text-xs backdrop-blur-md">
+            <p>{content.year}</p>
+          </span>
+        </div>
+      )}
+
+      {isHover && (
+        <div
+          style={{
             top: style?.top,
-            bottom: style?.bottom,
             left: style?.left !== undefined ? style?.left + width : null,
             right: style?.right !== undefined ? style?.right + width : null,
             zIndex: 30,
           }}
-          className={`absolute flex flex-shrink flex-col gap-2 pl-2 pr-2 opacity-0 transition-all duration-[1000] group-hover:opacity-100`}
+          className={`absolute flex flex-shrink flex-col gap-2 pb-3 pl-2 pr-2 opacity-0 transition-all duration-[1000] group-hover:opacity-100`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* <span className="rounded-full bg-white/10 backdrop-blur-sm">
-          <Image
-            src={logos.gitHubLogo}
-            alt="check out this project on GitHub"
-            width={36}
-            height={36}
-            className=""
-          />
-        </span> */}
-          <span className="rounded-full bg-white/30 p-1 backdrop-blur-sm">
-            <a href="https://cribbage.netlify.app/">
-              <LinkIcon width={'28px'} height={'28px'} />
+          <span className="rounded-full bg-white/30 p-1 backdrop-blur-md ">
+            <a href={content.link} target="_blank">
+              <LinkIcon
+                width={'28px'}
+                height={'28px'}
+                className="transition-all duration-500 hover:fill-white"
+              />
             </a>
           </span>
-          <span className="rounded-full bg-white/30 p-1 backdrop-blur-sm">
-            <GitHubIcon width={'28px'} height={'28px'} />
+          <span className="rounded-full bg-white/30 p-1 backdrop-blur-md">
+            <a href={content.github} target="_blank">
+              <GitHubIcon
+                width={'28px'}
+                height={'28px'}
+                className="transition-all duration-500 hover:fill-white"
+              />
+            </a>
           </span>
-          <span className="pointer-events-none h-full w-full"></span>
         </div>
       )}
-    </div>
+    </>
     // </div>
   );
 };
