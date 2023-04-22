@@ -72,10 +72,10 @@ const ScrollImage: FC<ScrollImageProps> = ({
           onMouseLeave={handleMouseLeave}
         >
           <h4 className="pr-4 text-lg font-bold text-white">{content.title}</h4>
-          <span className="rounded-lg bg-white px-1 text-xs backdrop-blur-md">
+          <span className="rounded-lg bg-white px-2 text-xs backdrop-blur-md">
             <p>{content.kind}</p>
           </span>
-          <span className="rounded-lg bg-white px-1 text-xs backdrop-blur-md">
+          <span className="rounded-lg bg-white px-2 text-xs backdrop-blur-md">
             <p>{content.year}</p>
           </span>
         </div>

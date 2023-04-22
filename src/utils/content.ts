@@ -40,14 +40,6 @@ export const logos = {
   testingLibraryLogo,
 };
 
-// export const projectImages = {
-//   lowercase,
-//   cribbageMonster,
-//   rainbeau,
-//   takefive,
-//   focusTrap,
-// };
-
 export const mainSections = {
   stackSection: {
     title: 'I will take that moment to review and rework.',

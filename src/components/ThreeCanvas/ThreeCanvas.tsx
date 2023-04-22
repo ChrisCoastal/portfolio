@@ -3,6 +3,7 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import type { FC, ReactNode } from 'react';
 
+import AboutSection from '@/components/AboutSection/AboutSection';
 import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
 import Model from '@/components/Model/Model';
 import Nav from '@/components/Nav/Nav';

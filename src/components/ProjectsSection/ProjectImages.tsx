@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 // import { projects } from '@/assets';
 import ProjectImage from '@/components/ProjectsSection/ProjectImage';
 import ScrollImage from '@/components/ProjectsSection/ProjectImage';
-import useIntersectionObserver from '@/hook/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { projectContent } from '@/utils/content';
 import type { SpringValue } from '@react-spring/three';
 import { animated, easings, useSprings, useTrail } from '@react-spring/three';
@@ -30,7 +30,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const sectionRef = React.useRef<HTMLDivElement>(null);
   const observer = useIntersectionObserver(sectionRef, {
     root: null,
-    rootMargin: '100px',
+    rootMargin: '0px 0px 600px 0px',
     threshold: 0.2,
   });
 
@@ -59,7 +59,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
 
   const [entryStyles, entryAnimation] = useTrail(projects.length, () => ({
     // opacity: 0,
-    transform: 'translate3d(0, 250px, 0) rotateX(60deg)',
+    transform: 'translate3d(0, 300px, 0) rotateX(90deg)',
     config: { easing: easings.easeOutCubic },
   }));
 
@@ -75,7 +75,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
       case 'out':
         entryAnimation.start({
           // opacity: 0,
-          transform: 'translate3d(0, 250px, 0) rotateX(60deg)',
+          transform: 'translate3d(0, 250px, 0) rotateX(90deg)',
         });
         hoverAnimation.start({ opacity: 1, zIndex: 1, pointerEvents: 'auto' });
         break;
@@ -87,7 +87,11 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   observer?.isIntersecting ? animateImageEntry('in') : animateImageEntry('out');
 
   return (
-    <div className={`group relative h-[1200px] w-full`} ref={sectionRef}>
+    <div
+      style={{ perspective: '1000px' }}
+      className={`group relative h-[1000px] w-full`}
+      ref={sectionRef}
+    >
       {entryStyles.map((entryStyles, i) => {
         return (
           <ProjectImage
