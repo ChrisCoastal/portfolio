@@ -42,6 +42,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
               <ScrollBlock top="300vh">
                 <StackSection />
                 <ProjectsSection />
+                <AboutSection />
               </ScrollBlock>
             </Scroll>
           </ScrollControls>

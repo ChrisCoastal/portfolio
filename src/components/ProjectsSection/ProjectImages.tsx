@@ -30,8 +30,8 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const sectionRef = React.useRef<HTMLDivElement>(null);
   const observer = useIntersectionObserver(sectionRef, {
     root: null,
-    rootMargin: '0px 0px 600px 0px',
-    threshold: 0.2,
+    rootMargin: '0px',
+    threshold: 0.5,
   });
 
   const [hoverStyles, hoverAnimation] = useSprings(projects.length, () => ({
@@ -58,7 +58,6 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   }
 
   const [entryStyles, entryAnimation] = useTrail(projects.length, () => ({
-    // opacity: 0,
     transform: 'translate3d(0, 300px, 0) rotateX(90deg)',
     config: { easing: easings.easeOutCubic },
   }));
@@ -68,13 +67,11 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
     switch (direction) {
       case 'in':
         entryAnimation.start({
-          // opacity: 1,
           transform: 'translate3d(0, 0, 0) rotateX(0deg)',
         });
         break;
       case 'out':
         entryAnimation.start({
-          // opacity: 0,
           transform: 'translate3d(0, 250px, 0) rotateX(90deg)',
         });
         hoverAnimation.start({ opacity: 1, zIndex: 1, pointerEvents: 'auto' });
@@ -84,12 +81,13 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
     }
   }
 
-  observer?.isIntersecting ? animateImageEntry('in') : animateImageEntry('out');
+  observer.viewPortPos === 'intersect' ? animateImageEntry('in') : null;
+  observer.viewPortPos === 'above' ? animateImageEntry('out') : null;
 
   return (
     <div
-      style={{ perspective: '1000px' }}
-      className={`group relative h-[1000px] w-full`}
+      style={{ perspective: '800px' }}
+      className={`group relative h-[1000px] w-full transition-all`}
       ref={sectionRef}
     >
       {entryStyles.map((entryStyles, i) => {

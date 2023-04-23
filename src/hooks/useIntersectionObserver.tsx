@@ -1,36 +1,47 @@
 import { RefObject, useEffect, useState } from 'react';
 
+type Observer = {
+  entry: IntersectionObserverEntry | null;
+  viewPortPos: 'above' | 'below' | 'intersect';
+};
+
 const useIntersectionObserver = (
   elementRef: RefObject<HTMLElement>,
   options: IntersectionObserverInit = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5,
-  },
-  callback?: () => void
+    threshold: 0.3,
+  }
+  // callback?: () => void
 ) => {
-  const [intersectionEntry, setIntersectionEntry] =
-    useState<IntersectionObserverEntry | null>(null);
+  const [observerState, setObserverState] = useState<Observer>({
+    entry: null,
+    viewPortPos: 'above',
+  });
 
   useEffect(() => {
     const element = elementRef.current;
     const observer = new IntersectionObserver(([entry]) => {
-      // intersectionEntryRef.current = entry;
-      console.log(entry);
-      if (!intersectionEntry && entry.isIntersecting) {
-        setIntersectionEntry(entry);
+      if (!observerState.entry?.isIntersecting && entry.isIntersecting) {
+        setObserverState({ entry, viewPortPos: 'intersect' });
+        console.log(entry, entry.isIntersecting);
       }
-      if (intersectionEntry && !entry.isIntersecting) {
-        setIntersectionEntry(null);
+
+      if (observerState.entry?.isIntersecting && !entry.isIntersecting) {
+        if (
+          entry.target.getBoundingClientRect().top <= entry.rootBounds?.top!
+        ) {
+          setObserverState({ entry, viewPortPos: 'below' });
+          console.log(entry, entry.isIntersecting);
+          return;
+        } else {
+          setObserverState({ entry, viewPortPos: 'above' });
+          console.log(entry, entry.isIntersecting);
+          return;
+        }
+        // setObserverState({ entry, viewPortPos: 'above' });
+        // console.log(entry, entry.isIntersecting);
       }
-      // if (!intersectionEntryRef.current && entry.isIntersecting) {
-      //   intersectionEntryRef.current = entry;
-      //   // callback && callback();
-      // }
-      // if (intersectionEntryRef.current && !entry.isIntersecting) {
-      //   intersectionEntryRef.current = entry;
-      //   // callback && callback();
-      // }
     }, options);
 
     if (element) {
@@ -42,9 +53,10 @@ const useIntersectionObserver = (
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [elementRef, options, intersectionEntry?.isIntersecting]);
+  }, [elementRef, options, observerState.entry?.isIntersecting]);
+  // }, []);
 
-  return intersectionEntry;
+  return observerState;
 };
 
 export default useIntersectionObserver;
