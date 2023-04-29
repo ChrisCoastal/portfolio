@@ -31,7 +31,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const observer = useIntersectionObserver(sectionRef, {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5,
+    threshold: 0.3,
   });
 
   const [hoverStyles, hoverAnimation] = useSprings(projects.length, () => ({
@@ -63,7 +63,6 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   }));
 
   function animateImageEntry(direction: 'in' | 'out') {
-    console.log('animate entry');
     switch (direction) {
       case 'in':
         entryAnimation.start({

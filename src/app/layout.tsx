@@ -1,4 +1,4 @@
-import { redHat } from '@/app/fonts';
+import { redHat, vollkorn } from '@/app/fonts';
 
 import './globals.css';
 
@@ -14,7 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${redHat.variable} font-sans`}>
+    <html
+      lang="en"
+      className={`${redHat.variable} ${vollkorn.variable} font-sans text-white`}
+    >
       <body>{children}</body>
     </html>
   );

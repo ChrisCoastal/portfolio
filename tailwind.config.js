@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         ...defaultTheme.fontFamily,
         sans: ['var(--font-redHat)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-vollkorn)', ...defaultTheme.fontFamily.serif],
+        'red-hat': 'var(--font-redHat)',
+        vollkorn: 'var(--font-vollkorn)',
       },
     },
   },

@@ -42,15 +42,15 @@ export const logos = {
 
 export const mainSections = {
   stackSection: {
-    title: 'I will take that moment to review and rework.',
+    title: 'instead take that moment',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   projectsSection: {
-    title: 'I will find inspiration in accomplishment.',
+    title: 'find inspiration in accomplishment.',
     text: 'Here is a selection of projects that I have worked on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   aboutSection: {
-    title: 'And remember that they are a part of a greater whole.',
+    title: 'building the greater whole.',
     text: 'It is a gift to feel inspired - to feel that you are contributing to something that is ',
   },
 };
@@ -62,7 +62,7 @@ export const projectContent: { [key: string]: ProjectContent } = {
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    kind: 'web app',
+    kind: 'web',
     year: 2022,
     link: 'https://tolowercase.xyz/',
     github: 'https://github.com/ChrisCoastal/tolowercase',
@@ -73,7 +73,7 @@ export const projectContent: { [key: string]: ProjectContent } = {
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    kind: 'web app',
+    kind: 'web',
     year: 2023,
     link: 'https://cribbage.netlify.app/',
     github: 'https://github.com/ChrisCoastal/tolowercase',
@@ -84,7 +84,7 @@ export const projectContent: { [key: string]: ProjectContent } = {
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    kind: 'web app',
+    kind: 'web',
     year: 2022,
     link: 'https://tolowercase.xyz/',
     github: 'https://github.com/ChrisCoastal/tolowercase',
@@ -109,7 +109,6 @@ export const projectContent: { [key: string]: ProjectContent } = {
     kind: 'open source',
     year: 2023,
     link: 'https://codesandbox.io/p/github/ChrisCoastal/focustrap-test/main?workspace=%257B%2522activeFileId%2522%253Anull%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clfegprm0000e3b6lso1rq9qj%2522%253A%257B%2522key%2522%253A%2522clfegprm0000e3b6lso1rq9qj%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522port%2522%253A5173%252C%2522key%2522%253A%2522clfegv45v00mz3b6ln37voyka%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522key%2522%253A%2522clfegv35n00ho3b6layzu8u5o%2522%252C%2522isMinimized%2522%253Atrue%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clfegprm0000e3b6lso1rq9qj%2522%252C%2522spacesOrder%2522%253A%255B%2522clfegprm0000e3b6lso1rq9qj%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D&workspaceId=6624ae69-76a1-4e06-a4af-4f9f128345fa',
-    github:
-      'https://github.com/themesberg/flowbite-react/issues/647#issuecomment-1515539479',
+    github: 'https://github.com/themesberg/flowbite-react/issues/647',
   },
 };

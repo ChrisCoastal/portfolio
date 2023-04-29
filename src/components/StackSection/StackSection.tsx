@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { vollkorn } from '@/app/fonts';
 import StackGallery from '@/components/StackGallery/StackGallery';
 import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
@@ -9,11 +10,14 @@ type Props = {};
 
 const StackSection = (props: Props) => {
   return (
-    <section>
-      <SectionTitle text={mainSections.stackSection.title} />
+    <section className="stack">
+      <SectionTitle
+        text={mainSections.stackSection.title}
+        className={`font-vollkorn`}
+      />
+      <StackGallery />
       <div className="flex justify-center gap-16 rounded-lg p-8">
-        <StackGallery />
-        <p>{mainSections.stackSection.text}</p>
+        <p className="text-white">{mainSections.stackSection.text}</p>
       </div>
     </section>
   );
