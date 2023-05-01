@@ -2,12 +2,22 @@ import React from 'react';
 import Image from 'next/image';
 
 import { logos } from '@/utils/content';
+import { useScroll } from '@react-three/drei';
 
 type Props = {};
 
 const Tools = (props: Props) => {
+  const scroll = useScroll();
+
+  // setInterval(() => {
+  //   console.log(scroll.offset);
+  // }, 1000);
+
   return (
-    <div className="m-8 mt-24 flex flex-col gap-8">
+    <div
+      id="stack"
+      className="m-8 flex h-[300vh] flex-col gap-8 overflow-hidden"
+    >
       <h3 className="text-4xl font-semibold">Standard +</h3>
 
       <div className="flex w-full justify-between">

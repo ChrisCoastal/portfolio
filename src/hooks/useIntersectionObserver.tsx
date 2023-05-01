@@ -3,6 +3,7 @@ import { RefObject, useEffect, useState } from 'react';
 type Observer = {
   entry: IntersectionObserverEntry | null;
   viewPortPos: 'above' | 'below' | 'intersect';
+  callback?: () => void;
 };
 
 const useIntersectionObserver = (
@@ -11,8 +12,8 @@ const useIntersectionObserver = (
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
-  }
-  // callback?: () => void
+  },
+  callback?: () => void
 ) => {
   const [observerState, setObserverState] = useState<Observer>({
     entry: null,
@@ -39,8 +40,6 @@ const useIntersectionObserver = (
           console.log(entry, entry.isIntersecting);
           return;
         }
-        // setObserverState({ entry, viewPortPos: 'above' });
-        // console.log(entry, entry.isIntersecting);
       }
     }, options);
 
@@ -54,7 +53,6 @@ const useIntersectionObserver = (
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [elementRef, options, observerState.entry?.isIntersecting]);
-  // }, []);
 
   return observerState;
 };

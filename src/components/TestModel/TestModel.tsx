@@ -9,19 +9,30 @@ import {
   useScroll,
   useTexture,
 } from '@react-three/drei';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { ThreeElements, useFrame, useLoader } from '@react-three/fiber';
 
 type Props = {};
 
 export function TestModel() {
-  const group = useRef(null);
+  const groupRef = useRef(null);
+  const sphereRef = useRef<THREE.Mesh | null>(null);
 
   // @ts-expect-error
   const { nodes, materials, animations } = useGLTF('/assets/problem.glb');
-  const { actions } = useAnimations(animations, group);
+  const { actions } = useAnimations(animations, groupRef);
+
+  const scroll = useScroll();
+
+  useFrame((state, delta) => {
+    if (!sphereRef.current) return;
+    const position = scroll.curve(0, 1 / 3);
+    // console.log(position);
+    // sphereRef.current.position.y = position;
+    sphereRef.current.position.z = position * 3;
+  });
 
   return (
-    <group ref={group} dispose={null}>
+    <group ref={groupRef} dispose={null}>
       <group name="Scene">
         <group
           name="Camera"
@@ -39,6 +50,7 @@ export function TestModel() {
         </group>
         <group name="Empty" position={[-1.37, 0.82, -1.6]} />
         <mesh
+          ref={sphereRef}
           name="Sphere"
           castShadow
           receiveShadow

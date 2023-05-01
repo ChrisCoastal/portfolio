@@ -1,6 +1,12 @@
 'use client';
 
-import React, { Suspense, useEffect, useRef, useState } from 'react';
+import React, {
+  CSSProperties,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
 import { vollkorn } from '@/app/fonts';
@@ -15,7 +21,8 @@ import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { mainSections } from '@/utils/content';
-import { animated, config, useSpring } from '@react-spring/three';
+import { config, useSpring } from '@react-spring/three';
+import { animated, useScroll as useSpringScroll } from '@react-spring/web';
 import {
   Backdrop,
   Environment,
@@ -40,7 +47,8 @@ type ThreeCanvasProps = {
 extend({ TestScroll });
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
-  const rotationRef = useRef(1);
+  const positionRef = useRef(0);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement>(null);
 
   function Loader() {
@@ -54,41 +62,92 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     rootMargin: '0px',
   });
 
-  const scroll = useScroll();
-
-  const [spring, api] = useSpring(() => ({
-    from: { opacity: 1 },
-    to: { opacity: 0 },
+  const [style, animation] = useSpring(() => ({
+    from: { x: 0 },
+    to: { x: 1 },
   }));
+
+  function handleClick() {
+    console.log('click');
+  }
 
   function handleMove() {
     // works
     // do stuff on move
   }
 
-  function handleScroll(e: WheelEvent<HTMLDivElement>) {
-    console.log('scroll', e);
-    rotationRef.current += 0.1;
+  function handleScroll(wheelEvent: WheelEvent<HTMLDivElement>) {
+    console.log('scroll', stickyRef.current?.getBoundingClientRect().top);
+    const max = 100;
+    const min = max * -1;
+    const start = positionRef.current;
+    const end = positionRef.current + wheelEvent.deltaY;
+
+    if (end > max) {
+      positionRef.current = max;
+    } else if (end < min) {
+      positionRef.current = min;
+    } else {
+      positionRef.current += wheelEvent.deltaY;
+    }
+
+    animation.start({
+      from: { x: start },
+      to: { x: positionRef.current },
+      config: {
+        friction: 8,
+        tension: 100,
+      },
+    });
+    positionRef.current += wheelEvent.deltaY;
+
+    // works
+    // do stuff on wheel
   }
 
-  observe.viewPortPos === 'intersect' && api();
+  const [slideIn, animateSlideIn] = useSpring(() => ({
+    from: { x: 0 },
+    to: { x: 1 },
+    config: {
+      friction: 8,
+      tension: 100,
+    },
+  }));
+
+  // observe.viewPortPos === 'intersect' && api();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('position', stickyRef.current!.getBoundingClientRect().top);
+    }, 500);
+
+    return clearInterval(interval);
+  }, []);
 
   return (
     <div
       style={{ height: '100vh', width: '100vw' }}
-      onScroll={handleScroll}
-      className="relative bg-gradient-to-br from-pink-200 to-teal-700"
+      className="fixed"
+      // className="fixed bg-gradient-to-br from-pink-200 to-teal-700"
     >
-      {/* {observe.viewPortPos === 'intersect' && (
-        <animated.div
-          className={`pointer-events-none fixed z-50 h-full w-full bg-pink-500/30`}
-        ></animated.div>
-      )} */}
+      <div className="absolute h-full w-full bg-gradient-to-br from-pink-200 to-teal-700"></div>
+      <div className="pointer-events-none absolute top-10 z-10 flex h-full w-full items-center justify-center">
+        <p className="bg-green-400/20 pb-96">Yup, that&apos;s a problem</p>
+      </div>
+      {/* <animated.div
+        style={{
+          // @ts-expect-error
+          transform: style.x.to((value) => `translateX(${value}px)`),
+          // transform: style.x.to((value) => `rotateZ(${value}deg)`),
+        }}
+        className={`pointer-events-none absolute left-1/2 overflow-hidden bg-black`}
+      >
+        <p className="text-lg font-extrabold ">hello</p>
+      </animated.div> */}
       {/* <Canvas style={{ background: 'black' }}> */}
-      <Hero pos={rotationRef.current} />
-      <div className="fixed text-red-500">hry</div>
+      {/* <Hero /> */}
       {/* <TestScroll /> */}
-      <Canvas onMouseMove={handleMove} onWheel={(e) => handleScroll(e)}>
+      <Canvas onMouseMove={handleMove} onWheel={handleScroll}>
         <ambientLight intensity={0.4} />
         <spotLight intensity={0.5} position={[10, 10, 10]} castShadow />
         <Suspense fallback={<Loader />}>
@@ -97,30 +156,45 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
               <TestModel />
             </Float>
             {/* <Scroll>
-              <Float rotationIntensity={3}>
-                <TestModel />
-              </Float>
-            </Scroll> */}
+    <Float rotationIntensity={3}>
+      <TestModel />
+    </Float>
+  </Scroll> */}
             {/* <Model /> */}
             {/*@ts-expect-error className is passed to Scroll*/}
-            <Scroll html className="relative h-full w-full">
-              <div className="fixed">This is in scroll.</div>
+            <Scroll html className="relative h-full w-full ">
+              {/* <div className="fixed">This is in scroll.</div> */}
               <Nav />
               {/* <ScrollPrompt /> */}
+              <div className="h-screen w-full overflow-auto bg-green-300/50">
+                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
+                <h1
+                  ref={stickyRef}
+                  className="!sticky top-0 h-full bg-orange-400/30"
+                >
+                  STICKY
+                </h1>
+                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
+                <div className="relative h-96 w-48 bg-red-500">
+                  <div className="h-24 w-48 bg-blue-200/20">sibling</div>
+                </div>
+                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
+              </div>
+
               <ScrollBlock top="200vh">
                 <Tools />
               </ScrollBlock>
-              {/* <span className="absolute top-[295vh]" ref={blockRef}></span>
-              <ScrollBlock top="300vh">
-                <h1
-                  className={`text-center font-vollkorn text-4xl font-medium`}
-                >
-                  but instead take that moment...
-                </h1>
-                <StackSection />
-                <ProjectsSection />
-                <AboutSection />
-              </ScrollBlock> */}
+              <span className="absolute top-[105vh]" ref={blockRef}></span>
+              {/* <ScrollBlock top="300vh">
+      <h1
+        className={`text-center font-vollkorn text-4xl font-medium`}
+      >
+        but instead take that moment...
+      </h1>
+      <StackSection />
+      <ProjectsSection />
+      <AboutSection />
+    </ScrollBlock> */}
             </Scroll>
           </ScrollControls>
         </Suspense>

@@ -10,7 +10,7 @@ type Props = {};
 
 const StackSection = (props: Props) => {
   return (
-    <section className="stack">
+    <section id="stack">
       <SectionTitle
         text={mainSections.stackSection.title}
         className={`font-vollkorn`}
