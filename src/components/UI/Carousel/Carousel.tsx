@@ -12,33 +12,41 @@ import {
 
 type CarouselProps = {
   slides: ReactElement[];
+  slideIndex?: number;
+  config?: {
+    tension: number;
+    friction: number;
+    duration: number;
+  };
+  clickable?: boolean;
   className?: string;
   // children: ReactNode;
 };
 
-const Carousel: FC<CarouselProps> = ({ slides, className }) => {
+const Carousel: FC<CarouselProps> = ({
+  slides,
+  slideIndex,
+  clickable = true,
+  config,
+  className,
+}) => {
   const [index, setIndex] = useState(0);
   const transRef = useSpringRef();
-  const transitions = useTransition(index, {
+  const transitions = useTransition(slideIndex || index, {
     ref: transRef,
-    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-    leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+    from: { opacity: 1, transform: 'translate3d(100%,0,0)' },
+    enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
+    leave: { opacity: 0.5, transform: 'translate3d(-200%,0,0)' },
+    config: { tension: 180, friction: 4, duration: 700 },
   });
 
   function clickHandler() {
     setIndex((prev) => (prev + 1) % slides.length);
   }
 
-  // const animatedSlides: ((
-  //   props: AnimatedProps<{ style: CSSProperties }>
-  // ) => React.ReactElement)[] = [
-  //   ({ style }) => ,
-  // ];
-
   useEffect(() => {
     transRef.start();
-  }, [index, transRef]);
+  }, [slideIndex, index, transRef]);
 
   return (
     <div className={`${className}`} onClick={clickHandler}>

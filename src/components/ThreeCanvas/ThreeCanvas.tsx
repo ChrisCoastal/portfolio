@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { log } from 'console';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
 import { vollkorn } from '@/app/fonts';
@@ -39,6 +40,7 @@ import Hero from '../Hero/Hero';
 import TestModel from '../TestModel/TestModel';
 import TestScroll from '../TestScroll/TestScroll';
 import Tools from '../Tools/Tools';
+import TransitionBlock from '../TransitionBlock/TransitionBlock';
 
 type ThreeCanvasProps = {
   children?: ReactNode;
@@ -47,6 +49,7 @@ type ThreeCanvasProps = {
 extend({ TestScroll });
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
+  const pages = 8;
   const positionRef = useRef(0);
   const stickyRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement>(null);
@@ -64,7 +67,6 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
 
   const [style, animation] = useSpring(() => ({
     from: { x: 0 },
-    to: { x: 1 },
   }));
 
   function handleClick() {
@@ -77,73 +79,59 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   }
 
   function handleScroll(wheelEvent: WheelEvent<HTMLDivElement>) {
-    console.log('scroll', stickyRef.current?.getBoundingClientRect().top);
-    const max = 100;
-    const min = max * -1;
-    const start = positionRef.current;
-    const end = positionRef.current + wheelEvent.deltaY;
+    if (!stickyRef.current?.clientWidth) return;
+    console.log(
+      'scroll',
+      stickyRef.current?.getBoundingClientRect().top,
+      stickyRef.current?.clientWidth
+    );
+    // const elWidth = stickyRef.current?.clientWidth / document.body.clientWidth;
+    console.log(stickyRef.current?.clientWidth / document.body.clientWidth);
+    const relativeElWidth =
+      (stickyRef.current?.offsetWidth / document.body.clientWidth) * 50;
+    console.log(relativeElWidth);
+    const reverse = -1;
+    const rMax = 50 + relativeElWidth;
+    const lMax = rMax * -1;
+    const xFrom = positionRef.current;
+    let xTo = positionRef.current + wheelEvent.deltaY * 0.1 * reverse;
 
-    if (end > max) {
-      positionRef.current = max;
-    } else if (end < min) {
-      positionRef.current = min;
-    } else {
-      positionRef.current += wheelEvent.deltaY;
-    }
+    if (xTo > rMax) xTo = rMax;
+    if (xTo < lMax) xTo = lMax;
+    positionRef.current = xTo;
 
     animation.start({
-      from: { x: start },
-      to: { x: positionRef.current },
-      config: {
-        friction: 8,
-        tension: 100,
-      },
+      from: { x: xFrom },
+      to: { x: xTo },
+      config: { tension: 140, friction: 12 },
     });
-    positionRef.current += wheelEvent.deltaY;
-
-    // works
-    // do stuff on wheel
   }
 
-  const [slideIn, animateSlideIn] = useSpring(() => ({
-    from: { x: 0 },
-    to: { x: 1 },
-    config: {
-      friction: 8,
-      tension: 100,
-    },
-  }));
-
   // observe.viewPortPos === 'intersect' && api();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log('position', stickyRef.current!.getBoundingClientRect().top);
-    }, 500);
-
-    return clearInterval(interval);
-  }, []);
 
   return (
     <div
       style={{ height: '100vh', width: '100vw' }}
-      className="fixed"
+      className="relative"
       // className="fixed bg-gradient-to-br from-pink-200 to-teal-700"
     >
-      <div className="absolute h-full w-full bg-gradient-to-br from-pink-200 to-teal-700"></div>
-      <div className="pointer-events-none absolute top-10 z-10 flex h-full w-full items-center justify-center">
+      {/* <div className="absolute h-full w-full bg-gradient-to-br from-pink-200 to-teal-700"></div> */}
+      {/* <div className="pointer-events-none absolute top-10 z-10 flex h-full w-full items-center justify-center">
         <p className="bg-green-400/20 pb-96">Yup, that&apos;s a problem</p>
-      </div>
-      {/* <animated.div
+      </div> */}
+      <animated.div
         style={{
           // @ts-expect-error
-          transform: style.x.to((value) => `translateX(${value}px)`),
+          transform: style.x.to((value) => `translateX(${value}vw)`),
           // transform: style.x.to((value) => `rotateZ(${value}deg)`),
         }}
-        className={`pointer-events-none absolute left-1/2 overflow-hidden bg-black`}
+        ref={stickyRef}
+        className={`pointer-events-none absolute left-1/2 top-1/3 z-30 mx-auto -translate-x-1/2 overflow-hidden text-center`}
       >
-        <p className="text-lg font-extrabold ">hello</p>
-      </animated.div> */}
+        <p className="text-4xl font-extrabold text-black">
+          That looks like a problem.
+        </p>
+      </animated.div>
       {/* <Canvas style={{ background: 'black' }}> */}
       {/* <Hero /> */}
       {/* <TestScroll /> */}
@@ -151,7 +139,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
         <ambientLight intensity={0.4} />
         <spotLight intensity={0.5} position={[10, 10, 10]} castShadow />
         <Suspense fallback={<Loader />}>
-          <ScrollControls pages={8}>
+          <ScrollControls pages={pages}>
             <Float rotationIntensity={4}>
               <TestModel />
             </Float>
@@ -161,36 +149,29 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     </Float>
   </Scroll> */}
             {/* <Model /> */}
-            {/*@ts-expect-error className is passed to Scroll*/}
-            <Scroll html className="relative h-full w-full ">
-              {/* <div className="fixed">This is in scroll.</div> */}
-              <Nav />
-              {/* <ScrollPrompt /> */}
-              <div className="h-screen w-full overflow-auto bg-green-300/50">
-                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
-                <h1
-                  ref={stickyRef}
-                  className="!sticky top-0 h-full bg-orange-400/30"
-                >
-                  STICKY
-                </h1>
-                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
-                <div className="relative h-96 w-48 bg-red-500">
-                  <div className="h-24 w-48 bg-blue-200/20">sibling</div>
-                </div>
-                <div className="h-96 w-48 bg-blue-200/20">sibling</div>
-              </div>
 
-              <ScrollBlock top="200vh">
-                <Tools />
-              </ScrollBlock>
+            {/* prettier-ignore}*/}
+            <Scroll
+              html
+              className="absolute h-full w-full"
+              // onClick={() => console.log('click')}
+              // onScroll={() => console.log('scrolling')}
+            >
+              {/* <TransitionBlock /> */}
+              <Nav />
+              {/* <div className=" bg-orange-500/30">
+                <div className="h-96 bg-orange-500/10"></div>
+                <div className="h-96 bg-orange-500/10">
+                  <div className="sticky top-0 h-32 bg-orange-500/30"></div>
+                  <div className="h-32 bg-orange-500/40"></div>
+                  <div className="h-32 bg-orange-500/50"></div>
+                </div>
+              </div>
+              <div className="h-screen bg-red-500/30"></div>
+              <div className="h-screen bg-purple-500/30"></div> */}
               <span className="absolute top-[105vh]" ref={blockRef}></span>
               {/* <ScrollBlock top="300vh">
-      <h1
-        className={`text-center font-vollkorn text-4xl font-medium`}
-      >
-        but instead take that moment...
-      </h1>
+
       <StackSection />
       <ProjectsSection />
       <AboutSection />

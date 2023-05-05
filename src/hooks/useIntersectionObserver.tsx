@@ -8,7 +8,7 @@ type Observer = {
 
 const useIntersectionObserver = (
   elementRef: RefObject<HTMLElement>,
-  options: IntersectionObserverInit = {
+  options: IntersectionObserverInit | null = {
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
@@ -25,6 +25,7 @@ const useIntersectionObserver = (
     const observer = new IntersectionObserver(([entry]) => {
       if (!observerState.entry?.isIntersecting && entry.isIntersecting) {
         setObserverState({ entry, viewPortPos: 'intersect' });
+        callback && callback();
         console.log(entry, entry.isIntersecting);
       }
 
@@ -41,7 +42,7 @@ const useIntersectionObserver = (
           return;
         }
       }
-    }, options);
+    }, options!);
 
     if (element) {
       observer.observe(element);
