@@ -30,15 +30,15 @@ const Hero: FC<HeroProps> = () => {
     renderSlide(project.image)
   );
 
-  const observer1 = useIntersectionObserver(firstElRef, null, () =>
-    setSlideIndex(1)
-  );
-  const observer2 = useIntersectionObserver(secondElRef, null, () =>
-    setSlideIndex(2)
-  );
-  const observer3 = useIntersectionObserver(thirdElRef, null, () =>
-    setSlideIndex(3)
-  );
+  const observer1 = useIntersectionObserver(firstElRef, null, {
+    intersect: () => setSlideIndex(1),
+  });
+  const observer2 = useIntersectionObserver(secondElRef, null, {
+    intersect: () => setSlideIndex(2),
+  });
+  const observer3 = useIntersectionObserver(thirdElRef, null, {
+    intersect: () => setSlideIndex(3),
+  });
 
   return (
     <div className="pointer-events-none relative z-20 h-[400vh]">

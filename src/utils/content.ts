@@ -41,6 +41,9 @@ export const logos = {
 };
 
 export const mainSections = {
+  heroSection: {
+    title: ['This looks like a problem.', "Don't worry, I like problems."],
+  },
   stackSection: {
     title: 'instead take that moment',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',

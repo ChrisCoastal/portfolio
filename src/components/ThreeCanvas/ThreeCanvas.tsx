@@ -37,6 +37,7 @@ import {
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 
 import Hero from '../Hero/Hero';
+import HeroCarousel from '../HeroCarousel/HeroCarousel';
 import TestModel from '../TestModel/TestModel';
 import TestScroll from '../TestScroll/TestScroll';
 import Tools from '../Tools/Tools';
@@ -50,6 +51,7 @@ extend({ TestScroll });
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   const pages = 8;
+  const animateRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(0);
   const stickyRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement>(null);
@@ -59,15 +61,34 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     return <Html center>{progress} % loaded</Html>;
   }
 
-  const observe = useIntersectionObserver(blockRef, {
-    root: null,
-    threshold: 0,
-    rootMargin: '0px',
-  });
+  const observe = useIntersectionObserver(
+    animateRef,
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: '0px',
+    },
+    {
+      above: animateText,
+      below: animateText,
+      intersect: animateText,
+    }
+  );
 
   const [style, animation] = useSpring(() => ({
     from: { x: 0 },
+    // from: { x: 100 },
   }));
+  const heroText = mainSections.heroSection.title;
+  const heroIntersects = heroText.map((_, i) => {
+    return (
+      <div
+        key={i}
+        ref={animateRef}
+        className={`absolute h-screen top-[${i * 100 + 100 + 'vh'}]`}
+      ></div>
+    );
+  });
 
   function handleClick() {
     console.log('click');
@@ -79,35 +100,66 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   }
 
   function handleScroll(wheelEvent: WheelEvent<HTMLDivElement>) {
-    if (!stickyRef.current?.clientWidth) return;
-    console.log(
-      'scroll',
-      stickyRef.current?.getBoundingClientRect().top,
-      stickyRef.current?.clientWidth
-    );
-    // const elWidth = stickyRef.current?.clientWidth / document.body.clientWidth;
-    console.log(stickyRef.current?.clientWidth / document.body.clientWidth);
-    const relativeElWidth =
-      (stickyRef.current?.offsetWidth / document.body.clientWidth) * 50;
-    console.log(relativeElWidth);
-    const reverse = -1;
-    const rMax = 50 + relativeElWidth;
-    const lMax = rMax * -1;
-    const xFrom = positionRef.current;
-    let xTo = positionRef.current + wheelEvent.deltaY * 0.1 * reverse;
+    return;
+    // if (!stickyRef.current?.clientWidth) return;
+    // console.log(
+    //   'scroll',
+    //   stickyRef.current?.getBoundingClientRect().top,
+    //   stickyRef.current?.clientWidth
+    // );
+    // // const elWidth = stickyRef.current?.clientWidth / document.body.clientWidth;
+    // console.log(stickyRef.current?.clientWidth / document.body.clientWidth);
+    // const relativeElWidth =
+    //   (stickyRef.current?.offsetWidth / document.body.clientWidth) * 50;
+    // console.log(relativeElWidth);
+    // const reverse = -1;
+    // const rMax = 50 + relativeElWidth;
+    // const lMax = rMax * -1;
+    // const xFrom = positionRef.current;
+    // let xTo = positionRef.current + wheelEvent.deltaY * 0.08 * reverse;
 
-    if (xTo > rMax) xTo = rMax;
-    if (xTo < lMax) xTo = lMax;
-    positionRef.current = xTo;
+    // if (xTo > rMax) xTo = rMax;
+    // if (xTo < lMax) xTo = lMax;
+    // positionRef.current = xTo;
 
-    animation.start({
-      from: { x: xFrom },
-      to: { x: xTo },
-      config: { tension: 140, friction: 12 },
-    });
+    // animation.start({
+    //   from: { x: xFrom },
+    //   to: { x: xTo },
+    //   config: { tension: 140, friction: 14 },
+    // });
   }
 
-  // observe.viewPortPos === 'intersect' && api();
+  function animateText(
+    state: 'above' | 'below' | 'intersect',
+    from?: 'above' | 'below' | 'intersect'
+  ) {
+    if (state === 'intersect' && from === 'above')
+      animation.start({
+        from: { x: 50 },
+        to: { x: 0 },
+        config: { tension: 140, friction: 14 },
+      });
+    if (state === 'intersect' && from === 'below')
+      animation.start({
+        from: { x: -50 },
+        to: { x: 0 },
+        config: { tension: 140, friction: 14 },
+      });
+    if (state === 'above')
+      animation.start({
+        // from: { x: 50 },
+        to: { x: 50 },
+        config: { tension: 140, friction: 14 },
+      });
+    if (state === 'below')
+      animation.start({
+        from: { x: 0 },
+        to: { x: -50 },
+        config: { tension: 140, friction: 14 },
+      });
+  }
+
+  // if (observe.viewPortPos === 'intersect') animateText('intersect');
 
   return (
     <div
@@ -129,9 +181,10 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
         className={`pointer-events-none absolute left-1/2 top-1/3 z-30 mx-auto -translate-x-1/2 overflow-hidden text-center`}
       >
         <p className="text-4xl font-extrabold text-black">
-          That looks like a problem.
+          This looks like a problem.
         </p>
       </animated.div>
+      {/* <HeroCarousel /> */}
       {/* <Canvas style={{ background: 'black' }}> */}
       {/* <Hero /> */}
       {/* <TestScroll /> */}
@@ -157,6 +210,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
               // onClick={() => console.log('click')}
               // onScroll={() => console.log('scrolling')}
             >
+              {heroIntersects}
               {/* <TransitionBlock /> */}
               <Nav />
               {/* <div className=" bg-orange-500/30">

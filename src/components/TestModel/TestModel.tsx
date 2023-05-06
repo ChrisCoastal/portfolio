@@ -23,13 +23,13 @@ export function TestModel() {
 
   const scroll = useScroll();
 
-  useFrame((state, delta) => {
-    if (!sphereRef.current) return;
-    const position = scroll.curve(0, 1 / 3);
-    // console.log(position);
-    // sphereRef.current.position.y = position;
-    sphereRef.current.position.z = position * 3;
-  });
+  // useFrame((state, delta) => {
+  //   if (!sphereRef.current) return;
+  //   const position = scroll.curve(0, 1 / 3);
+  //   // console.log(position);
+  //   // sphereRef.current.position.y = position;
+  //   sphereRef.current.position.z = position * 3;
+  // });
 
   return (
     <group ref={groupRef} dispose={null}>
