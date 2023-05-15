@@ -42,19 +42,19 @@ export const logos = {
 
 export const mainSections = {
   heroSection: {
-    title: ['This looks like a problem.', "Don't worry, I like problems."],
+    title: ['This looks like a problem.'],
   },
   stackSection: {
     title: 'instead take that moment',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   projectsSection: {
-    title: 'find inspiration in accomplishment.',
+    title: 'work',
     text: 'Here is a selection of projects that I have worked on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   aboutSection: {
     title: 'building the greater whole.',
-    text: 'It is a gift to feel inspired - to feel that you are contributing to something that is ',
+    text: '',
   },
 };
 

@@ -2,26 +2,30 @@ import { RefObject, useEffect, useState } from 'react';
 
 export type ViewPortPos = 'above' | 'below' | 'intersect';
 
-type Observer = {
+type ObserverState = {
   entry: IntersectionObserverEntry | null;
   from: ViewPortPos;
   viewPortPos: ViewPortPos;
 };
 
-const useIntersectionObserver = (
-  elementRef: RefObject<HTMLElement>,
-  options: IntersectionObserverInit | null = {
+type Observer = {
+  elementRef: RefObject<HTMLElement>;
+  options?: IntersectionObserverInit | null;
+  observeAfterEntry?: boolean;
+  callback?: (pos: ViewPortPos, from: ViewPortPos) => void;
+};
+
+const useIntersectionObserver = ({
+  elementRef,
+  options = {
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
   },
-  callbacks?: {
-    intersect?: (state: ViewPortPos, from: ViewPortPos) => void;
-    above?: (state: ViewPortPos) => void;
-    below?: (state: ViewPortPos) => void;
-  }
-) => {
-  const [observerState, setObserverState] = useState<Observer>({
+  observeAfterEntry = true,
+  callback,
+}: Observer) => {
+  const [observerState, setObserverState] = useState<ObserverState>({
     entry: null,
     from: 'above',
     viewPortPos: 'above',
@@ -29,24 +33,25 @@ const useIntersectionObserver = (
 
   useEffect(() => {
     const element = elementRef.current;
+    console.log('observing', element);
     const observer = new IntersectionObserver(([entry]) => {
       // intersecting
       if (!observerState.entry?.isIntersecting && entry.isIntersecting) {
-        if (callbacks?.intersect && observerState.viewPortPos === 'above')
-          callbacks.intersect('intersect', 'above');
-        if (callbacks?.intersect && observerState.viewPortPos === 'below')
-          callbacks.intersect('intersect', 'below');
-
+        if (callback && observerState.viewPortPos === 'above') {
+          callback('intersect', 'above');
+        }
+        if (callback && observerState.viewPortPos === 'below') {
+          callback('intersect', 'below');
+        }
         setObserverState((prev) => ({
           entry,
           from: prev.viewPortPos,
           viewPortPos: 'intersect',
         }));
-        console.log(entry, entry.isIntersecting);
       }
 
-      // below
       if (observerState.entry?.isIntersecting && !entry.isIntersecting) {
+        // below
         if (
           entry.target.getBoundingClientRect().top <= entry.rootBounds?.top!
         ) {
@@ -55,9 +60,7 @@ const useIntersectionObserver = (
             from: prev.viewPortPos,
             viewPortPos: 'below',
           }));
-          console.log(entry, entry.isIntersecting);
-          callbacks?.below && callbacks.below('below');
-          return;
+          callback && callback('below', 'intersect');
 
           // above
         } else {
@@ -66,22 +69,26 @@ const useIntersectionObserver = (
             from: prev.viewPortPos,
             viewPortPos: 'above',
           }));
-          callbacks?.above && callbacks.above('above');
-          return;
+          callback && callback('above', 'intersect');
         }
       }
+      // unobserve after entry
+      !observeAfterEntry && observer.unobserve(element!);
     }, options!);
 
-    if (element) {
-      observer.observe(element);
-    }
+    if (element) observer.observe(element);
+
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      if (element) observer.unobserve(element);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [elementRef, options, observerState.entry?.isIntersecting]);
+  }, [
+    observerState.entry,
+    // options,
+    // callback,
+    // elementRef,
+    // observeAfterEntry,
+    observerState.viewPortPos,
+  ]);
 
   return observerState;
 };

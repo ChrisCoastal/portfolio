@@ -16,7 +16,7 @@ const Tools = (props: Props) => {
   return (
     <div
       id="stack"
-      className="m-8 flex h-[300vh] flex-col gap-8 overflow-hidden"
+      className="m-8 flex h-[300vh] flex-col gap-8 bg-stone-300/30"
     >
       <h3 className="text-4xl font-semibold">Standard +</h3>
 

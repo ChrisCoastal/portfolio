@@ -10,18 +10,27 @@ import React, {
 import { log } from 'console';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
-import { vollkorn } from '@/app/fonts';
-import AboutSection from '@/components/AboutSection/AboutSection';
-import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
-import Model from '@/components/Model/Model';
+// import { vollkorn } from '@/app/fonts';
+// import AboutSection from '@/components/AboutSection/AboutSection';
+// import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
+// import Hero from '@/components/Hero/Hero';
+// import HeroCarousel from '@/components/HeroCarousel/HeroCarousel';
+import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
+// import Model from '@/components/Model/Model';
 import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
-import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
-import StackSection from '@/components/StackSection/StackSection';
-import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
-import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import { mainSections } from '@/utils/content';
+import StackIcons from '@/components/StackIcons/StackIcons';
+// import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
+// import StackSection from '@/components/StackSection/StackSection';
+import TestModel from '@/components/TestModel/TestModel';
+import TestScroll from '@/components/TestScroll/TestScroll';
+import Tools from '@/components/Tools/Tools';
+// import TransitionBlock from '@/components/TransitionBlock/TransitionBlock';
+// import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
+// import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
+import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
+// import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+// import { mainSections } from '@/utils/content';
 import { config, useSpring } from '@react-spring/three';
 import { animated, useScroll as useSpringScroll } from '@react-spring/web';
 import {
@@ -36,12 +45,7 @@ import {
 } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 
-import Hero from '../Hero/Hero';
-import HeroCarousel from '../HeroCarousel/HeroCarousel';
-import TestModel from '../TestModel/TestModel';
-import TestScroll from '../TestScroll/TestScroll';
-import Tools from '../Tools/Tools';
-import TransitionBlock from '../TransitionBlock/TransitionBlock';
+import ScrollPrompt from '../ScrollPrompt/ScrollPrompt';
 
 type ThreeCanvasProps = {
   children?: ReactNode;
@@ -52,7 +56,9 @@ extend({ TestScroll });
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   const pages = 8;
   const animateRef = useRef<HTMLDivElement>(null);
+  const horzRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(0);
+  const heroTextRefs = useRef<HTMLDivElement[]>([]);
   const stickyRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement>(null);
 
@@ -61,180 +67,163 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     return <Html center>{progress} % loaded</Html>;
   }
 
-  const observe = useIntersectionObserver(
-    animateRef,
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: '0px',
-    },
-    {
-      above: animateText,
-      below: animateText,
-      intersect: animateText,
-    }
-  );
+  const [styleBlock, animationBlock] = useSpring(() => ({
+    from: { x: 0 },
+  }));
 
   const [style, animation] = useSpring(() => ({
-    from: { x: 0 },
-    // from: { x: 100 },
+    from: { x: 0, opacity: 1 },
   }));
-  const heroText = mainSections.heroSection.title;
-  const heroIntersects = heroText.map((_, i) => {
-    return (
-      <div
-        key={i}
-        ref={animateRef}
-        className={`absolute h-screen top-[${i * 100 + 100 + 'vh'}]`}
-      ></div>
-    );
-  });
 
   function handleClick() {
     console.log('click');
   }
 
   function handleMove() {
-    // works
     // do stuff on move
   }
 
   function handleScroll(wheelEvent: WheelEvent<HTMLDivElement>) {
-    return;
-    // if (!stickyRef.current?.clientWidth) return;
+    // const scrollHeight = document.getElementById('scroll-controls');
+    // console.log('scroll', scrollHeight);
+    if (!horzRef.current?.clientWidth) return;
     // console.log(
     //   'scroll',
-    //   stickyRef.current?.getBoundingClientRect().top,
-    //   stickyRef.current?.clientWidth
+    //   horzRef.current?.getBoundingClientRect().top,
+    //   horzRef.current?.clientWidth
     // );
-    // // const elWidth = stickyRef.current?.clientWidth / document.body.clientWidth;
-    // console.log(stickyRef.current?.clientWidth / document.body.clientWidth);
-    // const relativeElWidth =
-    //   (stickyRef.current?.offsetWidth / document.body.clientWidth) * 50;
-    // console.log(relativeElWidth);
-    // const reverse = -1;
+    // const elWidth = horzRef.current?.clientWidth / document.body.clientWidth;
+    // console.log(horzRef.current?.clientWidth / document.body.clientWidth);
+    const relativeElWidth =
+      (horzRef.current?.offsetWidth / document.body.clientWidth) * 50;
+    // console.log(wheelEvent.deltaY * 0.01);
+    const reverse = -1;
     // const rMax = 50 + relativeElWidth;
     // const lMax = rMax * -1;
-    // const xFrom = positionRef.current;
-    // let xTo = positionRef.current + wheelEvent.deltaY * 0.08 * reverse;
-
+    const xFrom = positionRef.current;
+    let xTo = positionRef.current + (wheelEvent.deltaY / 20) * reverse;
+    // console.log(xTo);
     // if (xTo > rMax) xTo = rMax;
     // if (xTo < lMax) xTo = lMax;
-    // positionRef.current = xTo;
+    positionRef.current = xTo;
 
-    // animation.start({
-    //   from: { x: xFrom },
-    //   to: { x: xTo },
-    //   config: { tension: 140, friction: 14 },
-    // });
+    animationBlock.start({
+      from: { x: xFrom },
+      to: { x: xTo },
+      config: { tension: 30, friction: 8, mass: 1 },
+    });
   }
 
-  function animateText(
-    state: 'above' | 'below' | 'intersect',
-    from?: 'above' | 'below' | 'intersect'
-  ) {
-    if (state === 'intersect' && from === 'above')
+  function animateText(pos: ViewPortPos) {
+    if (!stickyRef.current?.offsetWidth) return;
+    const config = { tension: 140, friction: 20, mass: 1.8 };
+    const width = stickyRef.current?.offsetWidth;
+    console.log(
+      stickyRef.current?.offsetWidth,
+      width / (2 * document.body.clientWidth)
+    );
+    if (pos === 'intersect')
       animation.start({
-        from: { x: 50 },
-        to: { x: 0 },
-        config: { tension: 140, friction: 14 },
+        to: { x: 0, opacity: 1 },
+        config,
       });
-    if (state === 'intersect' && from === 'below')
+    if (pos === 'above')
       animation.start({
-        from: { x: -50 },
-        to: { x: 0 },
-        config: { tension: 140, friction: 14 },
+        to: { x: 30, opacity: 0 },
+        config,
       });
-    if (state === 'above')
+    if (pos === 'below')
       animation.start({
-        // from: { x: 50 },
-        to: { x: 50 },
-        config: { tension: 140, friction: 14 },
-      });
-    if (state === 'below')
-      animation.start({
-        from: { x: 0 },
-        to: { x: -50 },
-        config: { tension: 140, friction: 14 },
+        to: { x: -30, opacity: 0 },
+        config,
       });
   }
 
-  // if (observe.viewPortPos === 'intersect') animateText('intersect');
+  useEffect(() => {
+    const canvas = document.getElementById('canvas')! as HTMLDivElement;
+    // @ts-expect-error
+    canvas.addEventListener('wheel', (e: WheelEvent<HTMLDivElement>) =>
+      handleScroll(e)
+    );
 
+    return () => {
+      // @ts-expect-error
+      canvas.removeEventListener('wheel', (e: WheelEvent<HTMLDivElement>) =>
+        handleScroll(e)
+      );
+    };
+  }, []);
+
+  const text = `
+  I LIKE MAKING
+  NICE STUFF.`;
   return (
-    <div
-      style={{ height: '100vh', width: '100vw' }}
-      className="relative"
-      // className="fixed bg-gradient-to-br from-pink-200 to-teal-700"
-    >
-      {/* <div className="absolute h-full w-full bg-gradient-to-br from-pink-200 to-teal-700"></div> */}
-      {/* <div className="pointer-events-none absolute top-10 z-10 flex h-full w-full items-center justify-center">
-        <p className="bg-green-400/20 pb-96">Yup, that&apos;s a problem</p>
-      </div> */}
+    <div style={{ height: '100vh', width: '100vw' }} className="relative">
+      <animated.div
+        // prettier-ignore
+        // @ts-expect-error
+        style={{ transform: style.x.to((value) => `translateX(${value}px)`), opacity: style.opacity }}
+        ref={stickyRef}
+        className={`pointer-events-none absolute top-1/4 z-30 mx-auto flex w-full -translate-x-1/2 justify-center overflow-hidden`}
+      >
+        <p className="whitespace-pre font-anton text-4xl font-extrabold text-black">
+          {text}
+        </p>
+      </animated.div>
       <animated.div
         style={{
           // @ts-expect-error
-          transform: style.x.to((value) => `translateX(${value}vw)`),
-          // transform: style.x.to((value) => `rotateZ(${value}deg)`),
+          transform: styleBlock.x.to((value) => `translateX(${value}vw)`),
         }}
-        ref={stickyRef}
-        className={`pointer-events-none absolute left-1/2 top-1/3 z-30 mx-auto -translate-x-1/2 overflow-hidden text-center`}
+        ref={horzRef}
+        className={`pointer-events-none absolute h-screen w-[300vw] overflow-hidden text-center`}
       >
-        <p className="text-4xl font-extrabold text-black">
-          This looks like a problem.
-        </p>
+        <div className="flex h-full w-full items-center justify-center gap-4">
+          <div className="h-24 w-24 bg-blue-300"></div>
+          <div className="h-24 w-24 bg-blue-300"></div>
+          <div className="h-24 w-24 bg-blue-300"></div>
+          <div className="h-24 w-24 bg-blue-300"></div>
+        </div>
       </animated.div>
-      {/* <HeroCarousel /> */}
-      {/* <Canvas style={{ background: 'black' }}> */}
-      {/* <Hero /> */}
-      {/* <TestScroll /> */}
-      <Canvas onMouseMove={handleMove} onWheel={handleScroll}>
+
+      <Canvas onMouseMove={handleMove} onWheel={handleScroll} id="canvas">
         <ambientLight intensity={0.4} />
         <spotLight intensity={0.5} position={[10, 10, 10]} castShadow />
         <Suspense fallback={<Loader />}>
           <ScrollControls pages={pages}>
-            <Float rotationIntensity={4}>
+            {/* <Float rotationIntensity={4}>
               <TestModel />
-            </Float>
-            {/* <Scroll>
-    <Float rotationIntensity={3}>
-      <TestModel />
-    </Float>
-  </Scroll> */}
-            {/* <Model /> */}
+            </Float> */}
 
-            {/* prettier-ignore}*/}
             <Scroll
               html
-              className="absolute h-full w-full"
+              className="w-full"
               // onClick={() => console.log('click')}
-              // onScroll={() => console.log('scrolling')}
             >
-              {heroIntersects}
-              {/* <TransitionBlock /> */}
-              <Nav />
-              {/* <div className=" bg-orange-500/30">
-                <div className="h-96 bg-orange-500/10"></div>
-                <div className="h-96 bg-orange-500/10">
-                  <div className="sticky top-0 h-32 bg-orange-500/30"></div>
-                  <div className="h-32 bg-orange-500/40"></div>
-                  <div className="h-32 bg-orange-500/50"></div>
+              <div className="wrapper w-full">
+                <HeroIntersects animateText={animateText} />
+                {/* <Nav /> */}
+                <ScrollPrompt />
+                <div>
+                  <div className="hero-spacer h-screen"></div>
+                  {/* <div className="h-[200vh] bg-gradient-to-br from-white to-stone-200"></div> */}
+                  {/* <span className="absolute top-[105vh]" ref={blockRef}></span> */}
+                  <h1 className="text-4xl font-extrabold text-black">
+                    Built around core
+                  </h1>
+                  <StackIcons />
+                  <ProjectsSection />
+                  {/* <ScrollBlock top="300vh">
+
+<StackSection />
+<AboutSection />
+</ScrollBlock> */}
                 </div>
               </div>
-              <div className="h-screen bg-red-500/30"></div>
-              <div className="h-screen bg-purple-500/30"></div> */}
-              <span className="absolute top-[105vh]" ref={blockRef}></span>
-              {/* <ScrollBlock top="300vh">
-
-      <StackSection />
-      <ProjectsSection />
-      <AboutSection />
-    </ScrollBlock> */}
             </Scroll>
           </ScrollControls>
         </Suspense>
         <Environment preset="night" />
-        {/* <OrbitControls /> */}
       </Canvas>
     </div>
   );

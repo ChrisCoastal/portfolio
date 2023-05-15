@@ -28,10 +28,13 @@ const ProjectImages: FC<ProjectImagesProps> = ({ className }) => {
   const projects = Object.values(projectContent);
 
   const sectionRef = React.useRef<HTMLDivElement>(null);
-  const observer = useIntersectionObserver(sectionRef, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.3,
+  const observer = useIntersectionObserver({
+    elementRef: sectionRef,
+    options: {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3,
+    },
   });
 
   const [hoverStyles, hoverAnimation] = useSprings(projects.length, () => ({
