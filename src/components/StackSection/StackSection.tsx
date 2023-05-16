@@ -4,7 +4,7 @@ import { vollkorn } from '@/app/fonts';
 import StackGallery from '@/components/StackGallery/StackGallery';
 import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainSections } from '@/utils/content';
+import { mainSections } from '@/constants/content';
 
 type Props = {};
 

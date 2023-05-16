@@ -58,6 +58,11 @@ export const mainSections = {
   },
 };
 
+export const marquee = {
+  lr: '',
+  rl: '',
+};
+
 export const projectContent: { [key: string]: ProjectContent } = {
   lowercase: {
     title: 'tolowercase',

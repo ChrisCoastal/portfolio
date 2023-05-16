@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { v4 as uuid } from 'uuid';
 
 import Carousel from '@/components/UI/Carousel/Carousel';
-import { mainSections } from '@/utils/content';
+import { mainSections } from '@/constants/content';
 import {
   animated,
   AnimatedProps,

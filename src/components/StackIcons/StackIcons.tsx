@@ -4,19 +4,19 @@ import { v4 as uuid } from 'uuid';
 import useIntersectionObserver, {
   ViewPortPos,
 } from '@/hooks/useIntersectionObserver';
-import { projectContent } from '@/utils/content';
+import { projectContent } from '@/constants/content';
 import { animated, easings, useSprings, useTrail } from '@react-spring/web';
 
 type Props = {};
 
 const StackIcons = (props: Props) => {
-  // const projects = Object.values(projectContent);
   const animatedIndices = [0, 1, 2, 3, 4, 7, 8, 11, 12, 13, 14, 15];
   const observerRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<NodeJS.Timer | null>(null);
   const rotationRefs = useRef<{ [key: number]: number }>({});
   const indexRef = useRef(30);
-  const observer = useIntersectionObserver({
+
+  useIntersectionObserver({
     elementRef: observerRef,
     options: {
       root: null,
@@ -31,9 +31,9 @@ const StackIcons = (props: Props) => {
       opacity: 0,
       transform: `translate3d(0, 70px, 0)`,
     },
-    config: { duration: 400, easing: easings.easeOutCubic },
+    config: { delay: 400, duration: 300, easing: easings.easeOutCubic },
   }));
-  const [logoStyles, logoAnimation] = useSprings(16, (index) => ({
+  const [rotationStyles, rotationAnimation] = useSprings(16, (index) => ({
     from: {
       transform: `rotate3d(0, 0, 0, 0deg)`,
     },
@@ -41,24 +41,6 @@ const StackIcons = (props: Props) => {
     config: { delay: 1200, duration: 1400, easing: easings.easeOutCubic },
   }));
 
-  // function renderIcons() {
-  //   const icons = [];
-  //   for (let i = 0; i < 16; i++) {
-  //     const icon = (
-  //       <animated.div
-  //         key={uuid()}
-  //         onClick={() => console.log('clcick')}
-  //         styles={animatedIndices.includes(i) ? { ...styles } : ''}
-  //         className="h-24 w-24 bg-black"
-  //       >
-  //         <span className="h-12 w-12 rounded-full bg-white"></span>
-  //       </animated.div>
-  //     );
-  //     icons.push(icon);
-  //   }
-  //   return icons;
-  // }
-  // const icons = renderIcons();
   function randomIndex() {
     let index = Math.floor(Math.random() * 24);
     if (index === indexRef.current) index = randomIndex();
@@ -73,8 +55,7 @@ const StackIcons = (props: Props) => {
     }));
     if (intervalRef.current) clearInterval(intervalRef.current);
     const interval = setInterval(() => {
-      logoAnimation.start((index) => {
-        console.log(indexRef.current, index);
+      rotationAnimation.start((index) => {
         const curRotation = rotationRefs.current[index] || 0;
         if (index === indexRef.current) {
           const rotateTo = curRotation + 180;
@@ -92,20 +73,28 @@ const StackIcons = (props: Props) => {
       indexRef.current = randomIndex();
     }, 800);
   }
-  // observer.entry && console.log('entry');
 
   return (
-    <span className="my-48 flex justify-center">
+    <section className="flex flex-col items-center justify-center border-t border-stone-500 py-12">
+      <div>
+        <p className="w-96 text-black">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolor
+          earum accusamus ipsa vero exercitationem asperiores natus,
+          reprehenderit architecto fugiat rem dolores veniam corrupti iure in
+          voluptatum et, doloribus nisi!
+        </p>
+      </div>
+      <div className=""></div>
       <div
         ref={observerRef}
         style={{ perspective: '800px' }}
-        className="grid h-96 w-96 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1 bg-red-300 shadow-lg"
+        className="m-24 grid h-96 w-96 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1"
       >
         {entryStyles.map((styles, i) =>
           animatedIndices.includes(i) ? (
             <animated.div
               key={i}
-              style={{ ...styles, ...logoStyles[i] }}
+              style={{ ...styles, ...rotationStyles[i] }}
               className="h-24 w-24 bg-black"
             >
               <span className="h-12 w-12 rounded-full bg-white"></span>
@@ -117,7 +106,7 @@ const StackIcons = (props: Props) => {
           )
         )}
       </div>
-    </span>
+    </section>
   );
 };
 

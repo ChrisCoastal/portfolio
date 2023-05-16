@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { logos } from '@/assets';
-import type { ProjectContent } from '@/utils/content';
+import type { ProjectContent } from '@/constants/content';
 import { animated, SpringValue } from '@react-spring/web';
 
 import GitHubIcon from '../UI/icons/GitHubIcon/GitHubIcon';

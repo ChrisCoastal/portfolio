@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
 import Gallery from '@/components/UI/Gallery/Gallery';
-import { logos } from '@/utils/content';
+import { logos } from '@/constants/content';
 import { useTrail } from '@react-spring/three';
 import { useSprings } from '@react-spring/web';
 

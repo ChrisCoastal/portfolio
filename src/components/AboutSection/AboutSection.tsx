@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainSections } from '@/utils/content';
+import { mainSections } from '@/constants/content';
 
 type Props = {};
 

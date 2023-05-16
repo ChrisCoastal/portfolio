@@ -1,8 +1,8 @@
 import React, { FC, useRef } from 'react';
 
+import { mainSections } from '@/constants/content';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import { mainSections } from '@/utils/content';
 
 type HeroIntersectsProps = {
   animateText: (pos: ViewPortPos, from?: ViewPortPos) => void;

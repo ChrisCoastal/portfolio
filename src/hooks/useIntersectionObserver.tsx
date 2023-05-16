@@ -83,10 +83,10 @@ const useIntersectionObserver = ({
     };
   }, [
     observerState.entry,
-    // options,
-    // callback,
-    // elementRef,
-    // observeAfterEntry,
+    options,
+    callback,
+    elementRef,
+    observeAfterEntry,
     observerState.viewPortPos,
   ]);
 

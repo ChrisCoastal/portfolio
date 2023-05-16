@@ -19,12 +19,14 @@ import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
 // import Model from '@/components/Model/Model';
 import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
+import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import StackIcons from '@/components/StackIcons/StackIcons';
 // import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 // import StackSection from '@/components/StackSection/StackSection';
 import TestModel from '@/components/TestModel/TestModel';
-import TestScroll from '@/components/TestScroll/TestScroll';
 import Tools from '@/components/Tools/Tools';
+import Cursor from '@/components/UI/Cursor/Cursor';
+import Marquee from '@/components/UI/Marquee/Marquee';
 // import TransitionBlock from '@/components/TransitionBlock/TransitionBlock';
 // import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 // import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
@@ -45,17 +47,13 @@ import {
 } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 
-import ScrollPrompt from '../ScrollPrompt/ScrollPrompt';
-
 type ThreeCanvasProps = {
   children?: ReactNode;
 };
 
-extend({ TestScroll });
-
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   const pages = 8;
-  const animateRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef({ x: 50, y: 50 });
   const horzRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(0);
   const heroTextRefs = useRef<HTMLDivElement[]>([]);
@@ -139,26 +137,12 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       });
   }
 
-  useEffect(() => {
-    const canvas = document.getElementById('canvas')! as HTMLDivElement;
-    // @ts-expect-error
-    canvas.addEventListener('wheel', (e: WheelEvent<HTMLDivElement>) =>
-      handleScroll(e)
-    );
-
-    return () => {
-      // @ts-expect-error
-      canvas.removeEventListener('wheel', (e: WheelEvent<HTMLDivElement>) =>
-        handleScroll(e)
-      );
-    };
-  }, []);
-
   const text = `
   I LIKE MAKING
   NICE STUFF.`;
   return (
     <div style={{ height: '100vh', width: '100vw' }} className="relative">
+      <Cursor />
       <animated.div
         // prettier-ignore
         // @ts-expect-error
@@ -212,6 +196,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
                     Built around core
                   </h1>
                   <StackIcons />
+                  <Marquee />
                   <ProjectsSection />
                   {/* <ScrollBlock top="300vh">
 

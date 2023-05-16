@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { logos } from '@/utils/content';
+import { logos } from '@/constants/content';
 import { useScroll } from '@react-three/drei';
 
 type Props = {};

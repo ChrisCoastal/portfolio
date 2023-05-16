@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import Carousel from '@/components/UI/Carousel/Carousel';
-import { projectContent } from '@/utils/content';
+import { projectContent } from '@/constants/content';
 import { animated } from '@react-spring/web';
 
 type Props = {};
