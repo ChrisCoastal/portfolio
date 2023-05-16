@@ -60,8 +60,8 @@ const StackIcons = (props: Props) => {
   // }
   // const icons = renderIcons();
   function randomIndex() {
-    const index = Math.floor(Math.random() * 24);
-    if (index === indexRef.current) randomIndex();
+    let index = Math.floor(Math.random() * 24);
+    if (index === indexRef.current) index = randomIndex();
     return index;
   }
 
@@ -71,6 +71,7 @@ const StackIcons = (props: Props) => {
       opacity: 1,
       transform: `translate3d(0, 0, 0)`,
     }));
+    if (intervalRef.current) clearInterval(intervalRef.current);
     const interval = setInterval(() => {
       logoAnimation.start((index) => {
         console.log(indexRef.current, index);
@@ -87,7 +88,7 @@ const StackIcons = (props: Props) => {
           };
         }
       });
-
+      intervalRef.current = interval;
       indexRef.current = randomIndex();
     }, 800);
   }
