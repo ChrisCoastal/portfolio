@@ -4,8 +4,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Christopher Allen | Frontend Developer Portfolio',
-  description:
-    'I like making nice stuff. | Christopher Allen | GitHub @ChrisCoastal',
+  description: 'I like making nice stuff. | GitHub @ChrisCoastal',
 };
 
 export default function RootLayout({
@@ -16,7 +15,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${redHat.variable} ${vollkorn.variable} ${anton.className} font-sans text-white`}
+      className={`${redHat.variable} ${vollkorn.variable} ${anton.className} font-sans text-black`}
     >
       <body>{children}</body>
     </html>

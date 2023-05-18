@@ -21,31 +21,22 @@ module.exports = {
         vollkorn: 'var(--font-vollkorn)',
       },
       animation: {
-        'marquee-rl': 'marquee 50s linear infinite',
-        'marquee-lr': 'marquee 50s linear infinite reverse',
+        'spin-slow': 'spin-slow 4s linear infinite',
+        'marquee-rl': 'marquee 80s linear infinite',
+        'marquee-lr': 'marquee 80s linear infinite reverse',
       },
       keyframes: {
         marquee: {
           from: { transform: 'translateX(100%)' },
           to: { transform: 'translateX(-100%)' },
         },
+        'spin-slow': {
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
     },
   },
-  plugins: [
-    // plugin(({ matchUtilities, theme }) => {
-    //   matchUtilities(
-    //     {
-    //       'animation-delay': (value) => {
-    //         return {
-    //           'animation-delay': value,
-    //         };
-    //       },
-    //     },
-    //     {
-    //       values: theme('transitionDelay'),
-    //     }
-    //   );
-    // }),
-  ],
+  plugins: [],
 };

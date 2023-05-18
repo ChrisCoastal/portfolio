@@ -45,7 +45,7 @@ export const mainSections = {
     title: ['This looks like a problem.'],
   },
   stackSection: {
-    title: 'instead take that moment',
+    title: 'foundation',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   projectsSection: {
@@ -53,14 +53,18 @@ export const mainSections = {
     text: 'Here is a selection of projects that I have worked on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   aboutSection: {
-    title: 'building the greater whole.',
+    title: 'about',
+    text: '',
+  },
+  contactSection: {
+    title: 'reach out',
     text: '',
   },
 };
 
-export const marquee = {
-  lr: '',
-  rl: '',
+export const marqueeText = {
+  lr: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
+  rl: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
 };
 
 export const projectContent: { [key: string]: ProjectContent } = {
@@ -119,4 +123,10 @@ export const projectContent: { [key: string]: ProjectContent } = {
     link: 'https://codesandbox.io/p/github/ChrisCoastal/focustrap-test/main?workspace=%257B%2522activeFileId%2522%253Anull%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clfegprm0000e3b6lso1rq9qj%2522%253A%257B%2522key%2522%253A%2522clfegprm0000e3b6lso1rq9qj%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522port%2522%253A5173%252C%2522key%2522%253A%2522clfegv45v00mz3b6ln37voyka%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522key%2522%253A%2522clfegv35n00ho3b6layzu8u5o%2522%252C%2522isMinimized%2522%253Atrue%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clfegprm0000e3b6lso1rq9qj%2522%252C%2522spacesOrder%2522%253A%255B%2522clfegprm0000e3b6lso1rq9qj%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D&workspaceId=6624ae69-76a1-4e06-a4af-4f9f128345fa',
     github: 'https://github.com/themesberg/flowbite-react/issues/647',
   },
+};
+
+export const contactInfo = {
+  local: 'hello',
+  domain: 'chriscoastal',
+  tld: 'com',
 };

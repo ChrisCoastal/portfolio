@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
+import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
+import { projectContent } from '@/constants/content';
+import { mainSections } from '@/constants/content';
 import useIntersectionObserver, {
   ViewPortPos,
 } from '@/hooks/useIntersectionObserver';
-import { projectContent } from '@/constants/content';
 import { animated, easings, useSprings, useTrail } from '@react-spring/web';
 
 type Props = {};
@@ -21,7 +23,7 @@ const StackIcons = (props: Props) => {
     options: {
       root: null,
       rootMargin: '0px',
-      threshold: 1,
+      threshold: 0.5,
     },
     observeAfterEntry: true,
     callback: animateEntry,
@@ -75,36 +77,43 @@ const StackIcons = (props: Props) => {
   }
 
   return (
-    <section className="flex flex-col items-center justify-center border-t border-stone-500 py-12">
-      <div>
-        <p className="w-96 text-black">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolor
-          earum accusamus ipsa vero exercitationem asperiores natus,
-          reprehenderit architecto fugiat rem dolores veniam corrupti iure in
-          voluptatum et, doloribus nisi!
-        </p>
-      </div>
-      <div className=""></div>
-      <div
-        ref={observerRef}
-        style={{ perspective: '800px' }}
-        className="m-24 grid h-96 w-96 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1"
-      >
-        {entryStyles.map((styles, i) =>
-          animatedIndices.includes(i) ? (
-            <animated.div
-              key={i}
-              style={{ ...styles, ...rotationStyles[i] }}
-              className="h-24 w-24 bg-black"
-            >
-              <span className="h-12 w-12 rounded-full bg-white"></span>
-            </animated.div>
-          ) : (
-            <div key={i} className="h-24 w-24 bg-black">
-              <span className="h-12 w-12 rounded-full bg-white"></span>
-            </div>
-          )
-        )}
+    <section className="relative border-t border-stone-500">
+      {/* <span className="absolute left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-[33px] rotate-45 border-l border-t border-stone-500 bg-white bg-blend-multiply"></span> */}
+      <SectionTitle text={mainSections.stackSection.title} />
+      <div className="border-tpy-12 flex flex-col items-center justify-center">
+        <div>
+          <p className="w-96 text-black">
+            I like to make nice stuff with nice stuff - standard stuff, trendy
+            stuff, . Sewn together with creativity and care. Finding balance
+            between beauty and looking forward to maintainability and
+            testability. Built around core Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Illo dolor earum accusamus ipsa vero
+            exercitationem asperiores natus, reprehenderit architecto fugiat rem
+            dolores veniam corrupti iure in voluptatum et, doloribus nisi!
+          </p>
+        </div>
+        <span className="">◆</span>
+        <div
+          ref={observerRef}
+          style={{ perspective: '800px' }}
+          className="m-24 grid h-96 w-96 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1"
+        >
+          {entryStyles.map((styles, i) =>
+            animatedIndices.includes(i) ? (
+              <animated.div
+                key={i}
+                style={{ ...styles, ...rotationStyles[i] }}
+                className="h-24 w-24 bg-black"
+              >
+                <span className="h-12 w-12 rounded-full bg-white"></span>
+              </animated.div>
+            ) : (
+              <div key={i} className="h-24 w-24 bg-black">
+                <span className="h-12 w-12 rounded-full bg-white"></span>
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   );

@@ -11,7 +11,8 @@ import { log } from 'console';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
 // import { vollkorn } from '@/app/fonts';
-// import AboutSection from '@/components/AboutSection/AboutSection';
+import AboutSection from '@/components/AboutSection/AboutSection';
+import ContactSection from '@/components/ContactSection/ContactSection';
 // import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
 // import Hero from '@/components/Hero/Hero';
 // import HeroCarousel from '@/components/HeroCarousel/HeroCarousel';
@@ -20,13 +21,13 @@ import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
 import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
+import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
 import StackIcons from '@/components/StackIcons/StackIcons';
 // import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 // import StackSection from '@/components/StackSection/StackSection';
 import TestModel from '@/components/TestModel/TestModel';
 import Tools from '@/components/Tools/Tools';
 import Cursor from '@/components/UI/Cursor/Cursor';
-import Marquee from '@/components/UI/Marquee/Marquee';
 // import TransitionBlock from '@/components/TransitionBlock/TransitionBlock';
 // import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
 // import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
@@ -163,10 +164,10 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
         className={`pointer-events-none absolute h-screen w-[300vw] overflow-hidden text-center`}
       >
         <div className="flex h-full w-full items-center justify-center gap-4">
+          <div className="h-96 w-96 rotate-45 bg-pink-500 bg-blend-color-burn"></div>
+          {/* <div className="h-24 w-24 bg-blue-300"></div>
           <div className="h-24 w-24 bg-blue-300"></div>
-          <div className="h-24 w-24 bg-blue-300"></div>
-          <div className="h-24 w-24 bg-blue-300"></div>
-          <div className="h-24 w-24 bg-blue-300"></div>
+          <div className="h-24 w-24 bg-blue-300"></div> */}
         </div>
       </animated.div>
 
@@ -187,22 +188,19 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
               <div className="wrapper w-full">
                 <HeroIntersects animateText={animateText} />
                 {/* <Nav /> */}
-                <ScrollPrompt />
+                {/* <ScrollPrompt /> */}
                 <div>
                   <div className="hero-spacer h-screen"></div>
                   {/* <div className="h-[200vh] bg-gradient-to-br from-white to-stone-200"></div> */}
                   {/* <span className="absolute top-[105vh]" ref={blockRef}></span> */}
-                  <h1 className="text-4xl font-extrabold text-black">
-                    Built around core
-                  </h1>
                   <StackIcons />
-                  <Marquee />
+                  <SkillsMarquee />
                   <ProjectsSection />
-                  {/* <ScrollBlock top="300vh">
-
-<StackSection />
-<AboutSection />
-</ScrollBlock> */}
+                  {/* <ScrollBlock top="300vh"> */}
+                  <div className="h-[0.5px]"></div>
+                  <AboutSection />
+                  <ContactSection />
+                  {/* </ScrollBlock> */}
                 </div>
               </div>
             </Scroll>
