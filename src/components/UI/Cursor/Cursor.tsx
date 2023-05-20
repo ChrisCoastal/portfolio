@@ -12,6 +12,7 @@ const Cursor: FC<CursorProps> = () => {
   const [cursorStyles, cursorAnimation] = useSpring(() => ({
     from: {
       transform: `translate3d(${cursorRef.current.x}px, ${cursorRef.current.y}px, 0) rotate(45deg)`,
+      opacity: 0,
     },
     config: {
       tension: 320,
@@ -22,6 +23,7 @@ const Cursor: FC<CursorProps> = () => {
   const [outlineStyles, outlineAnimation] = useSpring(() => ({
     from: {
       transform: `translate3d(${cursorRef.current.x}px, ${cursorRef.current.y}px, 0) rotate(45deg)`,
+      opacity: 0,
     },
     config: {
       tension: 120,
@@ -43,8 +45,39 @@ const Cursor: FC<CursorProps> = () => {
   useEffect(() => {
     document.addEventListener('mousemove', handleMouseMove);
 
-    return document.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
+
+  // function syntheticClick() {
+  //   const main = document.getElementById('main')!;
+  //   main.click();
+  //   // const event = new Event('mousedown', {
+  //   //   view: window,
+  //   //   bubbles: true,
+  //   //   cancelable: true,
+  //   // });
+  //   // document.dispatchEvent(event);
+  // }
+
+  // function initCursor(event: globalThis.MouseEvent) {
+  //   console.log(event);
+  //   cursorRef.current = { x: event.clientX, y: event.clientY };
+  //   handleMouseMove(event);
+  // }
+
+  // function handleWheel(event: globalThis.WheelEvent) {
+  //   const clickable = Boolean(
+  //     event.target?.classList && event.target.classList.contains('clickable')
+  //   );
+  //   if (clickableTargetRef.current !== clickable)
+  //     clickableTargetRef.current = clickable;
+
+  //   textAnimation.start({
+  //     scale: clickableTargetRef.current ? 1.2 : 0,
+  //   });
+  // }
 
   function handleMouseMove(event: globalThis.MouseEvent) {
     // console.log(
@@ -60,11 +93,13 @@ const Cursor: FC<CursorProps> = () => {
       transform: `translate3d(${cursorRef.current.x - 12}px, ${
         cursorRef.current.y - 12
       }px, 0) rotate(45deg)`,
+      opacity: 1,
     });
     outlineAnimation.start({
       transform: `translate3d(${cursorRef.current.x - 24}px, ${
         cursorRef.current.y - 24
       }px, 0) rotate(45deg)`,
+      opacity: 1,
     });
     textAnimation.start({
       scale: clickableTargetRef.current ? 1.2 : 0,

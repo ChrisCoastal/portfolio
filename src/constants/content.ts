@@ -19,6 +19,8 @@ import lowercase from '@/assets/projects/tolowercase/tolowercase.png';
 export type ProjectContent = {
   title: string;
   image: StaticImageData;
+  images: StaticImageData[];
+  id: string;
   alt: string;
   description: string;
   kind: string;
@@ -71,6 +73,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   lowercase: {
     title: 'tolowercase',
     image: lowercase,
+    images: [lowercase, lowercase, lowercase],
+    id: 'tolowercase',
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
@@ -82,6 +86,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   cribbageMonster: {
     title: 'Cribbage Monster',
     image: cribbageMonster,
+    images: [cribbageMonster, cribbageMonster, cribbageMonster],
+    id: 'cribbagemonster',
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
@@ -93,6 +99,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   rainbeau: {
     title: 'Rainbeau',
     image: rainbeau,
+    images: [rainbeau, rainbeau, rainbeau],
+    id: 'rainbeau',
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
@@ -103,7 +111,9 @@ export const projectContent: { [key: string]: ProjectContent } = {
   },
   takefive: {
     title: 'Take Five',
+    id: 'takefive',
     image: takefive,
+    images: [takefive, takefive, takefive],
     alt: '',
     kind: 'library',
     year: 2022,
@@ -115,6 +125,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   focusTrap: {
     title: 'Focus Trap',
     image: focusTrap,
+    images: [focusTrap, focusTrap, focusTrap],
+    id: 'focustrap',
     alt: '',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',

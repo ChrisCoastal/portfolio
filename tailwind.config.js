@@ -24,6 +24,7 @@ module.exports = {
         'spin-slow': 'spin-slow 4s linear infinite',
         'marquee-rl': 'marquee 80s linear infinite',
         'marquee-lr': 'marquee 80s linear infinite reverse',
+        'rotate3d-45': 'rotate3d-45 1s ease-in-out',
       },
       keyframes: {
         marquee: {
@@ -33,6 +34,19 @@ module.exports = {
         'spin-slow': {
           to: {
             transform: 'rotate(360deg)',
+          },
+        },
+        'rotate3d-45': {
+          '0%': {
+            transform: 'rotate3d(0, 0, 0) rotate(45deg)',
+            opacity: 0,
+          },
+          '60%': {
+            opacity: 1,
+          },
+          '100%': {
+            transform: 'rotate3d(0, 1, 0, 180deg) rotate(45deg)',
+            opacity: 1,
           },
         },
       },

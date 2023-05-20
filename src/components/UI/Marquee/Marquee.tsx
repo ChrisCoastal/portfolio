@@ -34,21 +34,6 @@ const Marquee: FC<MarqueeProps> = ({
           </h3>
         </div>
       </div>
-      {/* <div className="relative h-12">
-        <div>
-          <h3
-            style={{ animationDelay: '-25000ms' }}
-            className="absolute animate-marquee-rl whitespace-nowrap text-4xl font-extrabold text-black"
-          >
-            ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH◆ THOUGHTFUL APPROACH◆
-            THOUGHTFUL APPROACH◆ THOUGHTFUL APPROACH END
-          </h3>
-          <h3 className="absolute animate-marquee-rl whitespace-nowrap text-4xl font-extrabold text-black">
-            ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH◆ THOUGHTFUL APPROACH◆
-            THOUGHTFUL APPROACH◆ THOUGHTFUL APPROACH END
-          </h3>
-        </div>
-      </div> */}
     </>
   );
 };

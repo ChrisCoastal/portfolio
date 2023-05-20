@@ -83,27 +83,12 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   }
 
   function handleScroll(wheelEvent: WheelEvent<HTMLDivElement>) {
-    // const scrollHeight = document.getElementById('scroll-controls');
-    // console.log('scroll', scrollHeight);
     if (!horzRef.current?.clientWidth) return;
-    // console.log(
-    //   'scroll',
-    //   horzRef.current?.getBoundingClientRect().top,
-    //   horzRef.current?.clientWidth
-    // );
-    // const elWidth = horzRef.current?.clientWidth / document.body.clientWidth;
-    // console.log(horzRef.current?.clientWidth / document.body.clientWidth);
-    const relativeElWidth =
-      (horzRef.current?.offsetWidth / document.body.clientWidth) * 50;
-    // console.log(wheelEvent.deltaY * 0.01);
     const reverse = -1;
-    // const rMax = 50 + relativeElWidth;
-    // const lMax = rMax * -1;
+    const scrollSpeed = 1 / 20;
     const xFrom = positionRef.current;
-    let xTo = positionRef.current + (wheelEvent.deltaY / 20) * reverse;
-    // console.log(xTo);
-    // if (xTo > rMax) xTo = rMax;
-    // if (xTo < lMax) xTo = lMax;
+
+    let xTo = positionRef.current + wheelEvent.deltaY * scrollSpeed * reverse;
     positionRef.current = xTo;
 
     animationBlock.start({
@@ -117,10 +102,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     if (!stickyRef.current?.offsetWidth) return;
     const config = { tension: 140, friction: 20, mass: 1.8 };
     const width = stickyRef.current?.offsetWidth;
-    console.log(
-      stickyRef.current?.offsetWidth,
-      width / (2 * document.body.clientWidth)
-    );
+
     if (pos === 'intersect')
       animation.start({
         to: { x: 0, opacity: 1 },
@@ -165,9 +147,6 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       >
         <div className="flex h-full w-full items-center justify-center gap-4">
           <div className="h-96 w-96 rotate-45 bg-pink-500 bg-blend-color-burn"></div>
-          {/* <div className="h-24 w-24 bg-blue-300"></div>
-          <div className="h-24 w-24 bg-blue-300"></div>
-          <div className="h-24 w-24 bg-blue-300"></div> */}
         </div>
       </animated.div>
 
