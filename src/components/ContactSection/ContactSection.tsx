@@ -25,6 +25,7 @@ const ContactSection = (props: Props) => {
     >
       <SectionTitle text={mainSections.contactSection.title} />
       <div className="flex justify-center gap-2 text-white">
+        <p className="w-96 text-black">{mainSections.contactSection.text}</p>
         <div className="flex gap-0.5">
           <div className="h-[198px] w-[198px] bg-black">
             <DiagonalArrowIcon height="180px" width="180px" />

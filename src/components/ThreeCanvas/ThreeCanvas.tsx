@@ -13,6 +13,7 @@ import type { FC, ReactNode, WheelEvent } from 'react';
 // import { vollkorn } from '@/app/fonts';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import ContactSection from '@/components/ContactSection/ContactSection';
+import FoundationSection from '@/components/FoundationSection/FoundationSection';
 // import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
 // import Hero from '@/components/Hero/Hero';
 // import HeroCarousel from '@/components/HeroCarousel/HeroCarousel';
@@ -22,7 +23,6 @@ import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
-import StackIcons from '@/components/StackIcons/StackIcons';
 // import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 // import StackSection from '@/components/StackSection/StackSection';
 import TestModel from '@/components/TestModel/TestModel';
@@ -172,7 +172,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
                   <div className="hero-spacer h-screen"></div>
                   {/* <div className="h-[200vh] bg-gradient-to-br from-white to-stone-200"></div> */}
                   {/* <span className="absolute top-[105vh]" ref={blockRef}></span> */}
-                  <StackIcons />
+                  <FoundationSection />
                   <SkillsMarquee />
                   <ProjectsSection />
                   {/* <ScrollBlock top="300vh"> */}

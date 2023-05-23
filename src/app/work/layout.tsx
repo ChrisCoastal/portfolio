@@ -3,6 +3,7 @@ import React, { FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import Cursor from '@/components/UI/Cursor/Cursor';
 import { ProjectContent, projectContent } from '@/constants/content';
 
 type WorkLayoutProps = {
@@ -19,14 +20,14 @@ const WorkLayout: FC<WorkLayoutProps> = ({ children }) => {
   );
 
   return (
-    <div className="mt-48 flex justify-center gap-32">
+    <div className="relative mt-48 flex justify-center gap-32">
       <div className="flex flex-col">
         <ul>
           <li>
             <Link href="/">HOME</Link>
           </li>
           <li>
-            <Link href="/">WORK</Link>
+            <Link href="/work">WORK</Link>
           </li>
         </ul>
         <ul className="ml-6 inline-flex flex-col gap-2">

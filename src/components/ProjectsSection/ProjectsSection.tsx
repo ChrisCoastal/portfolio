@@ -38,7 +38,7 @@ const ProjectsSection = (props: Props) => {
       {activeProject && <PageTransition cursorPos={mouseClickXY.current} />}
       <SectionTitle text={mainSections.projectsSection.title} />
       <div className="w-full">
-        <div className="grid-row-2 mx-auto grid w-fit grid-cols-3 gap-2">
+        <div className="grid-row-2 mx-auto grid w-fit grid-cols-3 gap-6">
           {projects.map((project) => (
             <div key={uuid()} className="">
               <Link href={`/work/${project.id}`}>

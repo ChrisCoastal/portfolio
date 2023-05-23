@@ -9,10 +9,12 @@ import emotionLogo from '@/assets/logos/emotion-logo.png';
 import figmaLogo from '@/assets/logos/figma-logo.png';
 import gitLogo from '@/assets/logos/git-logo.png';
 import gitHubLogo from '@/assets/logos/gitHub-logo.png';
+import reactLogo from '@/assets/logos/svg/react-logo.svg';
 import testingLibraryLogo from '@/assets/logos/testing-library-logo.png';
-import cribbageMonster from '@/assets/projects/cribbage-monster/cribbageMonster.png';
+import cribbageMonster from '@/assets/projects/cribbageMonster/cribbageMonster.jpg';
 import focusTrap from '@/assets/projects/focustrap/focustrap.jpg';
 import rainbeau from '@/assets/projects/rainbeau/rainbeau.png';
+import studioA from '@/assets/projects/studioA/studio-a.jpg';
 import takefive from '@/assets/projects/takefive/takefive.jpg';
 import lowercase from '@/assets/projects/tolowercase/tolowercase.png';
 
@@ -25,9 +27,44 @@ export type ProjectContent = {
   description: string;
   kind: string;
   year: number;
-  link: string;
-  github: string;
+  link?: string;
+  github?: string;
 };
+
+export const logoIndex = [
+  'amplify',
+  'apollo',
+  'blender',
+  'css',
+  'docker',
+  'react', // center
+  'tailwind', // center
+  'emotion',
+  'figma',
+  'typescript', // center
+  'jest', // center
+  'firebase',
+  'git',
+  'github',
+  'graphql',
+  'html',
+  'illustrator',
+  'indesign',
+  'javascript',
+  'jsont',
+  'mui',
+  '', // center
+  '', // center
+  'nextjs',
+  'nodejs',
+  '', // center
+  '', // center
+  'photoshop',
+  'sass',
+  'threejs',
+  'vite',
+  'xd',
+];
 
 export const logos = {
   apolloLogo,
@@ -59,12 +96,26 @@ export const mainSections = {
     text: '',
   },
   contactSection: {
-    title: 'reach out',
-    text: '',
+    title: 'contact',
+    text: 'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
   },
 };
 
 export const marqueeText = {
+  text: [
+    'intuitive',
+    'expressive',
+    'thoughtful',
+    'fresh',
+    'clean',
+    'rich',
+    'differentiation',
+    'clarity',
+    'detail',
+    'efficiency',
+    'accessibility',
+    'creativity',
+  ],
   lr: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
   rl: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
 };
@@ -119,8 +170,19 @@ export const projectContent: { [key: string]: ProjectContent } = {
     year: 2022,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    link: 'https://github.com/kaisergame/kaiser-lib',
     github: 'https://github.com/kaisergame/kaiser-lib',
+  },
+  studioA: {
+    title: 'Studio A',
+    id: 'studioa',
+    image: studioA,
+    images: [studioA, studioA, studioA],
+    alt: '',
+    kind: 'web',
+    year: 2022,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
+    link: 'https://studioa.ca/',
   },
   focusTrap: {
     title: 'Focus Trap',
