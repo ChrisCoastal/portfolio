@@ -1,16 +1,5 @@
 import type { StaticImageData } from 'next/image';
 
-import apolloLogo from '@/assets/logos/apollo-logo.png';
-import amplifyLogo from '@/assets/logos/aws-amplify-logo.png';
-import bashLogo from '@/assets/logos/bash-logo.png';
-import blenderLogo from '@/assets/logos/blender-logo.png';
-import dockerLogo from '@/assets/logos/docker-logo.png';
-import emotionLogo from '@/assets/logos/emotion-logo.png';
-import figmaLogo from '@/assets/logos/figma-logo.png';
-import gitLogo from '@/assets/logos/git-logo.png';
-import gitHubLogo from '@/assets/logos/gitHub-logo.png';
-import reactLogo from '@/assets/logos/svg/react-logo.svg';
-import testingLibraryLogo from '@/assets/logos/testing-library-logo.png';
 import cribbageMonster from '@/assets/projects/cribbageMonster/cribbageMonster.jpg';
 import focusTrap from '@/assets/projects/focustrap/focustrap.jpg';
 import rainbeau from '@/assets/projects/rainbeau/rainbeau.png';
@@ -31,6 +20,7 @@ export type ProjectContent = {
   github?: string;
 };
 
+// index order for rendering logos
 export const logoIndex = [
   'amplify',
   'apollo',
@@ -53,31 +43,18 @@ export const logoIndex = [
   'javascript',
   'jsont',
   'mui',
-  '', // center
-  '', // center
+  '_', // center
+  '_', // center
   'nextjs',
   'nodejs',
-  '', // center
-  '', // center
+  '_', // center
+  '_', // center
   'photoshop',
   'sass',
   'threejs',
   'vite',
   'xd',
 ];
-
-export const logos = {
-  apolloLogo,
-  amplifyLogo,
-  bashLogo,
-  blenderLogo,
-  dockerLogo,
-  emotionLogo,
-  figmaLogo,
-  gitLogo,
-  gitHubLogo,
-  testingLibraryLogo,
-};
 
 export const mainSections = {
   heroSection: {
@@ -121,19 +98,6 @@ export const marqueeText = {
 };
 
 export const projectContent: { [key: string]: ProjectContent } = {
-  lowercase: {
-    title: 'tolowercase',
-    image: lowercase,
-    images: [lowercase, lowercase, lowercase],
-    id: 'tolowercase',
-    alt: '',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    kind: 'web',
-    year: 2022,
-    link: 'https://tolowercase.xyz/',
-    github: 'https://github.com/ChrisCoastal/tolowercase',
-  },
   cribbageMonster: {
     title: 'Cribbage Monster',
     image: cribbageMonster,
@@ -160,17 +124,18 @@ export const projectContent: { [key: string]: ProjectContent } = {
     link: 'https://tolowercase.xyz/',
     github: 'https://github.com/ChrisCoastal/tolowercase',
   },
-  takefive: {
-    title: 'Take Five',
-    id: 'takefive',
-    image: takefive,
-    images: [takefive, takefive, takefive],
+  lowercase: {
+    title: 'tolowercase',
+    image: lowercase,
+    images: [lowercase, lowercase, lowercase],
+    id: 'tolowercase',
     alt: '',
-    kind: 'library',
-    year: 2022,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
-    github: 'https://github.com/kaisergame/kaiser-lib',
+    kind: 'web',
+    year: 2022,
+    link: 'https://tolowercase.xyz/',
+    github: 'https://github.com/ChrisCoastal/tolowercase',
   },
   studioA: {
     title: 'Studio A',
@@ -183,6 +148,18 @@ export const projectContent: { [key: string]: ProjectContent } = {
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
     link: 'https://studioa.ca/',
+  },
+  takefive: {
+    title: 'Take Five',
+    id: 'takefive',
+    image: takefive,
+    images: [takefive, takefive, takefive],
+    alt: '',
+    kind: 'library',
+    year: 2022,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
+    github: 'https://github.com/kaisergame/kaiser-lib',
   },
   focusTrap: {
     title: 'Focus Trap',

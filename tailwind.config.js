@@ -12,6 +12,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '420px',
+      },
       fontFamily: {
         ...defaultTheme.fontFamily,
         sans: ['var(--font-redHat)', ...defaultTheme.fontFamily.sans],

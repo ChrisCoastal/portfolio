@@ -29,26 +29,29 @@ const WorkLayout: FC<WorkLayoutProps> = ({ children }) => {
           <li>
             <Link href="/work">WORK</Link>
           </li>
-        </ul>
-        <ul className="ml-6 inline-flex flex-col gap-2">
-          {projects.map((project) => {
-            console.log(pathname, project.id);
-            const isActive = pathname.includes(project.id);
+          <ul className="ml-6 inline-flex flex-col gap-2">
+            {projects.map((project) => {
+              console.log(pathname, project.id);
+              const isActive = pathname.includes(project.id);
 
-            return (
-              <li key={project.title}>
-                <Link
-                  className={isActive ? 'text-black' : 'text-stone-600'}
-                  href={`/work/${project.id}`}
-                >
-                  <span className="relative flex items-center gap-3">
-                    {project.title}
-                    {isActive ? activeMarker : null}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
+              return (
+                <li key={project.title}>
+                  <Link
+                    className={isActive ? 'text-black' : 'text-stone-600'}
+                    href={`/work/${project.id}`}
+                  >
+                    <span className="relative flex items-center gap-3">
+                      {project.title}
+                      {isActive ? activeMarker : null}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <li>
+            <Link href="/contact">CONTACT</Link>
+          </li>
         </ul>
       </div>
       <div className="w-[72rem]">{children}</div>

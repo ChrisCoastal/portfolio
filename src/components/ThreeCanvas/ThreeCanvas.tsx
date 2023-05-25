@@ -161,6 +161,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
 
             <Scroll
               html
+              // @ts-expect-error
               className="w-full"
               // onClick={() => console.log('click')}
             >

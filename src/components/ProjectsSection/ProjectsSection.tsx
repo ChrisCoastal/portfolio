@@ -8,7 +8,9 @@ import { v4 as uuid } from 'uuid';
 import { logos } from '@/assets';
 import ProjectsCarousel from '@/components/ProjectsCarousel/ProjectsCarousel';
 import ProjectImages from '@/components/ProjectsSection/ProjectImages';
+import ScrollSection from '@/components/ScrollSection/ScrollSection';
 import StackGallery from '@/components/StackGallery/StackGallery';
+import CodeBlock from '@/components/UI/CodeBlock/CodeBlock';
 import PageTransition from '@/components/UI/PageTransition/PageTransition';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 import type { ProjectContent } from '@/constants/content';
@@ -34,11 +36,11 @@ const ProjectsSection = (props: Props) => {
   // }
 
   return (
-    <section className="relative border-t border-stone-500 bg-white/40 pb-24 backdrop-blur">
+    <ScrollSection className="relative bg-white/40 pb-24 backdrop-blur">
       {activeProject && <PageTransition cursorPos={mouseClickXY.current} />}
       <SectionTitle text={mainSections.projectsSection.title} />
       <div className="w-full">
-        <div className="grid-row-2 mx-auto grid w-fit grid-cols-3 gap-6">
+        <div className="mx-auto grid w-fit grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((project) => (
             <div key={uuid()} className="">
               <Link href={`/work/${project.id}`}>
@@ -52,7 +54,7 @@ const ProjectsSection = (props: Props) => {
                   className="clickable"
                 />
               </Link>
-              <span className="flex items-center gap-2 text-black">
+              <div className="flex items-center gap-2 text-black">
                 <h4 className="pr-4 text-lg font-bold">{project.title}</h4>
                 <span className="rounded-lg bg-green-200 px-2 text-xs">
                   <p>{project.kind}</p>
@@ -60,12 +62,13 @@ const ProjectsSection = (props: Props) => {
                 <span className="rounded-lg bg-green-200 px-2 text-xs">
                   <p>{project.year}</p>
                 </span>
-              </span>
+              </div>
+              <div className="h-0 w-0 opacity-0">text</div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </ScrollSection>
   );
 };
 

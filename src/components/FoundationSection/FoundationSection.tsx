@@ -44,16 +44,6 @@ const FoundationSection = (props: Props) => {
     loop: true,
     config: { delay: 1200, duration: 1400, easing: easings.easeOutCubic },
   }));
-  // const [backRotationStyles, backRotationAnimation] = useSprings(
-  //   16,
-  //   (index) => ({
-  //     from: {
-  //       transform: `rotate3d(0, 0, 0, 180deg)`,
-  //     },
-  //     loop: true,
-  //     config: { delay: 1200, duration: 1400, easing: easings.easeOutCubic },
-  //   })
-  // );
 
   function randomIndex() {
     let index = Math.floor(Math.random() * 24);
@@ -90,17 +80,25 @@ const FoundationSection = (props: Props) => {
   }
 
   return (
-    <section className="relative border-t border-stone-500">
-      <SectionTitle text={mainSections.stackSection.title} />
-      <div className="border-tpy-12 flex flex-col items-center justify-center">
-        <div>
-          <p className="w-96 text-black">
-            I like to make nice stuff with nice stuff. I write Front End UI
+    <section className="relative">
+      <div className="mb-16 flex items-center">
+        {/* <span className="h-10 w-10 origin-center -translate-x-1/2 rotate-45 bg-green-200"></span> */}
+        <SectionTitle
+          className="self-center"
+          text={mainSections.stackSection.title}
+        />
+      </div>
+      <div className="border-ty-12 flex flex-col-reverse items-center justify-center md:flex-col">
+        <div className="mx-4 sm:w-96">
+          <p className="">
+            I like to make nice stuff with nice stuff. With a core industry
+            standard tools interleaved with an ever expoanding selection of what
+            is new / trendy / exciting / best-suited, I build expressive Front
+            End UI that works to balance elements of design and process.
             supported by a core of industry standard tools. Sewn together with
-            creativity and care to content that is engaging and accessible
-            through engaging and expressive UI.
+            creativity and care to content that is engaging and accessible.
           </p>
-          <p className="w-96 text-black">
+          <p className="">
             Finding balance between beauty and looking forward to
             maintainability and testability. Built around core Lorem ipsum dolor
             sit amet consectetur adipisicing elit. Illo dolor earum accusamus
@@ -113,7 +111,7 @@ const FoundationSection = (props: Props) => {
         <div
           ref={observerRef}
           style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
-          className="m-24 grid h-96 w-96 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1"
+          className="m-24 grid h-64 w-64 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1 xs:h-96 xs:w-96"
         >
           {entryStyles.map((styles, i) =>
             animatedIndices.includes(i) ? (
@@ -125,17 +123,17 @@ const FoundationSection = (props: Props) => {
                   perspective: '800px',
                   transformStyle: 'preserve-3d',
                 }}
-                className="relative flex h-24 w-24 place-content-center bg-black"
+                className="relative flex h-[4rem] w-[4rem] place-content-center bg-black xs:h-24 xs:w-24"
               >
                 <div
                   style={{ backfaceVisibility: 'hidden' }}
-                  className="absolute flex h-24 w-24 place-content-center "
+                  className="absolute flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
                 >
                   <StackLogo
                     height="72px"
                     width="72px"
                     logo={logoIndex[i]}
-                    className="-rotate-45 self-center"
+                    className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
                   />
                 </div>
                 <div
@@ -143,13 +141,13 @@ const FoundationSection = (props: Props) => {
                     transform: `rotate3d(0.5, 0.5, 0, 180deg)`,
                     backfaceVisibility: 'hidden',
                   }}
-                  className="absolute flex h-24 w-24 place-content-center"
+                  className="absolute flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
                 >
                   <StackLogo
                     height="72px"
                     width="72px"
                     logo={logoIndex[i + 16]}
-                    className="-rotate-45 self-center"
+                    className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
                   />
                 </div>
               </animated.div>
@@ -159,13 +157,14 @@ const FoundationSection = (props: Props) => {
                 //   clipPath: logoPaths['react'],
                 // }}
                 key={i}
-                className="flex h-24 w-24 place-content-center bg-pink-500"
+                className="flex h-[4rem] w-[4rem] scale-[102%] place-content-center border border-black xs:h-24 xs:w-24"
               >
                 <StackLogo
                   height="72px"
                   width="72px"
                   logo={logoIndex[i]}
-                  className="-rotate-45 self-center"
+                  color="black"
+                  className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
                 />
               </div>
             )
