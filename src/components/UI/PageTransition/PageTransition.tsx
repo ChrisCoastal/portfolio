@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent, useEffect, useRef } from 'react';
 
-import ClickIcon from '@/components/UI/icons/ClickIcon/ClickIcon';
+import ClickIcon from '@/components/UI/Cursor/CursorText';
 import { animated, useSpring } from '@react-spring/web';
 type PageTransitionProps = {
   cursorPos: { x: number; y: number };

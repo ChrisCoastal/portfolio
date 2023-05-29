@@ -1,39 +1,17 @@
 'use client';
 
-import React, {
-  CSSProperties,
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import { log } from 'console';
+import React, { Suspense, useRef } from 'react';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
-// import { vollkorn } from '@/app/fonts';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import ContactSection from '@/components/ContactSection/ContactSection';
 import FoundationSection from '@/components/FoundationSection/FoundationSection';
-// import CursorSpotLight from '@/components/CursorSpotLight/CursorSpotLight';
-// import Hero from '@/components/Hero/Hero';
-// import HeroCarousel from '@/components/HeroCarousel/HeroCarousel';
 import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
-// import Model from '@/components/Model/Model';
 import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
-// import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
-// import StackSection from '@/components/StackSection/StackSection';
-import TestModel from '@/components/TestModel/TestModel';
-import Tools from '@/components/Tools/Tools';
-import Cursor from '@/components/UI/Cursor/Cursor';
-// import TransitionBlock from '@/components/TransitionBlock/TransitionBlock';
-// import ScrollBlock from '@/components/UI/ScrollBlock/ScrollBlock';
-// import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
-// import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-// import { mainSections } from '@/utils/content';
 import { config, useSpring } from '@react-spring/three';
 import { animated, useScroll as useSpringScroll } from '@react-spring/web';
 import {
@@ -125,7 +103,6 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   NICE STUFF.`;
   return (
     <div style={{ height: '100vh', width: '100vw' }} className="relative">
-      {/* <Cursor /> */}
       <animated.div
         // prettier-ignore
         // @ts-expect-error

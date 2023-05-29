@@ -21,6 +21,7 @@ export type ProjectContent = {
   id: string;
   alt: string;
   description: string;
+  code?: string;
   kind: string;
   year: number;
   video?: string;
@@ -130,6 +131,7 @@ export const projectContent: { [key: string]: ProjectContent } = {
     description:
       'Rainbeau is a color theming tool that takes inspiration from the real world. Users can cycle through randomized images (fetched from Unsplash) to draw up custom color palettes based where markers are added and dragged over the image. The palette can be copied as individual colors in HSL, HEX, or RGB or formatted to be used with common styling libraries like Tailwind, Mui, or Styled Components.',
     kind: 'web',
+    code: '',
     year: 2022,
     link: 'https://tolowercase.xyz/',
     github: 'https://github.com/ChrisCoastal/tolowercase',

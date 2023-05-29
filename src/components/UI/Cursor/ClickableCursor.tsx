@@ -1,16 +1,17 @@
 import React, { FC, MouseEvent, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import ClickIcon from '@/components/UI/icons/ClickIcon/ClickIcon';
+import CursorText from '@/components/UI/Cursor/CursorText';
 import { animated, useSpring } from '@react-spring/web';
 
 type ClickableCursorProps = {
-  text?: 'click';
+  text: 'link' | 'click' | 'github' | undefined;
   children: React.ReactNode;
 };
 
 const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
-  const [hover, setHover] = useState<boolean | null>(null);
+  const [portalContainer, setPortalContainer] =
+    useState<HTMLSpanElement | null>(null);
   const [textStyles, textAnimation] = useSpring(() => ({
     from: {
       scale: 0,
@@ -23,7 +24,8 @@ const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
   }));
 
   function handleHover(event: MouseEvent) {
-    setHover(event.type === 'mouseenter' ? true : false);
+    if (!portalContainer)
+      setPortalContainer(document.getElementById('cursor')! as HTMLSpanElement);
     textAnimation.start({
       scale: event.type === 'mouseenter' ? 1.2 : 0,
     });
@@ -31,20 +33,21 @@ const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
 
   return (
     <span onMouseEnter={handleHover} onMouseLeave={handleHover}>
-      {hover && document.getElementById('cursor')
+      {portalContainer
         ? createPortal(
             <animated.div
               style={textStyles}
               className={`absolute -left-[50%] -top-[52%] flex h-24 w-24 items-center justify-center overflow-visible`}
             >
-              <ClickIcon
+              <CursorText
                 height="180px"
                 width="180px"
                 color="#4ADE80dd"
+                text={text}
                 className="origin-center animate-spin-slow mix-blend-overlay"
               />
             </animated.div>,
-            document.getElementById('cursor')!
+            portalContainer
           )
         : null}
       {children}

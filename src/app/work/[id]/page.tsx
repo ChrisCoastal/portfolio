@@ -1,6 +1,7 @@
 'use client';
 import React, { FC } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
 
@@ -25,12 +26,23 @@ const ProjectPage: FC = (props: Props) => {
       {project ? (
         <>
           <div className="flex justify-between">
-            <ClickableCursor text="click">
-              <h2 className="mb-4">{project.title}</h2>
-            </ClickableCursor>
+            <h2 className="mb-4">{project.title}</h2>
+
             <div className="flex gap-4">
-              <LinkIcon height="32px" width="32px" className="inline" />
-              <GitHubIcon height="32px" width="32px" className="inline" />
+              {project.link ? (
+                <ClickableCursor text="click">
+                  <Link href={project.link} target="_blank">
+                    <LinkIcon height="32px" width="32px" className="inline" />
+                  </Link>
+                </ClickableCursor>
+              ) : null}
+              {project.github ? (
+                <ClickableCursor text="click">
+                  <Link href={project.github} target="_blank">
+                    <GitHubIcon height="32px" width="32px" className="inline" />
+                  </Link>
+                </ClickableCursor>
+              ) : null}
             </div>
           </div>
           <div className="mb-24 grid grid-cols-3 gap-x-2 gap-y-24">
@@ -69,24 +81,7 @@ const ProjectPage: FC = (props: Props) => {
               />
             </video>
           </div>
-          <CodeBlock language="html">
-            {`<div class='cover flex-full-width'>
-              {.section items}
-                <div class='cover cover-image-container'>
-                  <a href={0.clickthroughUrl} class="cover-image-link cover-image-link--left">
-                    {.if 0.customContent.buttonText}{0.customContent.buttonText}{.or}work work{.end}
-                  </a>
-                  <img class='cover cover-image cover-image--left' src="{0.assetUrl}" alt="{0.title}"/>
-                </div>
-                <div class='cover cover-image-container'>
-                  <a href={1.clickthroughUrl} class="cover-image-link cover-image-link--right">
-                    {.if 1.customContent.buttonText}{1.customContent.buttonText}{.or}studio work{.end}
-                  </a>
-                  <img class='cover cover-image cover-image--right' src="{1.assetUrl}" alt="{1.title}"/>
-                </div>
-              {.end}
-            </div>`}
-          </CodeBlock>
+          <CodeBlock language="html">{}</CodeBlock>
         </>
       ) : null}
     </>

@@ -36,7 +36,7 @@ module.exports = {
         },
         'spin-slow': {
           to: {
-            transform: 'rotate(360deg)',
+            transform: 'rotate(-360deg)',
           },
         },
         'rotate3d-45': {
