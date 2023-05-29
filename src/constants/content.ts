@@ -7,15 +7,23 @@ import studioA from '@/assets/projects/studioA/studio-a.jpg';
 import takefive from '@/assets/projects/takefive/takefive.jpg';
 import lowercase from '@/assets/projects/tolowercase/tolowercase.png';
 
+import rainbeau_image_2 from '/public/projects/images/rainbeau_2.jpg';
+import rainbeau_image_3 from '/public/projects/images/rainbeau_3.jpg';
+import rainbeau_image_4 from '/public/projects/images/rainbeau_4.jpg';
+import rainbeau_image_5 from '/public/projects/images/rainbeau_5.jpg';
+import rainbeau_image_6 from '/public/projects/images/rainbeau_6.jpg';
+
 export type ProjectContent = {
   title: string;
-  image: StaticImageData;
-  images: StaticImageData[];
+
+  headerImages: StaticImageData[];
+  galleryImages: StaticImageData[];
   id: string;
   alt: string;
   description: string;
   kind: string;
   year: number;
+  video?: string;
   link?: string;
   github?: string;
 };
@@ -100,8 +108,9 @@ export const marqueeText = {
 export const projectContent: { [key: string]: ProjectContent } = {
   cribbageMonster: {
     title: 'Cribbage Monster',
-    image: cribbageMonster,
-    images: [cribbageMonster, cribbageMonster, cribbageMonster],
+
+    headerImages: [cribbageMonster, cribbageMonster, cribbageMonster],
+    galleryImages: [],
     id: 'cribbagemonster',
     alt: '',
     description:
@@ -113,12 +122,13 @@ export const projectContent: { [key: string]: ProjectContent } = {
   },
   rainbeau: {
     title: 'Rainbeau',
-    image: rainbeau,
-    images: [rainbeau, rainbeau, rainbeau],
+    headerImages: [rainbeau, rainbeau_image_5, rainbeau_image_6],
+    galleryImages: [],
+    video: 'https://www.youtube.com/embed/5qap5aO4i9A',
     id: 'rainbeau',
     alt: '',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
+      'Rainbeau is a color theming tool that takes inspiration from the real world. Users can cycle through randomized images (fetched from Unsplash) to draw up custom color palettes based where markers are added and dragged over the image. The palette can be copied as individual colors in HSL, HEX, or RGB or formatted to be used with common styling libraries like Tailwind, Mui, or Styled Components.',
     kind: 'web',
     year: 2022,
     link: 'https://tolowercase.xyz/',
@@ -126,8 +136,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   },
   lowercase: {
     title: 'tolowercase',
-    image: lowercase,
-    images: [lowercase, lowercase, lowercase],
+    headerImages: [lowercase, lowercase, lowercase],
+    galleryImages: [],
     id: 'tolowercase',
     alt: '',
     description:
@@ -140,8 +150,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   studioA: {
     title: 'Studio A',
     id: 'studioa',
-    image: studioA,
-    images: [studioA, studioA, studioA],
+    headerImages: [studioA, studioA, studioA],
+    galleryImages: [],
     alt: '',
     kind: 'web',
     year: 2022,
@@ -152,8 +162,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   takefive: {
     title: 'Take Five',
     id: 'takefive',
-    image: takefive,
-    images: [takefive, takefive, takefive],
+    headerImages: [takefive, takefive, takefive],
+    galleryImages: [],
     alt: '',
     kind: 'library',
     year: 2022,
@@ -163,8 +173,8 @@ export const projectContent: { [key: string]: ProjectContent } = {
   },
   focusTrap: {
     title: 'Focus Trap',
-    image: focusTrap,
-    images: [focusTrap, focusTrap, focusTrap],
+    headerImages: [focusTrap, focusTrap, focusTrap],
+    galleryImages: [],
     id: 'focustrap',
     alt: '',
     description:

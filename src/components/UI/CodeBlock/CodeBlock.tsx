@@ -9,17 +9,16 @@ type CodeBlockProps = {
   children?: React.ReactNode;
 };
 
-const CodeBlock: FC<CodeBlockProps> = ({
-  language = 'language-javascript',
-  children,
-}) => {
+const CodeBlock: FC<CodeBlockProps> = ({ language = 'tsx', children }) => {
   useEffect(() => {
     highlightAll();
   }, [children]);
 
   return (
-    <pre>
-      <code className="language-javascript">{children}</code>
+    <pre className={`!rounded-none !bg-stone-800 language-${language}`}>
+      <code className={`!bg-stone-800 !text-sm language-${language}`}>
+        {children}
+      </code>
     </pre>
   );
 };

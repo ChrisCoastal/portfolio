@@ -1,4 +1,5 @@
 import { anton, redHat, vollkorn } from '@/app/fonts';
+import Cursor from '@/components/UI/Cursor/Cursor';
 
 import './globals.css';
 
@@ -17,7 +18,7 @@ export default function RootLayout({
       lang="en"
       className={`${redHat.variable} ${vollkorn.variable} ${anton.className} font-sans text-black`}
     >
-      <body className="">{children}</body>
+      <body className="relative">{children}</body>
     </html>
   );
 }

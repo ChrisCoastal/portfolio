@@ -125,7 +125,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   NICE STUFF.`;
   return (
     <div style={{ height: '100vh', width: '100vw' }} className="relative">
-      <Cursor />
+      {/* <Cursor /> */}
       <animated.div
         // prettier-ignore
         // @ts-expect-error

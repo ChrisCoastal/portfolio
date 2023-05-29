@@ -53,7 +53,7 @@ const ScrollImage: FC<ScrollImageProps> = ({
         onMouseLeave={handleMouseLeave}
       >
         <Image
-          src={content.image}
+          src={content.headerImages[0]}
           alt={content.alt}
           width={width}
           height={height}
