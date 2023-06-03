@@ -50,9 +50,11 @@ const Cursor: FC<CursorProps> = () => {
 
   useEffect(() => {
     document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('wheel', handleMouseMove);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('wheel', handleMouseMove);
     };
   }, [handleMouseMove]);
 

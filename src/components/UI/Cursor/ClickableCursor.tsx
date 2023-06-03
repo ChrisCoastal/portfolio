@@ -5,7 +5,7 @@ import CursorText from '@/components/UI/Cursor/CursorText';
 import { animated, useSpring } from '@react-spring/web';
 
 type ClickableCursorProps = {
-  text: 'link' | 'click' | 'github' | undefined;
+  text: 'link' | 'click' | 'github';
   children: React.ReactNode;
 };
 

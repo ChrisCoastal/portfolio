@@ -1,7 +1,8 @@
-import { SpotLight } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
 import React, { ReactElement, RefObject, useRef } from 'react';
 import { Vector3 } from 'three';
+
+import { SpotLight } from '@react-three/drei';
+import { useFrame, useThree } from '@react-three/fiber';
 
 type Props = {};
 

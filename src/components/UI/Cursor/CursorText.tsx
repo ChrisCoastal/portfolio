@@ -1,16 +1,11 @@
 import React, { FC } from 'react';
 
-import {
-  clickForMoreA,
-  clickForMoreB,
-  gitHub,
-  gitHubRepo,
-} from '@/constants/clickableText';
+import cursorTextSvg from '@/constants/cursorTextSvg';
 
 type CursorTextProps = {
   height: string;
   width: string;
-  text: 'click' | 'github' | 'link' | undefined;
+  text: 'click' | 'github' | 'link';
   color?: string;
   className?: string;
 };
@@ -31,7 +26,7 @@ const CursorText: FC<CursorTextProps> = ({
       fill={color}
       className={`svg ${className}`}
     >
-      {gitHubRepo}
+      {cursorTextSvg[text]}
     </svg>
   );
 };

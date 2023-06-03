@@ -114,7 +114,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
           {text}
         </p>
       </animated.div>
-      <animated.div
+      {/* <animated.div
         style={{
           // @ts-expect-error
           transform: styleBlock.x.to((value) => `translateX(${value}vw)`),
@@ -125,7 +125,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
         <div className="flex h-full w-full items-center justify-center gap-4">
           <div className="h-96 w-96 rotate-45 bg-pink-500 bg-blend-color-burn"></div>
         </div>
-      </animated.div>
+      </animated.div> */}
 
       <Canvas onMouseMove={handleMove} onWheel={handleScroll} id="canvas">
         <ambientLight intensity={0.4} />

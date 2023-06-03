@@ -39,11 +39,11 @@ const ProjectsSection = (props: Props) => {
         <div className="mx-auto grid w-fit grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((project) => (
             <div key={uuid()} className="">
-              <ClickableCursor>
-                <Link href={`/work/${project.id}`}>
+              <ClickableCursor text="click">
+                <Link href={`/projects/${project.id}`}>
                   <Image
-                    src={project.headerImages[0]}
-                    alt={project.alt}
+                    src={project.thumbnail.image}
+                    alt={project.thumbnail.alt}
                     // onClick={(e) => handleClick(e, project[0])}
                     width={width}
                     height={height}
@@ -53,7 +53,7 @@ const ProjectsSection = (props: Props) => {
               <div className="flex items-center gap-2 text-black">
                 <h4 className="pr-4 text-lg font-bold">{project.title}</h4>
                 <span className="rounded-lg bg-green-200 px-2 text-xs">
-                  <p>{project.kind}</p>
+                  <p>{project.projectType}</p>
                 </span>
                 <span className="rounded-lg bg-green-200 px-2 text-xs">
                   <p>{project.year}</p>
