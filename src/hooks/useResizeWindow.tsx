@@ -5,11 +5,13 @@ import { breakPoints } from '@/constants/constants';
 
 const useResizeWindow = () => {
   const getBreakPoint = useCallback((innerWidth: number) => {
-    for (const [key, value] of Object.entries(breakPoints).reverse()) {
-      if (innerWidth < value) {
-        return key as BreakPoint;
+    let breakPoint: BreakPoint | undefined;
+    for (const [key, value] of Object.entries(breakPoints)) {
+      if (innerWidth > value) {
+        breakPoint = key as BreakPoint;
       }
     }
+    return breakPoint;
   }, []);
 
   const [windowSize, setWindowSize] = useState<{

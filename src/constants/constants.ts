@@ -1,4 +1,7 @@
-export const breakPoints = {
+import { BreakPoint } from '@/@types/types';
+
+export const breakPoints: Record<BreakPoint, number> = {
+  xs: 420,
   sm: 640,
   md: 768,
   lg: 1024,
