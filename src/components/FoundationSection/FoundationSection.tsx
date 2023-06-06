@@ -82,7 +82,7 @@ const FoundationSection = (props: Props) => {
   return (
     <section className="relative">
       <div className="mb-16 flex items-center">
-        {/* <span className="h-10 w-10 origin-center -translate-x-1/2 rotate-45 bg-green-200"></span> */}
+        {/* <span className="h-10 w-10 origin-center -translate-x-1/2 rotate-45 bg-rose-200"></span> */}
         <SectionTitle
           className="self-center"
           text={mainSections.stackSection.title}

@@ -62,11 +62,11 @@ const Cursor: FC<CursorProps> = () => {
     <>
       <animated.div
         style={cursorStyles}
-        className="pointer-events-none absolute z-[1000] h-6 w-6 rounded-full bg-green-400/70"
+        className="pointer-events-none absolute z-[1000] h-6 w-6 rounded-full bg-rose-400/70"
       />
       <animated.div
         style={outlineStyles}
-        className="pointer-events-none absolute z-[1000] h-12 w-12 rounded-full border border-green-400/70"
+        className="pointer-events-none absolute z-[1000] h-12 w-12 rounded-full border border-rose-400/70"
       >
         <span id="cursor" />
       </animated.div>

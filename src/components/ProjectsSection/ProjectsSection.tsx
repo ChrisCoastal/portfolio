@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { v4 as uuid } from 'uuid';
 
+import type { ProjectContent } from '@/@types/types';
 import ScrollSection from '@/components/ScrollSection/ScrollSection';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import PageTransition from '@/components/UI/PageTransition/PageTransition';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import type { ProjectContent } from '@/constants/content';
 import { mainSections, projectContent } from '@/constants/content';
 
 type Props = {};
@@ -52,10 +52,10 @@ const ProjectsSection = (props: Props) => {
               </ClickableCursor>
               <div className="flex items-center gap-2 text-black">
                 <h4 className="pr-4 text-lg font-bold">{project.title}</h4>
-                <span className="rounded-lg bg-green-200 px-2 text-xs">
+                <span className="rounded-lg bg-rose-200 px-2 text-xs">
                   <p>{project.projectType}</p>
                 </span>
-                <span className="rounded-lg bg-green-200 px-2 text-xs">
+                <span className="rounded-lg bg-rose-200 px-2 text-xs">
                   <p>{project.year}</p>
                 </span>
               </div>

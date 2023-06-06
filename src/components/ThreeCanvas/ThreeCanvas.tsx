@@ -163,7 +163,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
             </Scroll>
           </ScrollControls>
         </Suspense>
-        <Environment preset="night" />
+        {/* <Environment preset="night" /> */}
       </Canvas>
     </div>
   );

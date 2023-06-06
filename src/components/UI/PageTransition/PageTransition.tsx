@@ -48,7 +48,7 @@ const PageTransition: FC<PageTransitionProps> = ({ cursorPos }) => {
     <>
       <animated.div
         style={cursorStyles}
-        className="pointer-events-none absolute -left-full -top-full z-[1000] aspect-square min-h-[200vh] min-w-[200vw] rounded-full bg-green-400/70"
+        className="pointer-events-none absolute -left-full -top-full z-[1000] aspect-square min-h-[200vh] min-w-[200vw] rounded-full bg-rose-400/70"
       ></animated.div>
     </>
   );

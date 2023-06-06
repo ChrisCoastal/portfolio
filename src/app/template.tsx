@@ -11,7 +11,7 @@ const RootTemplate: FC<RootTemplateProps> = ({ children }) => {
   return (
     // TODO: fix cursor scroll
     <div>
-      {/* <div className="pointer-events-none fixed"> */}
+      {/* <div className="pointer-events-none fixed h-screen w-screen bg-pink-300/40"> */}
       <Cursor />
       {/* </div> */}
       {children}

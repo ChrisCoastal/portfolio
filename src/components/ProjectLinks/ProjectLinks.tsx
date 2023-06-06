@@ -12,7 +12,7 @@ type ProjectLinksProps = {
 
 const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex items-center gap-4">
       {site ? (
         <ClickableCursor text="link">
           <Link href={site} target="_blank">
@@ -23,7 +23,12 @@ const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
       {gitHub ? (
         <ClickableCursor text="github">
           <Link href={gitHub} target="_blank">
-            <GitHubIcon height="32px" width="32px" className="inline" />
+            <GitHubIcon
+              height="32px"
+              width="32px"
+              className="inline"
+              color="fff"
+            />
           </Link>
         </ClickableCursor>
       ) : null}

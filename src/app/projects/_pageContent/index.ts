@@ -1,7 +1,19 @@
-import rainbeau from './rainbeau/rainbeau';
+import type { ProjectContent } from '@/@types/types';
 
-const pageContent = {
+import cribbagemonster from './cribbagemonster/content';
+import focustrap from './focustrap/content';
+import rainbeau from './rainbeau/content';
+import studioa from './studioa/content';
+import takefive from './takefive/content';
+import tolowercase from './tolowercase/content';
+
+const projectContent: { [key: string]: ProjectContent } = {
+  cribbagemonster,
   rainbeau,
+  tolowercase,
+  takefive,
+  studioa,
+  focustrap,
 };
 
-export default pageContent;
+export default projectContent;

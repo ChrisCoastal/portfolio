@@ -13,7 +13,7 @@ type CodeBlockProps = {
 
 const CodeBlock: FC<CodeBlockProps> = ({
   children,
-  language = 'tsx',
+  language = 'js',
   fileName,
   className,
 }) => {
@@ -23,34 +23,18 @@ const CodeBlock: FC<CodeBlockProps> = ({
   }, [children]);
 
   return (
-    <>
-      {fileName ? (
-        <h4 className="bg-stone-800 text-white">{fileName}</h4>
-      ) : null}
-      <pre className={`language-tsx !m-0 !rounded-none !bg-stone-800`}>
+    <div className="bg-stone-800 p-8">
+      {fileName ? <h4 className="mb-4 text-white">{fileName}</h4> : null}
+      <pre
+        className={`language-${language} !m-0 !rounded-none border border-stone-400/40 !bg-stone-800`}
+      >
         <code
-          className={`${className} language-tsx !m-0 !bg-stone-800 !text-sm`}
+          className={`${className} language-${language} !m-0  !bg-stone-800 !text-sm`}
         >
-          {`
-          
-          const CodeBlock: FC<CodeBlockProps> = ({
-            children,
-            language = 'tsx',
-            fileName,
-            className,
-          }) => {
-            useEffect(() => {
-              // Prismjs code highlighting
-              highlightAll();
-            }, [children]);
-          
-            return (
-              <></>);
-          `}
-          {/* {children} */}
+          {children}
         </code>
       </pre>
-    </>
+    </div>
   );
 };
 

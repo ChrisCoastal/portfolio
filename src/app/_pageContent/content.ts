@@ -1,8 +1,3 @@
-import type { StaticImageData } from 'next/image';
-
-import type { ProjectContent } from '@/@types/types';
-
-// index order for rendering logos
 export const logoIndex = [
   'amplify',
   'apollo',
@@ -81,10 +76,4 @@ export const marqueeText = {
   ],
   lr: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
   rl: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
-};
-
-export const contactInfo = {
-  local: 'hello',
-  domain: 'chriscoastal',
-  tld: 'com',
 };
