@@ -24,7 +24,6 @@ const studioa: ProjectContent = {
   ],
   galleryImages: [],
   video: '/projects/studioA/video/studioA-demo',
-
   elements: [
     {
       title: 'landing page',

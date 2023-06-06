@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 
-import { projectContent } from '@/constants/content';
-import { animated, easings, useSpring, useTrail } from '@react-spring/web';
 type MarqueeProps = {
   text: string;
   reverse?: boolean;

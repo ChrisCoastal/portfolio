@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { v4 as uuid } from 'uuid';
 
 import type { ProjectContent } from '@/@types/types';
+import { mainSections } from '@/app/_pageContent/content';
+import projectContent from '@/app/projects/_pageContent';
 import ScrollSection from '@/components/ScrollSection/ScrollSection';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import PageTransition from '@/components/UI/PageTransition/PageTransition';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainSections, projectContent } from '@/constants/content';
 
 type Props = {};
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { marqueeText } from '@/app/_pageContent/content';
 import Marquee from '@/components/UI/Marquee/Marquee';
-import { marqueeText } from '@/constants/content';
 
 const SkillsMarquee = () => {
   return (

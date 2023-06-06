@@ -5,12 +5,12 @@ import type { FC, ReactNode, WheelEvent } from 'react';
 
 import AboutSection from '@/components/AboutSection/AboutSection';
 import ContactSection from '@/components/ContactSection/ContactSection';
-import FoundationSection from '@/components/FoundationSection/FoundationSection';
 import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
 import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
+import FoundationSection from '@/components/StackSection/StackSection';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
 import { config, useSpring } from '@react-spring/three';
 import { animated, useScroll as useSpringScroll } from '@react-spring/web';

@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { mainSections } from '@/app/_pageContent/content';
 import ScrollSection from '@/components/ScrollSection/ScrollSection';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { mainSections } from '@/constants/content';
 type Props = {};
 
 const AboutSection = (props: Props) => {

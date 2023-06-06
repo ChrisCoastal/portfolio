@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
+import { contactInfo, mainSections } from '@/app/_pageContent/content';
 import DiagonalArrowIcon from '@/components/UI/icons/DiagonalArrowIcon/DiagonalArrowIcon';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { contactInfo, mainSections } from '@/constants/content';
 
 type Props = {};
 

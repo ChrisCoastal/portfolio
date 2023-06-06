@@ -1,9 +1,9 @@
 import React, { FC, useRef } from 'react';
 
+import type { CodeSnippet } from '@/@types/types';
 import CodeBlock from '@/components/UI/CodeBlock/CodeBlock';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import CodeIcon from '@/components/UI/icons/CodeIcon/CodeIcon';
-import type { CodeSnippet } from '@/constants/content';
 import { animated, useSpring } from '@react-spring/web';
 
 type CodeDropDownProps = {

@@ -2,8 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { v4 as uuid } from 'uuid';
 
+import { mainSections } from '@/app/_pageContent/content';
 import Carousel from '@/components/UI/Carousel/Carousel';
-import { mainSections } from '@/constants/content';
 import {
   animated,
   AnimatedProps,

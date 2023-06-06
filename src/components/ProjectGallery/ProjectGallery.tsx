@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
-import { ImageData } from '@/constants/content';
+import { ImageData } from '@/@types/types';
 
 type ProjectGalleryProps = {
   galleryImages: ImageData[];

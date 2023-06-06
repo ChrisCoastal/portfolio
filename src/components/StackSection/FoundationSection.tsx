@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
+import { logoIndex, mainSections } from '@/app/_pageContent/content';
+import projectContent from '@/app/projects/_projectContent';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
-import { logoIndex, mainSections, projectContent } from '@/constants/content';
 import useIntersectionObserver, {
   ViewPortPos,
 } from '@/hooks/useIntersectionObserver';

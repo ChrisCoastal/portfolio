@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react';
 
-import { mainSections } from '@/constants/content';
+import { mainSections } from '@/app/_pageContent/content';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 

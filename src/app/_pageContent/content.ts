@@ -12,7 +12,7 @@ export const logoIndex = [
   'jest', // center
   'firebase',
   'git',
-  'gitHub',
+  'github',
   'graphql',
   'html',
   'illustrator',
@@ -76,4 +76,10 @@ export const marqueeText = {
   ],
   lr: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
   rl: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
+};
+
+export const contactInfo = {
+  local: 'hello',
+  domain: 'chriscoastal',
+  tld: 'com',
 };

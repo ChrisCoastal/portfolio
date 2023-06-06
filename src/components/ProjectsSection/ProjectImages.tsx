@@ -2,10 +2,9 @@ import React, { CSSProperties, FC, useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { v4 as uuid } from 'uuid';
 
-// import { projects } from '@/assets';
+import projectContent from '@/app/projects/_pageContent';
 import ProjectImage from '@/components/ProjectsSection/ProjectImage';
 import ScrollImage from '@/components/ProjectsSection/ProjectImage';
-import { projectContent } from '@/constants/content';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import type { SpringValue } from '@react-spring/three';
 import { animated, easings, useSprings, useTrail } from '@react-spring/three';

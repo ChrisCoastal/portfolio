@@ -63,6 +63,9 @@ const ProjectPage: FC = (props: Props) => {
                 </video>
               </div>
             )}
+            {project.text.description && (
+              <p className="mx-20 font-light">{project.text.description}</p>
+            )}
             {project.elements
               ? project.elements.map((element) => (
                   <ProjectElement key={element.title} element={element} />
