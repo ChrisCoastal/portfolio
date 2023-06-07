@@ -18,7 +18,7 @@ export default function RootLayout({
       lang="en"
       className={`${redHat.variable} ${vollkorn.variable} ${anton.className} font-sans text-black`}
     >
-      <body className="relative">{children}</body>
+      <body className="relative overflow-x-hidden">{children}</body>
     </html>
   );
 }

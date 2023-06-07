@@ -17,29 +17,26 @@ const useResizeWindow = () => {
   const [windowSize, setWindowSize] = useState<{
     innerHeight: number;
     innerWidth: number;
-    breakPoint: BreakPoint | undefined;
   }>({
     innerHeight: window.innerHeight,
     innerWidth: window.innerWidth,
-    breakPoint: getBreakPoint(window.innerWidth),
   });
 
   useEffect(() => {
     const handleResize = (event: UIEvent) => {
       const { innerHeight, innerWidth } = event.currentTarget as Window;
-      const breakPoint = getBreakPoint(innerWidth);
+      console.log(innerHeight, innerHeight - 200);
       setWindowSize({
         innerHeight,
         innerWidth,
-        breakPoint,
       });
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [getBreakPoint]);
+  }, []);
 
-  return windowSize;
+  return { windowSize, breakPoints };
 };
 
 export default useResizeWindow;

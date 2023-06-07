@@ -12,8 +12,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        xs: '420px',
+      fontSize: {
+        '2xs': '.65rem',
       },
       fontFamily: {
         ...defaultTheme.fontFamily,
@@ -22,6 +22,13 @@ module.exports = {
         anton: 'var(--font-anton)',
         'red-hat': 'var(--font-redHat)',
         vollkorn: 'var(--font-vollkorn)',
+      },
+      colors: {
+        primary: 'var(--primary-color)',
+        secondary: 'var(--secondary-color)',
+      },
+      screens: {
+        xs: '420px',
       },
       animation: {
         'spin-slow': 'spin-slow 4s linear infinite',

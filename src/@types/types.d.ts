@@ -35,9 +35,9 @@ export type ProjectLinks = {
 export type ProjectContent = {
   id: ProjectId;
   title: string;
-  thumbnail: { image: StaticImageData; alt: string };
-  headerImages: { image: StaticImageData; alt: string }[];
-  galleryImages: { image: StaticImageData; alt: string }[];
+  thumbnail: ImageData;
+  headerImages: ImageData[];
+  galleryImages: ImageData[];
   text: {
     lede: {
       first: string;

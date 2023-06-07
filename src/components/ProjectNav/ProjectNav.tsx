@@ -1,41 +1,38 @@
-import React, { FC } from 'react';
-import Link from 'next/link';
+import React, { useRef } from 'react';
 
-type ProjectNavProps = {
-  next: { link: string; title: string };
-  prev: { link: string; title: string };
-};
+import MenuIcon from '@/components/UI/icons/MenuIcon/MenuIcon';
+import { animated, useChain, useSpring } from '@react-spring/web';
 
-const ProjectNav: FC<ProjectNavProps> = ({ prev, next }) => {
+type ProjectNavProps = {};
+
+const ProjectNav = () => {
+  const showNavRef = useRef(false);
+
+  const [menuStyles, animateMenu] = useSpring(() => ({
+    from: {
+      top: 0,
+      right: 0,
+      y: -50,
+      x: 50,
+    },
+    config: {
+      friction: 280,
+      tension: 280,
+      mass: 1,
+    },
+  }));
+
+  function toggleNav() {
+    //
+  }
+
   return (
-    <div className="flex justify-between">
-      <div className="flex items-center">
-        <Link
-          href={`/projects/${prev.link}`}
-          className={`grid h-16 w-16 -rotate-45 grid-cols-3 grid-rows-3 gap-0.5`}
-        >
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="row-start-2 bg-stone-800"></span>
-          <span className="row-start-3 bg-stone-800"></span>
-        </Link>
-        <Link href={`/projects/${prev.link}`}>{prev.title}</Link>
-      </div>
-
-      <div className="flex items-center">
-        <Link href={next.link}>{next.title}</Link>
-        <Link
-          href={`/projects/${next.link}`}
-          className={`grid h-16 w-16 rotate-45 grid-cols-3 grid-rows-3 gap-0.5`}
-        >
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="row-start-1 bg-stone-800"></span>
-          <span className="col-start-3 bg-stone-800"></span>
-          <span className="col-start-3 bg-stone-800"></span>
-        </Link>
-      </div>
+    <div className="flex justify-end">
+      <animated.div className="fixed mr-10 mt-10 flex h-12 w-12 items-center bg-pink-300 shadow-md">
+        <button className="flex justify-center" onClick={toggleNav}>
+          <MenuIcon height="70%" width="70%" color="000" />
+        </button>
+      </animated.div>
     </div>
   );
 };

@@ -12,7 +12,12 @@ const ProjectGallery: FC<ProjectGalleryProps> = ({ galleryImages }) => {
   return (
     <div>
       {galleryImages.map((gallery, i) => (
-        <Image key={uuid()} src={gallery.image} alt={gallery.alt} />
+        <Image
+          key={uuid()}
+          src={gallery.image}
+          alt={gallery.alt}
+          priority={i === 0 ? true : false}
+        />
       ))}
     </div>
   );
