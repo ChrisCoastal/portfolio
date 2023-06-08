@@ -4,28 +4,28 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
-import focusTrap_image_1 from '/public/projects/focusTrap/images/focusTrap_1.jpg';
-import focusTrap_image_2 from '/public/projects/focusTrap/images/focusTrap_2.jpg';
-import focusTrap_image_3 from '/public/projects/focusTrap/images/focusTrap_3.jpg';
-import focusTrap_image_4 from '/public/projects/focusTrap/images/focusTrap_4.jpg';
+import focustrap_image_1 from '/public/projects/focustrap/images/focustrap_1.jpg';
+import focustrap_image_2 from '/public/projects/focustrap/images/focustrap_2.jpg';
+import focustrap_image_3 from '/public/projects/focustrap/images/focustrap_3.jpg';
+import focustrap_image_4 from '/public/projects/focustrap/images/focustrap_4.jpg';
 
 const focustrap: ProjectContent = {
   title: 'Focus Trap',
   thumbnail: {
-    image: focusTrap_image_2,
+    image: focustrap_image_2,
     alt: 'Admiral Ackbar gazing into the distance',
   },
   headerImages: [
-    { image: focusTrap_image_1, alt: 'abstract squiggly light rings' },
+    { image: focustrap_image_1, alt: 'abstract squiggly light rings' },
     {
-      image: focusTrap_image_2,
+      image: focustrap_image_2,
       alt: 'Admiral Ackbar gazing into the distance',
     },
-    { image: focusTrap_image_3, alt: 'abstract concentric light rings' },
+    { image: focustrap_image_3, alt: 'abstract concentric light rings' },
   ],
   galleryImages: [
     {
-      image: focusTrap_image_4,
+      image: focustrap_image_4,
       alt: 'screenshot of Flowbite modal component',
     },
   ],
@@ -51,7 +51,7 @@ const focustrap: ProjectContent = {
         },
         {
           language: 'js',
-          code: code.focusTrap,
+          code: code.focustrap,
           fileName: 'FocusTrap.tsx',
         },
       ],

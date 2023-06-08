@@ -28,7 +28,7 @@ const ProjectNav = () => {
 
   return (
     <div className="flex justify-end">
-      <animated.div className="fixed mr-10 mt-10 flex h-12 w-12 items-center bg-pink-300 shadow-md">
+      <animated.div className="fixed z-[1000] mr-4 mt-4 flex h-12 w-12 items-center bg-pink-300 shadow-md">
         <button className="flex justify-center" onClick={toggleNav}>
           <MenuIcon height="70%" width="70%" color="000" />
         </button>

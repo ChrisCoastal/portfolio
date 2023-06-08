@@ -3,7 +3,9 @@
 :root {
   --primary-color: rgb(87, 218, 155);
   --secondary-color: #777;
-  --scrollbar-thumb-color: #292524;
+  --scrollbar-white: #fff;
+  --scrollbar-stone-400: #e5e7eb;
+  --scrollbar-stone-800: #292524;
   --transparent: 'transparent';
 }
 
@@ -12,27 +14,42 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb-color) #fff;
+  scrollbar-color: var(--scrollbar-white) var(--scrollbar-stone-800);
+}
+
+.invert-scrollbar {
+  scrollbar-color: var(--scrollbar-stone-800) var(--scrollbar-stone-400);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  height: 15px;
-  width: 15px;
-  transform: translateX(-300%);
+  height: 12px;
+  width: 14px;
+  /* transform: translateX(-300%); */
 }
 
 *::-webkit-scrollbar-track {
-  background: #fff;
+  background: var(--scrollbar-white);
   /* border-radius: 5px; */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
+  background-color: var(--scrollbar-stone-800);
   /* border-radius: 14px; */
-  border: 3px solid #fff;
+  border: 3px solid var(--scrollbar-white);
 }
 /* } */
+
+.invert-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-stone-800);
+  /* border-radius: 5px; */
+}
+
+.invert-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-stone-400);
+  /* border-radius: 14px; */
+  border: 3px solid var(--scrollbar-stone-800);
+}
 
 @media (max-width: 420px) {
   *::-webkit-scrollbar {

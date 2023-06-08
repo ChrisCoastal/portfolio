@@ -44,7 +44,7 @@ const ProjectPage: FC = (props: Props) => {
           </div>
           <div className="mb-36 flex flex-col gap-24">
             <ProjectGallery galleryImages={project.galleryImages} />
-            {/* <ProjectVideo video={project.video} /> */}
+            <ProjectVideo video={project.video} />
             {project.text.description && (
               <p className="mx-20 font-light">{project.text.description}</p>
             )}

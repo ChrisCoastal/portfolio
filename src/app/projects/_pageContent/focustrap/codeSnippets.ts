@@ -27,7 +27,7 @@ export const code = {
         )
       : null;
     };`,
-  focusTrap: `import { ComponentProps, FC, PropsWithChildren } from 'react';
+  focustrap: `import { ComponentProps, FC, PropsWithChildren } from 'react';
   import { useEffect, useInsertionEffect, useRef } from 'react';
   import { focusable } from 'tabbable';
   

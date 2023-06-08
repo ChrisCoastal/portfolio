@@ -8,7 +8,7 @@ type ProjectBottomNavProps = {
 
 const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
   return (
-    <div className="flex justify-between">
+    <div className="mx-4 flex justify-between">
       <div className="flex items-center">
         <Link
           href={`/projects/${prev.link}`}

@@ -1,11 +1,9 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 
 import type { CodeSnippet } from '@/@types/types';
 import CodeBlock from '@/components/UI/CodeBlock/CodeBlock';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import CodeIcon from '@/components/UI/icons/CodeIcon/CodeIcon';
-import useDimensions from '@/hooks/useDimensions';
-import useResizeWindow from '@/hooks/useResizeWindow';
 import { animated, useSpring } from '@react-spring/web';
 
 type CodeDropDownProps = {
@@ -19,12 +17,15 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
   show = false,
   className,
 }) => {
-  // const [showCode, setShowCode] = useState<boolean>(show);
-  const dropDownRef = React.useRef<HTMLDivElement>(null);
-  const showCodeRef = React.useRef<boolean>(show);
+  const dropDownRef = useRef<HTMLDivElement>(null);
+  const showCodeRef = useRef<boolean>(show);
+  const iconRef = useRef<HTMLSpanElement>(null);
   const [dropDownStyles, animateDropDown] = useSpring(() => ({
     opacity: showCodeRef.current ? 1 : 0,
     height: showCodeRef.current ? 500 : 0,
+    fill: showCodeRef.current ? '#fff' : '#292524',
+    bg: showCodeRef.current ? '#29252400' : '#29252422',
+    deg: showCodeRef.current ? 45 : 0,
     config: {
       tension: 280,
       friction: 30,
@@ -37,54 +38,52 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
     animateDropDown.start({
       opacity: showCode ? 1 : 0,
       height: showCode ? 500 : 0,
-      config: {
-        // duration: showCode ? 500 : undefined,
-        tension: showCode ? 500 : 280,
-        friction: showCode ? 300 : 30,
-        mass: showCode ? 0.1 : 0.2,
-      },
+      fill: showCode ? '#fff' : '#292524',
+      bg: showCode ? '#29252400' : '#29252422',
+      deg: showCode ? 45 : 0,
     });
     showCodeRef.current = showCode;
   }
 
-  // const { width, height } = useDimensions(dropDownRef);
-
-  const { windowSize: size, breakPoints } = useResizeWindow();
-
-  // useEffect(() => {
-  //   console.log(width, height);
-  // }, [width, height]);
-
   return (
     <div className={`${className}`}>
-      <div className="flex">
-        {/* <span className="w-full"></span> */}
+      <div className="flex justify-end">
         <ClickableCursor text="link">
-          <span onClick={toggleShowCode}>
+          <animated.span
+            style={{
+              color: dropDownStyles.fill,
+              backgroundColor: dropDownStyles.bg,
+              transform: `rotate(${dropDownStyles.deg}deg)`,
+            }}
+            onClick={toggleShowCode}
+            className="relative z-50 origin-center"
+            ref={iconRef}
+          >
             <CodeIcon
-              height="32px"
-              width="32px"
-              color="#292524"
-              className={``}
+              height="48px"
+              width="48px"
+              color={'currentColor'}
+              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
+              className={`-translate-x-8 translate-y-12`}
             />
-          </span>
+          </animated.span>
         </ClickableCursor>
       </div>
       <animated.div
         style={{
           maxHeight: dropDownStyles.height,
-          width: size.innerWidth > breakPoints.sm ? '92vw' : '96vw',
+          width: '96vw',
           maxWidth: '72rem',
           opacity: dropDownStyles.opacity,
         }}
         ref={dropDownRef}
         id="code-container"
-        className="flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 pt-4 sm:p-8"
+        className="invert-scrollbar flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 pt-7 sm:p-7"
       >
         {snippets.map((snippet) => (
           <CodeBlock
             key={snippet.fileName}
-            // language={snippet.language}
+            language={snippet.language}
             fileName={snippet.fileName}
             code={snippet.code}
           >

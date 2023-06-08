@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 type CodeIconProps = {
   height: string;
   width: string;
+  text?: string;
   color?: string;
   className?: string;
 };
@@ -10,6 +11,7 @@ type CodeIconProps = {
 const CodeIcon: FC<CodeIconProps> = ({
   height,
   width,
+  text = 'code',
   color = '#000',
   className,
 }) => {
@@ -28,6 +30,18 @@ const CodeIcon: FC<CodeIconProps> = ({
 		l2.01-2.01L42.72,24L31.39,35.32z"
         />
       </g>
+
+      {/* <g>
+        <polygon points="20.38,7.21 3.59,24 20.38,40.79 23.8,37.38 10.42,24 23.8,10.62 	" />
+        <text
+          transform="matrix(1 0 0 1 22.2227 30.6201)"
+          font-size="23.7749"
+          className="font-mono font-extrabold"
+        >
+          {text}
+        </text>
+        <polygon points="75.45,7.21 72.04,10.63 85.41,24 72.04,37.38 75.46,40.79 92.25,24 	" />
+      </g> */}
     </svg>
   );
 };

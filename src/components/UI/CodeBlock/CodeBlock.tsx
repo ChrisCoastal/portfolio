@@ -41,12 +41,12 @@ const CodeBlock: FC<CodeBlockProps> = ({
 
   return (
     <div className="bg-stone-800">
-      <div style={{ width: width || 0 - 12 }} className="">
+      <div style={{ width: width || 0 - 12 }} className="translate-x-2">
         {fileName ? (
           <h4 className="!text-xs text-white sm:!text-sm">{fileName}</h4>
         ) : null}
         <pre
-          className={`language-${language} !m-0 !whitespace-pre !rounded-none border border-stone-400/40 !bg-stone-800 text-sm`}
+          className={`language-${language} invert-scrollbar !m-0 !whitespace-pre !rounded-none border border-stone-400/40 !bg-stone-800 text-sm`}
         >
           <code
             className={`${className} language-${language} !m-0 !bg-stone-800 !text-2xs sm:!text-sm`}

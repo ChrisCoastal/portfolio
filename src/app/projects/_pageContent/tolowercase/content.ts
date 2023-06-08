@@ -4,10 +4,10 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
-import toLowercase_image_1 from '/public/projects/toLowercase/images/toLowercase_1.jpg';
-import toLowercase_image_2 from '/public/projects/toLowercase/images/toLowercase_2.jpg';
-import toLowercase_image_3 from '/public/projects/toLowercase/images/toLowercase_3.jpg';
-import toLowercase_image_4 from '/public/projects/toLowercase/images/toLowercase_4.jpg';
+import tolowercase_image_1 from '/public/projects/tolowercase/images/tolowercase_1.jpg';
+import tolowercase_image_2 from '/public/projects/tolowercase/images/tolowercase_2.jpg';
+import tolowercase_image_3 from '/public/projects/tolowercase/images/tolowercase_3.jpg';
+import tolowercase_image_4 from '/public/projects/tolowercase/images/tolowercase_4.jpg';
 
 const tolowercase: ProjectContent = {
   title: 'tolowercase',
@@ -16,18 +16,18 @@ const tolowercase: ProjectContent = {
   year: 2022,
   text,
   thumbnail: {
-    image: toLowercase_image_2,
-    alt: 'screenshot of toLowercase app',
+    image: tolowercase_image_2,
+    alt: 'screenshot of tolowercase app',
   },
   headerImages: [
-    { image: toLowercase_image_1, alt: 'toLowercase staircase logo' },
-    { image: toLowercase_image_3, alt: 'toLowercase staircase logo' },
-    { image: toLowercase_image_2, alt: 'screenshot of toLowercase app' },
+    { image: tolowercase_image_1, alt: 'tolowercase staircase logo' },
+    { image: tolowercase_image_3, alt: 'tolowercase staircase logo' },
+    { image: tolowercase_image_2, alt: 'screenshot of tolowercase app' },
   ],
   galleryImages: [
-    { image: toLowercase_image_4, alt: 'screenshot of toLowercase app' },
+    { image: tolowercase_image_4, alt: 'screenshot of tolowercase app' },
   ],
-  video: '/projects/toLowercase/video/toLowercase-demo',
+  video: '/projects/tolowercase/video/tolowercase-demo',
   links,
 };
 
