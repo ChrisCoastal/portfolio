@@ -2,8 +2,6 @@
 
 :root {
   --primary-color: rgb(87, 218, 155);
-  --secondary-color: #777;
-  --scrollbar-white: #fff;
   --scrollbar-stone-400: #e5e7eb;
   --scrollbar-stone-800: #292524;
   --transparent: 'transparent';

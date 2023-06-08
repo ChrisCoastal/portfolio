@@ -1,9 +1,10 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
 import type { CodeSnippet } from '@/@types/types';
 import CodeBlock from '@/components/UI/CodeBlock/CodeBlock';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import CodeIcon from '@/components/UI/icons/CodeIcon/CodeIcon';
+import CodeTagIcon from '@/components/UI/icons/CodeTagIcon/CodeTagIcon';
 import { animated, useSpring } from '@react-spring/web';
 
 type CodeDropDownProps = {
@@ -17,13 +18,15 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
   show = false,
   className,
 }) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const leftCodeIconRef = useRef<SVGSVGElement>(null);
+  const rightCodeIconRef = useRef<SVGSVGElement>(null);
   const dropDownRef = useRef<HTMLDivElement>(null);
   const showCodeRef = useRef<boolean>(show);
-  const iconRef = useRef<HTMLSpanElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
   const [dropDownStyles, animateDropDown] = useSpring(() => ({
     opacity: showCodeRef.current ? 1 : 0,
     height: showCodeRef.current ? 500 : 0,
-    fill: showCodeRef.current ? '#fff' : '#292524',
     bg: showCodeRef.current ? '#29252400' : '#29252422',
     deg: showCodeRef.current ? 45 : 0,
     config: {
@@ -34,22 +37,23 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
   }));
 
   function toggleShowCode() {
-    const showCode = !showCodeRef.current;
+    // const showCode = !showCodeRef.current;
+    const showCode = !open;
     animateDropDown.start({
       opacity: showCode ? 1 : 0,
       height: showCode ? 500 : 0,
-      fill: showCode ? '#fff' : '#292524',
       bg: showCode ? '#29252400' : '#29252422',
       deg: showCode ? 45 : 0,
     });
-    showCodeRef.current = showCode;
+    setOpen(showCode);
+    // showCodeRef.current = showCode;
   }
 
   return (
     <div className={`${className}`}>
       <div className="flex justify-end">
         <ClickableCursor text="link">
-          <animated.span
+          {/* <animated.span
             style={{
               color: dropDownStyles.fill,
               backgroundColor: dropDownStyles.bg,
@@ -66,7 +70,40 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
               // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
               className={`-translate-x-[14px] translate-y-12 border border-stone-400/40 backdrop-blur-[1px] sm:-translate-x-8`}
             />
-          </animated.span>
+          </animated.span> */}
+          <animated.div
+            style={{
+              transform: `rotate(${dropDownStyles.deg}deg)`,
+            }}
+            onClick={toggleShowCode}
+            className="relative z-50 flex origin-center -translate-x-[14px] translate-y-12 border-stone-400/40 sm:-translate-x-8"
+            ref={iconRef}
+          >
+            <CodeTagIcon
+              height="48px"
+              width="24px"
+              color={'currentColor'}
+              open={open}
+              side="left"
+              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
+              className={`${
+                open ? 'translate-x-5 fill-stone-100' : null
+              } borderbackdrop-blur-[1px] transition-all duration-300`}
+              // ref={leftCodeIconRef}
+            />
+            <CodeTagIcon
+              height="48px"
+              width="24px"
+              color={'currentColor'}
+              open={open}
+              side="right"
+              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
+              className={`${
+                open ? '-translate-x-5 fill-stone-100' : null
+              } borderbackdrop-blur-[1px] rotate-180 transition-all duration-300`}
+              // ref={rightCodeIconRef}
+            />
+          </animated.div>
         </ClickableCursor>
       </div>
       <animated.div

@@ -1,7 +1,9 @@
 export const text = {
   lede: {
     first:
-      'Rainbeau is a color theming tool that takes inspiration from the real world. Users can cycle through randomized images (fetched from Unsplash) to draw up custom color palettes based where markers are added and dragged over the image. The palette can be copied as individual colors in HSL, HEX, or RGB or formatted to be used with common styling libraries like Tailwind, Mui, or Styled Components.',
+      'Cribbage Monster is a multiplayer online version of the classic card game. The multi-page app is built with React, React Router, and uses Firestore and Firebase Realtime Database for auth, backend storage, and updating subscribed clients via websocket.',
+    second:
+      "The game has a playful monster theme inspired by playing card games when I was younger; the player's a monster avatar prompts them on required play actions and updates to scoring. The Anime.js library is used in combination with Tailwind to animate SVG and HTML elements.",
   },
   description: '',
   body: [],
