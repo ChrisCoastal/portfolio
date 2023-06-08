@@ -19,7 +19,7 @@ const ContactSection = (props: Props) => {
 
   return (
     <section
-      className="border-t border-stone-500"
+      className="border-t border-stone-400/40"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

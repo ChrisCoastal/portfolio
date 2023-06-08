@@ -11,7 +11,7 @@ type ProjectElementProps = {
 
 const ProjectElement: FC<ProjectElementProps> = ({ element }) => {
   return (
-    <div className="border pt-6">
+    <div className="border pt-10">
       {element?.title && <h4 className="mb-12 ml-10">{`${element.title}`}</h4>}
       <div className="mx-10 flex justify-center">
         {element?.media?.image && (

@@ -64,7 +64,7 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
               width="48px"
               color={'currentColor'}
               // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
-              className={`-translate-x-8 translate-y-12`}
+              className={`-translate-x-[14px] translate-y-12 border border-stone-400/40 backdrop-blur-[1px] sm:-translate-x-8`}
             />
           </animated.span>
         </ClickableCursor>
@@ -78,7 +78,7 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
         }}
         ref={dropDownRef}
         id="code-container"
-        className="invert-scrollbar flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 pt-7 sm:p-7"
+        className="invert-scrollbar flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 py-8 sm:p-7"
       >
         {snippets.map((snippet) => (
           <CodeBlock
