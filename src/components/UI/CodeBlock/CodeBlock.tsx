@@ -41,7 +41,7 @@ const CodeBlock: FC<CodeBlockProps> = ({
 
   return (
     <div className="bg-stone-800">
-      <div style={{ width: width || 0 - 12 }} className="translate-x-2">
+      <div style={{ width: width || 0 - 12 }} className="ml-2">
         {fileName ? (
           <h4 className="!text-xs text-white sm:!text-sm">{fileName}</h4>
         ) : null}

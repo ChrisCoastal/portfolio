@@ -38,23 +38,23 @@ export const mainSections = {
     title: ['This looks like a problem.'],
   },
   stackSection: {
-    title: 'found out //',
+    title: 'build◆ut',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   projectsSection: {
-    title: 'checkout //',
+    title: 'check◆ut',
     text: 'Here is a selection of projects that I have worked on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   aboutSection: {
-    title: 'about //',
+    title: 'ab◆ut',
     text: '',
   },
   contactSection: {
-    title: 'shout out // reach out',
+    title: 'shout◆ut // reach◆ut',
     text: 'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
   },
   leaveSection: {
-    title: 'get out //',
+    title: 'get◆ut',
     text: 'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
   },
 };

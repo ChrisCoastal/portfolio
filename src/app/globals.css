@@ -2,7 +2,8 @@
 
 :root {
   --primary-color: rgb(87, 218, 155);
-  --scrollbar-stone-400: #e5e7eb;
+  --scrollbar-white: #fff;
+  --scrollbar-stone-400: #ebe9e5a8;
   --scrollbar-stone-800: #292524;
   --transparent: 'transparent';
 }
@@ -10,6 +11,7 @@
 /* @media (min-width: 420px) { */
 /* SCROLL BAR */
 /* Firefox */
+
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-white) var(--scrollbar-stone-800);

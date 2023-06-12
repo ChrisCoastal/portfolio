@@ -33,11 +33,11 @@ const ProjectsSection = (props: Props) => {
   // }
 
   return (
-    <ScrollSection className="relative bg-white/40 pb-24 backdrop-blur">
+    <ScrollSection className="my-2">
       {/* {activeProject && <PageTransition cursorPos={mouseClickXY.current} />} */}
       <SectionTitle text={mainSections.projectsSection.title} />
       <div className="w-full">
-        <div className="mx-auto grid w-fit grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto my-36 grid w-fit grid-cols-1 gap-6 xs:grid-cols-2 md:grid-cols-3">
           {projects.map((project) => (
             <div key={uuid()} className="">
               <ClickableCursor text="click">

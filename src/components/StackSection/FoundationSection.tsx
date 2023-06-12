@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import { logoIndex, mainSections } from '@/app/_pageContent/content';
-import projectContent from '@/app/projects/_projectContent';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 import useIntersectionObserver, {
   ViewPortPos,
@@ -124,7 +123,7 @@ const FoundationSection = (props: Props) => {
                   perspective: '800px',
                   transformStyle: 'preserve-3d',
                 }}
-                className="relative flex h-[4rem] w-[4rem] place-content-center bg-black xs:h-24 xs:w-24"
+                className="relative flex h-[4rem] w-[4rem] place-content-center bg-stone-800 xs:h-24 xs:w-24"
               >
                 <div
                   style={{ backfaceVisibility: 'hidden' }}
@@ -158,7 +157,7 @@ const FoundationSection = (props: Props) => {
                 //   clipPath: logoPaths['react'],
                 // }}
                 key={i}
-                className="flex h-[4rem] w-[4rem] scale-[102%] place-content-center border border-black xs:h-24 xs:w-24"
+                className="flex h-[4rem] w-[4rem] scale-[102%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
               >
                 <StackLogo
                   height="72px"

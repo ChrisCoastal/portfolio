@@ -21,12 +21,12 @@ const Marquee: FC<MarqueeProps> = ({
         <div>
           <h3
             style={{ animationDelay: `${animationDelay}ms` }}
-            className={`${className} ${marqueeScroll} absolute whitespace-nowrap text-4xl font-extrabold text-black`}
+            className={`${className} ${marqueeScroll} absolute whitespace-nowrap text-7xl font-extrabold text-black`}
           >
             {text}
           </h3>
           <h3
-            className={`${className} ${marqueeScroll} absolute whitespace-nowrap text-4xl font-extrabold text-black`}
+            className={`${className} ${marqueeScroll} absolute whitespace-nowrap text-7xl font-extrabold text-black`}
           >
             {text}
           </h3>

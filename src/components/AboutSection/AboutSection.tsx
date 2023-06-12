@@ -43,7 +43,7 @@ const AboutSection = (props: Props) => {
             </span>
           </p>
           <div>
-            <span className="relative overflow-hidden">
+            <span className="relative w-24 overflow-hidden">
               {/* <span className="absolute left-1/2 top-1/3 z-20 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-teal-400 mix-blend-screen"></span> */}
               <div className="absolute bottom-1/4 right-0 z-20 h-48 w-48 rotate-45 bg-black sm:h-60 sm:w-60"></div>
               <Image

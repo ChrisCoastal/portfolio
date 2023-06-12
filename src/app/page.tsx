@@ -7,7 +7,7 @@ export default function Home() {
   useColorScrollThumb();
 
   return (
-    <main className="relative overflow-x-clip" id="main">
+    <main className="relative" id="main">
       <ThreeCanvas />
     </main>
   );

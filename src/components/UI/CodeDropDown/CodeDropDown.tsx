@@ -115,7 +115,7 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
         }}
         ref={dropDownRef}
         id="code-container"
-        className="invert-scrollbar flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 py-8 sm:p-7"
+        className="invert-scrollbar flex flex-col gap-8 overflow-x-clip overflow-y-scroll bg-stone-800 p-3 py-8 shadow-md sm:p-7"
       >
         {snippets.map((snippet) => (
           <CodeBlock

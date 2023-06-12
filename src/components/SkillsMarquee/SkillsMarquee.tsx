@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { marqueeText } from '@/app/_pageContent/content';
 import Marquee from '@/components/UI/Marquee/Marquee';
 
-const SkillsMarquee = () => {
+type SkillsMarqueeProps = {
+  className?: string;
+};
+
+const SkillsMarquee: FC<SkillsMarqueeProps> = ({ className }) => {
   return (
-    <div>
-      <Marquee text={marqueeText.rl} reverse />
-      <Marquee text={marqueeText.lr} />
+    <div
+      // className={`my-24 flex flex-col gap-14 bg-stone-800 py-56 ${className}`}
+      className={`my-24 flex flex-col gap-14 py-56 backdrop-blur-sm `}
+    >
+      <Marquee className="text-white" text={marqueeText.rl} reverse />
+      <Marquee className="text-white" text={marqueeText.lr} />
     </div>
   );
 };

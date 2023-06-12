@@ -1,6 +1,12 @@
 'use client';
 
-import React, { Suspense, useRef } from 'react';
+import React, {
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import type { FC, ReactNode, WheelEvent } from 'react';
 
 import AboutSection from '@/components/AboutSection/AboutSection';
@@ -10,8 +16,12 @@ import Nav from '@/components/Nav/Nav';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
 import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
+import SquareModel from '@/components/SquareModel/SquareModel';
 import FoundationSection from '@/components/StackSection/StackSection';
+import TestModel from '@/components/TestModel/TestModel';
+import useDimensions from '@/hooks/useDimensions';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
+import useResizeWindow from '@/hooks/useResizeWindow';
 import { config, useSpring } from '@react-spring/three';
 import { animated, useScroll as useSpringScroll } from '@react-spring/web';
 import {
@@ -31,7 +41,9 @@ type ThreeCanvasProps = {
 };
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
-  const pages = 8;
+  const [pages, setPages] = React.useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef({ x: 50, y: 50 });
   const horzRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(0);
@@ -98,6 +110,23 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       });
   }
 
+  useEffect(() => {
+    function updatePages(): NodeJS.Timeout | void {
+      timeoutRef.current && clearTimeout(timeoutRef.current);
+      const scrollContainerHeight = scrollContainerRef.current?.clientHeight;
+      if (!scrollContainerHeight) {
+        return (timeoutRef.current = setTimeout(() => {
+          return updatePages();
+        }, 40));
+      } else setPages(scrollContainerHeight / window.innerHeight);
+    }
+
+    window.addEventListener('resize', updatePages);
+    updatePages();
+
+    return () => window.removeEventListener('resize', updatePages);
+  }, []);
+
   const text = `
   I LIKE MAKING
   NICE STUFF.`;
@@ -135,6 +164,9 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
             {/* <Float rotationIntensity={4}>
               <TestModel />
             </Float> */}
+            <Float rotationIntensity={6}>
+              <SquareModel />
+            </Float>
 
             <Scroll
               html
@@ -142,7 +174,11 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
               className="w-full"
               // onClick={() => console.log('click')}
             >
-              <div className="wrapper w-full">
+              <div
+                className="wrapper w-full"
+                id="scroll-container"
+                ref={scrollContainerRef}
+              >
                 <HeroIntersects animateText={animateText} />
                 {/* <Nav /> */}
                 {/* <ScrollPrompt /> */}
@@ -151,10 +187,10 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
                   {/* <div className="h-[200vh] bg-gradient-to-br from-white to-stone-200"></div> */}
                   {/* <span className="absolute top-[105vh]" ref={blockRef}></span> */}
                   <FoundationSection />
+                  <SkillsMarquee className="!bg-none !text-black !backdrop-blur-sm" />
                   <SkillsMarquee />
                   <ProjectsSection />
                   {/* <ScrollBlock top="300vh"> */}
-                  <div className="h-[0.5px]"></div>
                   <AboutSection />
                   <ContactSection />
                   {/* </ScrollBlock> */}
