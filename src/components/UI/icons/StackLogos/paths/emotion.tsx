@@ -4,8 +4,8 @@ const emotion = (
   <>
     <g>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M98.33,168.21c1.22-1.74,2.35-3.56,3.68-5.21
 		c2.79-3.44,5.53-6.95,8.6-10.14c2.98-3.1,6.04-6.14,9.58-8.66c2.4-1.71,5.05-2.9,7.67-4.17c3-1.46,6.09-2.67,9.35-3.39
@@ -18,8 +18,8 @@ const emotion = (
 		C127,151.12,126.15,150.81,125.18,150.47z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M50.2,168.21c-1.19-1.4-2.38-2.81-3.58-4.21
 		c-3.06-3.56-5.94-7.26-8.32-11.33c-1.88-3.21-3.85-6.38-5.78-9.56c-0.08-0.13-0.14-0.27-0.25-0.5c0.27-0.1,0.51-0.22,0.76-0.28
@@ -28,8 +28,8 @@ const emotion = (
 		C71.22,168.21,60.71,168.21,50.2,168.21z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M132.61,168.21c1.64-5.69,4.68-10.57,8.95-14.61
 		c2.81-2.66,5.88-5.05,8.84-7.56c0.69-0.59,1.38-1.18,2.19-1.87c0.34,0.22,0.79,0.51,1.35,0.88c-0.5,0.46-0.91,0.82-1.31,1.19
@@ -37,8 +37,8 @@ const emotion = (
 		C134.13,168.21,133.37,168.21,132.61,168.21z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M46.24,168.21c-0.5-0.7-0.99-1.4-1.51-2.08
 		c-0.57-0.75-1.13-1.5-1.77-2.19c-5.26-5.72-8.73-12.54-11.9-19.53c-0.12-0.28-0.22-0.57-0.32-0.85c-0.03-0.09-0.04-0.19-0.08-0.37
@@ -47,8 +47,8 @@ const emotion = (
 		C48.07,168.21,47.15,168.21,46.24,168.21z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M43.5,168.21c-1.92-2.56-3.84-5.12-5.77-7.66
 		c-0.91-1.19-1.99-2.26-2.75-3.54c-2.23-3.74-4.34-7.55-6.48-11.34c-0.21-0.37-0.34-0.78-0.55-1.27c0.8-0.38,1.57-0.74,2.24-1.06
@@ -56,8 +56,8 @@ const emotion = (
 		"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M130.93,168.21c1.41-4.86,3.71-9.24,6.87-13.19
 		c2.96-3.7,6.62-6.63,10.26-9.58c0.94-0.77,1.91-1.5,2.93-2.31c0.36,0.18,0.79,0.39,1.38,0.68c-0.8,0.6-1.51,1.13-2.23,1.66
@@ -65,8 +65,8 @@ const emotion = (
 		C131.64,168.21,131.29,168.21,130.93,168.21z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M149.1,66.25c-1.14-1.08-2.25-2.01-3.22-3.06
 		c-2.39-2.59-4.75-5.22-7.06-7.88c-1.87-2.15-3.88-4.06-6.55-5.21c-0.54-0.23-0.95-0.74-1.41-1.14c-0.77-0.66-1.53-1.34-2.31-1.99
@@ -86,8 +86,8 @@ const emotion = (
 		C144.26,55.75,146.66,60.95,149.1,66.25z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M115.07,86.33c0.14,0.43,0.14,0.94,0.39,1.12
 		c1.71,1.27,1.28,3.26,1.55,4.92c0.4,2.46,0.51,5,0.51,7.5c-0.01,5.63-1.96,10.56-5.4,15.03c-1.69,2.19-3.99,3.3-6.23,4.58
@@ -108,8 +108,8 @@ const emotion = (
 		C95.19,99.2,95.43,98.47,95.11,97.58z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M36.36,134.66c1.38-1.44,2.67-2.99,4.17-4.3
 		c1.92-1.67,3.86-3.31,5.43-5.32c0.88-1.12,2.01-1.24,3.25-1.02c0.71,0.12,1.41,0.36,2.33,0.61c-0.75,0.61-1.34,1.1-1.94,1.57
@@ -131,8 +131,8 @@ const emotion = (
 		z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M92.28,159.27c0.51-0.87,1.02-1.75,1.54-2.62
 		c3.71-6.21,7.41-12.41,11.12-18.62c0.35-0.59,0.76-1.14,1.08-1.75c0.16-0.31,0.2-0.69,0.28-1.03c0.11-0.01,0.4-0.03,0.69-0.04
@@ -143,8 +143,8 @@ const emotion = (
 		C92.3,159.28,92.29,159.28,92.28,159.27z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M88.95,161.3c-0.15-0.25-0.25-0.37-0.3-0.5
 		c-2.44-5.93-5.64-11.46-8.79-17.03c-1.36-2.41-2.79-4.77-4.2-7.15c-0.2-0.34-0.37-0.61,0.02-0.98c2.37-2.29,3.56-5.2,4.3-8.34
@@ -153,8 +153,8 @@ const emotion = (
 		c-1.35,2.52-2.63,5.09-3.77,7.71C89.92,157.69,89.53,159.44,88.95,161.3z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M117.44,119.67c1-0.69,1.99-1.2,2.76-1.95
 		c1-0.97,1.83-0.79,2.83-0.07c3.74,2.7,7.59,5.26,11.24,8.08c2.6,2.01,4.95,4.35,7.38,6.57c0.5,0.45,0.87,1.04,1.42,1.72
@@ -165,8 +165,8 @@ const emotion = (
 		c-2.31-2.33-5.07-4.04-7.83-5.77C122.45,122.91,120.03,121.33,117.44,119.67z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M54.58,84.24c-0.49-6.84,0.12-13.44,4.22-19.35
 		c0.03,0.31,0.1,0.6,0.09,0.89c0,1.65-0.04,3.3-0.02,4.95c0.01,0.38,0.21,0.76,0.33,1.15c0.36-0.19,0.71-0.37,1.17-0.62
@@ -176,8 +176,8 @@ const emotion = (
 		c-1.06,1.79-2.16,3.54-3.53,5.11c-0.13,0.15-0.25,0.31-0.39,0.46C54.78,84.26,54.71,84.24,54.58,84.24z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M58.91,84.94c-1.49,1.57-3.01,3.18-4.54,4.79
 		c-0.07-0.03-0.15-0.06-0.22-0.1c-0.12-0.71-0.24-1.43-0.35-2.14c-0.01-0.09,0.04-0.2,0.09-0.28c1.53-2.24,3.06-4.47,4.59-6.71
@@ -186,8 +186,8 @@ const emotion = (
 		c-2.4,1.15-4.81,2.43-7.32,3.48c-3,1.25-6.13,1.09-9.17,0.16c-2.07-0.64-4.04-1.6-6.05-2.43C59.65,85.38,59.29,85.14,58.91,84.94z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M96.97,76.61c-0.23,0.26-0.44,0.54-0.69,0.78
 		c-7.9,7.54-15.36,15.51-22.44,23.82c-1.94,2.28-3.92,4.53-5.95,6.73c-1.17,1.26-2.47,2.39-3.77,3.63
@@ -196,8 +196,8 @@ const emotion = (
 		C96.9,76.46,96.94,76.53,96.97,76.61z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M62.92,73.92c1.31-1.78,2.45-3.45,3.71-5.02
 		c3.24-4.03,6.56-7.99,9.79-12.03c1.62-2.04,3.11-4.19,4.63-6.3c0.29-0.4,0.46-0.88,0.74-1.43c0.61,0.46,1.25,0.87,1.78,1.39
@@ -205,8 +205,8 @@ const emotion = (
 		c-0.22,0.29-0.53,0.54-0.85,0.72C65.65,72.54,64.38,73.17,62.92,73.92z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M87.7,48.22c2.43,1.04,4.05,2.7,5.51,4.54
 		c1.34,1.69,2.49,3.5,3.36,5.5c0.6,1.38,1.55,2.63,2.04,4.05c0.84,2.44,1.46,4.95,2.15,7.44c0.11,0.38,0.1,0.8,0.16,1.32
@@ -214,115 +214,115 @@ const emotion = (
 		C88.45,49.39,88.14,48.87,87.7,48.22z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M62.11,89.96c-1.23,2.6-2.44,5.14-3.76,7.91
 		c-0.64-1.85-1.21-3.48-1.77-5.12c-0.12-0.34-0.23-0.67-0.3-1.02c-0.2-1-0.41-1.28-1.74-0.83c-0.01-0.07-0.01-0.14-0.02-0.21
 		C57.03,90.45,59.54,90.21,62.11,89.96z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M66.49,77.37c0.01-1.02,0.89-1.87,1.92-1.84
 		c1.02,0.03,1.92,0.96,1.9,1.98c-0.02,1.07-0.83,1.89-1.86,1.89C67.41,79.39,66.49,78.43,66.49,77.37z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M109.17,79.73c-1.16-0.01-1.87-0.75-1.84-1.91
 		c0.02-0.99,0.74-1.83,1.57-1.82c0.7,0.01,2.02,1.62,1.99,2.44C110.87,79.1,110.02,79.74,109.17,79.73z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M116.34,87.29c-0.4-1.17-0.23-1.88,0.67-2.54
 		c0.88-0.64,1.56-1.56,2.37-2.41c0.17,0.99,0.35,2.02,0.52,3.05c0.01,0.09-0.08,0.26-0.16,0.3
 		C118.61,86.23,117.48,86.75,116.34,87.29z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M75.19,78.73c0.93,0.25,1.35,0.88,1.1,1.6
 		c-0.24,0.71-0.89,0.98-1.63,0.67C74.83,80.25,75.01,79.49,75.19,78.73z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M120.25,101.78c0-4.34,0-8.68,0-11.92
 		C120.43,93.1,120.78,97.45,120.25,101.78z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M77.87,127.77c-0.09-1.7-0.21-3.75-0.33-5.84
 		c0.07,0.07,0.27,0.19,0.29,0.32c0.05,0.56-0.04,1.14,0.06,1.69C78.14,125.35,78.11,126.74,77.87,127.77z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M117.9,78.47c0.61,0.77,0.4,1.42-0.66,1.82
 		C117.49,79.62,117.69,79.07,117.9,78.47z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M113.65,68.14c-0.18,0.11-0.31,0.18-0.45,0.27
 		c-0.33-0.93-0.65-1.82-0.96-2.71c0.04-0.02,0.08-0.04,0.12-0.06C112.77,66.45,113.19,67.26,113.65,68.14z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M87.7,125.5c1.66,0,3.32,0,4.98,0c0,0.04,0,0.08,0,0.12
 		c-1.66,0-3.32,0-4.98,0C87.7,125.59,87.7,125.54,87.7,125.5z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M53.71,79.22c0.06-1.33,0.13-2.66,0.19-3.99c0.01,0,0.02,0,0.03,0
 		c0,1.32,0,2.64,0,3.97C53.86,79.21,53.78,79.21,53.71,79.22z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M60.03,58.48c0.14,0.82,0.25,1.43,0.36,2.08
 		c-0.25-0.37-0.46-0.68-0.76-1.13C59.69,59.3,59.82,58.99,60.03,58.48z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M126.53,94.16c0-1.41,0-2.81,0-4.22c0.02,0,0.04,0,0.06,0
 		c0,1.41,0,2.81,0,4.22C126.57,94.16,126.55,94.16,126.53,94.16z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M99.29,61.56c-0.2-0.46-0.38-0.86-0.57-1.3
 		c0.34,0.35,0.63,0.66,0.97,1.01C99.6,61.33,99.46,61.43,99.29,61.56z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M53.53,81.27c0,0.91,0,1.83,0,2.74c-0.04,0-0.08,0-0.12,0
 		c0-0.91,0-1.83,0-2.74C53.45,81.27,53.49,81.27,53.53,81.27z"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M121.97,162.52c0.41-1.06,0.82-2.11,1.23-3.17
 		c0.49-1.25,1-2.49,1.46-3.76c0.36-0.99-0.12-1.86-1.1-2.18c-0.88-0.28-1.76-0.59-2.7-0.91c1.31-3.45,3.53-6.2,5.25-9.24

@@ -25,19 +25,19 @@ const SquareModel = (props: any) => {
   );
 
   useEffect(() => {
-    console.log(actions);
-    const interval = setInterval(() => {
-      console.log(scroll.offset);
-    }, 1000);
+    // console.log(actions);
+    // const interval = setInterval(() => {
+    //   console.log(scroll.offset);
+    // }, 1000);
 
     const action = actions[names[0]];
     const actionBall = actions['CubeAction'];
-    console.log(action, actionBall);
+    // console.log(action, actionBall);
     if (!action || !actionBall) return;
     void (action.play().paused = true);
     void (actionBall.play().paused = true);
 
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, [actions, names, scroll.offset]);
 
   useFrame((state, delta) => {
@@ -67,7 +67,7 @@ const SquareModel = (props: any) => {
         >
           <PerspectiveCamera
             name="Camera_Orientation"
-            makeDefault={false}
+            makeDefault={true}
             far={100}
             near={0.1}
             fov={22.9}
