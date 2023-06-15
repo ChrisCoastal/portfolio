@@ -27,7 +27,7 @@ const HeroIntersects: FC<HeroIntersectsProps> = ({ animateText }) => {
     <div
       key={i}
       ref={animateRef}
-      className={`absolute z-40 h-48 w-full top-[${
+      className={`pointer-events-none absolute z-40 h-48 w-full top-[${
         i * 100 + 'vh'
       }] bg-red-500/20`}
     ></div>

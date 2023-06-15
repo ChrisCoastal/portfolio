@@ -91,12 +91,13 @@ const FoundationSection = (props: Props) => {
       <div className="border-ty-12 flex flex-col-reverse items-center justify-center md:flex-col">
         <div className="mx-4 sm:w-96">
           <p className="">
-            I like to make nice stuff with nice stuff. With a core industry
-            standard tools interleaved with an ever expoanding selection of what
-            is new / trendy / exciting / best-suited, I build expressive Front
-            End UI that works to balance elements of design and process.
-            supported by a core of industry standard tools. Sewn together with
-            creativity and care to content that is engaging and accessible.
+            I like to make nice stuff with nice stuff. Employing a core of
+            industry standard tools interleaved with an ever expanding selection
+            of what is new || trendy || exciting || best-suited, I build
+            expressive Front End UI that works to balance elements of design and
+            process. supported by a core of industry standard tools. Sewn
+            together with creativity and care to content that is engaging and
+            accessible.
           </p>
           <p className="">
             Finding balance between beauty and looking forward to

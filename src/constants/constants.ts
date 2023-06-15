@@ -8,3 +8,9 @@ export const breakPoints: Record<BreakPoint, number> = {
   xl: 1280,
   '2xl': 1536,
 };
+
+export const heroSvgRatio = { landscape: 0.5, portrait: 0.877777 };
+export const svgScale = {
+  portrait: { x: 0.8, y: 0.77 },
+  landscape: { x: 1, y: 1 },
+};

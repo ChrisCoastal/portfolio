@@ -36,12 +36,19 @@ import {
 } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 
+import HeroText from '../Hero/HeroText';
+import HeroSection from '../HeroSection/HeroSection';
+import Citation from '../UI/Citation/Citation';
+
 type ThreeCanvasProps = {
   children?: ReactNode;
 };
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
-  const [pages, setPages] = React.useState(0);
+  const [pages, setPages] = useState(0);
+  const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(
+    'landscape'
+  );
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef({ x: 50, y: 50 });
@@ -53,7 +60,11 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
 
   function Loader() {
     const { active, progress, errors, item, loaded, total } = useProgress();
-    return <Html center>{progress} % loaded</Html>;
+    return (
+      <Html center className="h-screen w-screen bg-stone-800 text-white">
+        {progress} % loaded
+      </Html>
+    );
   }
 
   const [styleBlock, animationBlock] = useSpring(() => ({
@@ -121,15 +132,23 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       } else setPages(scrollContainerHeight / window.innerHeight);
     }
 
-    window.addEventListener('resize', updatePages);
+    function updateOrientation() {
+      window.innerWidth > window.innerHeight
+        ? setOrientation('landscape')
+        : setOrientation('portrait');
+    }
+
+    function handleResize() {
+      updatePages();
+      updateOrientation();
+    }
+
+    window.addEventListener('resize', handleResize);
     updatePages();
 
-    return () => window.removeEventListener('resize', updatePages);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const text = `
-  I LIKE MAKING
-  NICE STUFF.`;
   return (
     <div style={{ height: '100vh', width: '100vw' }} className="relative">
       <animated.div
@@ -137,11 +156,20 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
         // @ts-expect-error
         style={{ transform: style.x.to((value) => `translateX(${value}px)`), opacity: style.opacity }}
         ref={stickyRef}
-        className={`pointer-events-none absolute top-1/4 z-30 mx-auto flex w-full -translate-x-1/2 justify-center overflow-hidden`}
+        className={`pointer-events-none absolute z-30 mx-auto flex w-full origin-center -translate-x-1/2 justify-center overflow-hidden`}
       >
-        <p className="whitespace-pre font-anton text-4xl font-extrabold text-black">
+        {/* <p className="whitespace-pre font-anton text-4xl font-extrabold text-black">
           {text}
-        </p>
+        </p> */}
+        {/* <div className="relative h-[60vw] w-[90vw] bg-blue-300/30">
+          <div className="absolute left-[6vw] top-[11vw] h-[2.5vw] w-[2.5vw]">
+            <div className="flex h-[2.5vw] w-[2.5vw] rotate-45 items-center justify-center border border-red-400">
+              <p className="origin-center -rotate-45">1</p>
+            </div>
+          </div>
+
+          <HeroText height="60vw" width="90vw" className="absolute" />
+        </div> */}
       </animated.div>
       {/* <animated.div
         style={{
@@ -158,15 +186,18 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
 
       <Canvas onMouseMove={handleMove} onWheel={handleScroll} id="canvas">
         <ambientLight intensity={0.4} />
-        <spotLight intensity={0.5} position={[10, 10, 10]} castShadow />
+        {/* <spotLight intensity={0.5} position={[10, 10, 10]} castShadow /> */}
         <Suspense fallback={<Loader />}>
           <ScrollControls pages={pages}>
-            {/* <Float rotationIntensity={4}>
-              <TestModel />
-            </Float> */}
             <Float rotationIntensity={6}>
               <SquareModel />
             </Float>
+            {/* <Float rotationIntensity={2}>
+              <SquareModel />
+            </Float>
+            <Float rotationIntensity={10}>
+              <SquareModel />
+            </Float> */}
 
             <Scroll
               html
@@ -183,11 +214,10 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
                 {/* <Nav /> */}
                 {/* <ScrollPrompt /> */}
                 <div>
-                  <div className="hero-spacer h-screen"></div>
                   {/* <div className="h-[200vh] bg-gradient-to-br from-white to-stone-200"></div> */}
                   {/* <span className="absolute top-[105vh]" ref={blockRef}></span> */}
+                  <HeroSection orientation={orientation} />
                   <FoundationSection />
-                  <SkillsMarquee className="!bg-none !text-black !backdrop-blur-sm" />
                   <SkillsMarquee />
                   <ProjectsSection />
                   {/* <ScrollBlock top="300vh"> */}
@@ -199,7 +229,8 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
             </Scroll>
           </ScrollControls>
         </Suspense>
-        {/* <Environment preset="night" /> */}
+        {/* <Environment preset="warehouse" /> */}
+        <Environment files="/assets/clouds.hdr" />
       </Canvas>
     </div>
   );
