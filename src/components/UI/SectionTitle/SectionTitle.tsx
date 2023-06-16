@@ -2,13 +2,17 @@ import React from 'react';
 import type { FC } from 'react';
 
 type SectionTitleProps = {
-  text: string;
+  title: string;
   className?: string;
 };
 
-const SectionTitle: FC<SectionTitleProps> = ({ text, className }) => {
+const SectionTitle: FC<SectionTitleProps> = ({ title, className }) => {
   return (
-    <h3 className={`${className} text-xl font-light text-black`}>{text}</h3>
+    <h2
+      className={`${className} w-full text-center text-xl font-light md:text-2xl`}
+    >
+      {title}
+    </h2>
   );
 };
 

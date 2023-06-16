@@ -29,7 +29,7 @@ const HeroIntersects: FC<HeroIntersectsProps> = ({ animateText }) => {
       ref={animateRef}
       className={`pointer-events-none absolute z-40 h-48 w-full top-[${
         i * 100 + 'vh'
-      }] bg-red-500/20`}
+      }]`}
     ></div>
   ));
 

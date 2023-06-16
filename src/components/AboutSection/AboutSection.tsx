@@ -2,17 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 
 import { mainSections } from '@/app/_pageContent/content';
-import ScrollSection from '@/components/ScrollSection/ScrollSection';
+import Section from '@/components/UI/Section/Section';
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 type Props = {};
 
 const AboutSection = (props: Props) => {
   return (
-    <ScrollSection>
-      <SectionTitle text={mainSections.aboutSection.title} />
+    <Section title={mainSections.aboutSection.title}>
       <div className="flex justify-center gap-16 rounded-lg p-8 ">
         <div className="flex flex-col-reverse sm:flex-row">
-          <p className="flex w-96 flex-col gap-2">
+          <div className="flex w-96 flex-col gap-2 backdrop-blur-lg">
             <span>
               Drawing from the chances I have taken and . Bridging the space
               between{' '}
@@ -41,7 +40,7 @@ const AboutSection = (props: Props) => {
               incidunt, eveniet vel ut voluptate ab itaque magnam aut illo.
               Odit, recusandae repellendus? Check out my CV
             </span>
-          </p>
+          </div>
           <div>
             <span className="relative w-24 overflow-hidden">
               {/* <span className="absolute left-1/2 top-1/3 z-20 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-teal-400 mix-blend-screen"></span> */}
@@ -55,20 +54,10 @@ const AboutSection = (props: Props) => {
                 className=""
               />
             </span>
-            {/* <video
-              width="270"
-              height="720"
-              autoPlay
-              loop
-              preload=""
-              className="absolute"
-            >
-              <source src="/assets/about/lights_480.mp4" type="video/mp4" />
-            </video> */}
           </div>
         </div>
       </div>
-    </ScrollSection>
+    </Section>
   );
 };
 

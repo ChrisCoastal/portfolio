@@ -6,7 +6,7 @@ import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 
 type Props = {};
 
-const ContactSection = (props: Props) => {
+const ReachSection = (props: Props) => {
   const [mouseOver, setMouseOver] = useState(false);
   function handleMouseEnter() {
     //
@@ -23,9 +23,9 @@ const ContactSection = (props: Props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <SectionTitle text={mainSections.contactSection.title} />
+      <SectionTitle title={mainSections.reachSection.title} />
       <div className="flex justify-center gap-2 text-white">
-        <p className="w-96 text-black">{mainSections.contactSection.text}</p>
+        <p className="w-96 text-stone-800">{mainSections.reachSection.text}</p>
         <div className="flex gap-0.5">
           <div className="h-[198px] w-[198px] bg-black">
             <DiagonalArrowIcon height="180px" width="180px" />
@@ -68,4 +68,4 @@ const ContactSection = (props: Props) => {
   );
 };
 
-export default ContactSection;
+export default ReachSection;

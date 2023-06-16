@@ -14,10 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${redHat.variable} ${vollkorn.variable} ${anton.className} font-sans text-black`}
-    >
+    <html lang="en" className={`${redHat.variable} font-sans text-stone-800`}>
       <body className="overflow-x-hidden">{children}</body>
     </html>
   );

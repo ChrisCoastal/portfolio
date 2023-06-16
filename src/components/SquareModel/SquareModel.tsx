@@ -2,9 +2,13 @@ import React, { FC, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 import {
+  Clone,
   Float,
+  MeshReflectorMaterial,
+  MeshTransmissionMaterial,
   PerspectiveCamera,
   useAnimations,
+  useDepthBuffer,
   useGLTF,
   useScroll,
   useTexture,
@@ -22,7 +26,7 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
     '/assets/nice-stuff.glb'
   );
   const { actions, names } = useAnimations(animations, group);
-
+  const depthBuffer = useDepthBuffer({ frames: 1 });
   const scroll = useScroll();
 
   // const displacement = useLoader(
@@ -39,58 +43,64 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
     const action = actions[names[0]];
     const actionSquare = actions['CubeAction.005'];
     // console.log(action, actionSquare);
-    if (!action || !actionSquare) return;
-    void (action.play().paused = true);
+    if (!actionSquare) return;
+    void (actionSquare.play().paused = true);
     void (actionSquare.play().paused = true);
 
     // return () => clearInterval(interval);
   }, [actions, names, scroll.offset]);
 
   useFrame((state, delta) => {
-    const action = actions[names[0]];
+    // const action = actions[names[0]];
     const actionCamera = actions['CameraAction'];
     const actionSquare = actions['CubeAction.005'];
-    if (!action || !actionSquare) return;
+    if (!actionSquare) return;
     actionSquare.time = THREE.MathUtils.damp(
       actionSquare.time,
       actionSquare.getClip().duration * scroll.offset,
       1000,
       delta
     );
-    action.time = THREE.MathUtils.damp(
-      action.time,
-      action.getClip().duration * scroll.offset,
+    actionSquare.time = THREE.MathUtils.damp(
+      actionSquare.time,
+      actionSquare.getClip().duration * scroll.offset,
       1000,
       delta
     );
   });
+
+  // const Model = <Clone object={nodes.Cube} />;
   return (
     <group ref={group} dispose={null}>
       <group name="Scene">
         <group
           name="Camera"
-          position={[5.4, 3.79, 5.24]}
+          position={[6.62, 5.66, 6.98]}
           rotation={[1.24, 0.33, -0.76]}
         >
           <PerspectiveCamera
             name="Camera_Orientation"
             makeDefault={true}
             far={100}
-            near={0.1}
+            near={1}
             fov={20.41}
             rotation={[-Math.PI / 2, 0, 0]}
           />
         </group>
-        <group name="Empty" position={[-1.37, 0.82, -1.6]} />
-        <mesh
-          name="Cube"
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube.geometry}
-          material={materials['Material.002']}
-          position={position}
-          rotation={[0.96, -0.67, -2.31]}
-        />
+
+        <Float rotationIntensity={2} speed={0.5}>
+          <Clone object={nodes.Cube} />
+          {/* <mesh
+            name="Cube"
+            geometry={nodes.Cube.geometry}
+            material={materials['Material.002']}
+            // position={[0.95, 1.75, 1.53]}
+            // rotation={[2.53, -0.57, 1.93]}
+          ></mesh> */}
+        </Float>
+        {/* <Float rotationIntensity={3} speed={0.3}>
+          <Clone object={nodes.Cube} />
+        </Float> */}
       </group>
     </group>
 

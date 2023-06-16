@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { heroSvgRatio } from '@/constants/constants';
+import { heroTextRatio } from '@/constants/constants';
 
 type HeroTextProps = {
   orientation: 'landscape' | 'portrait';
@@ -15,7 +15,7 @@ const HeroText: FC<HeroTextProps> = ({
   color = '#000',
   className,
 }) => {
-  const height = width * heroSvgRatio[orientation];
+  const height = width * heroTextRatio[orientation];
 
   return (
     <svg

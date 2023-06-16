@@ -21,7 +21,7 @@ const Nav = (props: Props) => {
     //     <MenuIcon height="70%" width="70%" color="000" />
     //   </button>
     // </div>
-    <div className="absolute right-4 top-4 flex h-12 w-12 flex-col items-center text-black">
+    <div className="absolute right-4 top-4 flex h-12 w-12 flex-col items-center text-stone-800">
       <ul onClick={handleNav}>push</ul>
     </div>
   );
