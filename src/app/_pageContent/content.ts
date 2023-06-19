@@ -51,7 +51,11 @@ export const mainSections = {
   },
   aboutSection: {
     title: 'ab◆ut',
-    text: '',
+    text: [
+      'I have a breadth of experience in professional design, arts, and managerial/ownership roles in hospitality sectors. What it adds up to is someone who not only knows their stuff, but also how that stuff fits into a greater whole.',
+      'Following five years of building and fostering my own business, I made the decision to return to programming and web design, spending 2022 / 2023 updating my front end design and development skillset. These skills buld upon previous freelance experience and being privileged to work as the media Coordinator for the internationally recognized design studio molo in Vancouver.',
+      'Design and programming have been either the focus of or the suppliment to my career for the past 10 years. Regardless of the work I put my focus to, I have found that the core to my approach is accute attention to detail, dedication to excellence, and supporting clients and colleagues to do the same.',
+    ],
   },
   shoutSection: {
     title: 'shout◆ut',
@@ -59,7 +63,9 @@ export const mainSections = {
   },
   reachSection: {
     title: 'reach◆ut',
-    text: 'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
+    text: [
+      'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
+    ],
   },
   getSection: {
     title: 'get◆ut',

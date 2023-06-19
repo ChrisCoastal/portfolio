@@ -20,7 +20,10 @@ const Section = forwardRef(function Section(
   ref: LegacyRef<HTMLElement> | undefined
 ) {
   return (
-    <section className={`${className} mx-4 mb-36 pt-10 md:mb-48`} ref={ref}>
+    <section
+      className={`${className} mx-4 mb-36 pt-10 xs:mx-16 md:mb-48`}
+      ref={ref}
+    >
       {title && <SectionTitle title={title} />}
       {children}
     </section>
