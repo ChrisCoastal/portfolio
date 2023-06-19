@@ -1,4 +1,11 @@
-import React, { FC, ReactNode } from 'react';
+import React, {
+  FC,
+  ForwardedRef,
+  forwardRef,
+  LegacyRef,
+  ReactNode,
+  RefObject,
+} from 'react';
 
 import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 
@@ -8,13 +15,16 @@ type SectionProps = {
   children?: ReactNode;
 };
 
-const Section: FC<SectionProps> = ({ title, className, children }) => {
+const Section = forwardRef(function Section(
+  { title, className, children }: SectionProps,
+  ref: LegacyRef<HTMLElement> | undefined
+) {
   return (
-    <section className={`${className}`}>
+    <section className={`${className} mx-4 mb-36 pt-10 md:mb-48`} ref={ref}>
       {title && <SectionTitle title={title} />}
       {children}
     </section>
   );
-};
+});
 
 export default Section;

@@ -33,18 +33,21 @@ import {
 } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
+import Intersect from '../UI/Intersect/Intersect';
+
 type ThreeCanvasProps = {
   children?: ReactNode;
 };
 
 const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   const [pages, setPages] = useState(0);
-  const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(
-    'landscape'
-  );
+  const [screen, setScreen] = useState<{
+    orientation: 'landscape' | 'portrait';
+    width: number;
+  }>({ orientation: 'landscape', width: 0 });
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  // const horzRef = useRef<HTMLDivElement>(null);
+  const thoughtSectionRef = useRef<HTMLElement>(null);
   // const positionRef = useRef(0);
   const stickyRef = useRef<HTMLDivElement>(null);
 
@@ -113,40 +116,42 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       } else setPages(scrollContainerHeight / window.innerHeight);
     }
 
-    function updateOrientation() {
-      window.innerWidth > window.innerHeight
-        ? setOrientation('landscape')
-        : setOrientation('portrait');
+    function updateScreen() {
+      const width = window.innerWidth;
+      width > window.innerHeight
+        ? setScreen({ orientation: 'landscape', width })
+        : setScreen({ orientation: 'portrait', width });
     }
 
     function handleResize() {
       updatePages();
-      updateOrientation();
+      updateScreen();
     }
 
     window.addEventListener('resize', handleResize);
-    updatePages();
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  console.log(thoughtSectionRef);
 
   return (
     <div
       style={{ height: '100vh', width: '100vw' }}
       className="relative bg-stone-100"
     >
-      <animated.div
+      {/* <animated.div
         // prettier-ignore
         // @ts-expect-error
         style={{ transform: style.x.to((value) => `translateX(${value}px)`), opacity: style.opacity }}
         ref={stickyRef}
         className={`pointer-events-none absolute z-30 mx-auto flex w-full origin-center -translate-x-1/2 justify-center overflow-hidden`}
       >
-        <HeroSection orientation={orientation} />
-      </animated.div>
+      </animated.div> */}
 
       <Canvas onMouseMove={handleMove} id="canvas">
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={0.6} />
         <Suspense fallback={<Loader />}>
           <ScrollControls pages={pages}>
             <SquareModel />
@@ -161,17 +166,13 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
                 ref={scrollContainerRef}
               >
                 <HeroIntersects animateText={animateText} />
-                <div className="hero-spacer h-[100vh]"></div>
-                {/* <Nav /> */}
                 {/* <ScrollPrompt /> */}
-                <div>
-                  <div className="spacer h-[20rem]" />
-                  <BuildSection />
-                  <ThoughtSection />
-                  <CheckSection />
-                  <AboutSection />
-                  <ReachSection />
-                </div>
+                <HeroSection orientation={screen.orientation} />
+                <BuildSection />
+                <ThoughtSection ref={thoughtSectionRef} />
+                <CheckSection />
+                <AboutSection />
+                <ReachSection screenWidth={screen.width} />
               </div>
             </Scroll>
           </ScrollControls>

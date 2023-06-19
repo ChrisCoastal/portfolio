@@ -9,7 +9,7 @@ type SectionTitleProps = {
 const SectionTitle: FC<SectionTitleProps> = ({ title, className }) => {
   return (
     <h2
-      className={`${className} w-full text-center text-xl font-light md:text-2xl`}
+      className={`${className} static z-20 mb-12 w-full text-center text-xl font-light md:text-2xl`}
     >
       {title}
     </h2>

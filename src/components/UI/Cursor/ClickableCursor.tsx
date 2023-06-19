@@ -42,7 +42,7 @@ const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
               <CursorText
                 height="180px"
                 width="180px"
-                color="#fb7185ee"
+                color="#000"
                 text={text}
                 className="origin-center animate-spin-slow"
               />

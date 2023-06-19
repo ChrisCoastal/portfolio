@@ -68,7 +68,7 @@ export const mainSections = {
 };
 
 export const marqueeText = {
-  text: [
+  lr: [
     'intuitive',
     'expressive',
     'thoughtful',
@@ -82,8 +82,20 @@ export const marqueeText = {
     'accessibility',
     'creativity',
   ],
-  lr: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
-  rl: '◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ◆ THOUGHTFUL APPROACH ',
+  rl: [
+    'intuitive',
+    'expressive',
+    'thoughtful',
+    'fresh',
+    'clean',
+    'rich',
+    'differentiation',
+    'clarity',
+    'detail',
+    'efficiency',
+    'accessibility',
+    'creativity',
+  ],
 };
 
 export const contactInfo = {
