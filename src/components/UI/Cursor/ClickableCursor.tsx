@@ -42,9 +42,9 @@ const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
               <CursorText
                 height="180px"
                 width="180px"
-                color="#000"
+                color=""
                 text={text}
-                className="origin-center animate-spin-slow"
+                className="origin-center animate-spin-slow fill-pink-500"
               />
             </animated.div>,
             portalContainer

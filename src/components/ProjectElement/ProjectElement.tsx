@@ -13,7 +13,7 @@ const ProjectElement: FC<ProjectElementProps> = ({ element }) => {
   return (
     <div>
       {element?.title && <h4 className="font-light">{`${element.title}`}</h4>}
-      <div className="border border-stone-400/20 py-8 sm:pt-16">
+      <div className="border border-stone-400/20 pt-10">
         <div className="mx-10 flex justify-center">
           {element?.media?.image && (
             <Image src={element.media.image} alt={element.media.alt} />

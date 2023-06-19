@@ -14,7 +14,7 @@ const CursorText: FC<CursorTextProps> = ({
   height,
   width,
   text,
-  color = '#fff',
+  color = '#ff3654',
   className,
 }) => {
   return (

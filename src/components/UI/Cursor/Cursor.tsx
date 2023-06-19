@@ -34,11 +34,11 @@ const Cursor: FC<CursorProps> = () => {
 
   const handleMouseMove = useCallback(
     (event: globalThis.MouseEvent) => {
-      cursorRef.current = { x: event.pageX, y: event.pageY };
+      cursorRef.current = { x: event.clientX, y: event.clientY };
 
       cursorAnimation.start({
-        transform: `translate3d(${cursorRef.current.x - 12}px, ${
-          cursorRef.current.y - 12
+        transform: `translate3d(${cursorRef.current.x - 8}px, ${
+          cursorRef.current.y - 8
         }px, 0)`,
         opacity: 1,
       });
@@ -69,12 +69,12 @@ const Cursor: FC<CursorProps> = () => {
           <animated.div
             aria-hidden
             style={cursorStyles}
-            className="pointer-events-none absolute z-[1000] h-6 w-6 rounded-full bg-stone-800 mix-blend-difference invert"
+            className="pointer-events-none fixed z-[1000] h-4 w-4 rounded-full bg-pink-500"
           />
           <animated.div
             aria-hidden
             style={outlineStyles}
-            className="pointer-events-none absolute z-[1000] h-12 w-12 rounded-full border border-stone-800 mix-blend-difference invert"
+            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full border border-pink-500"
           >
             <span aria-hidden id="cursor" />
           </animated.div>
