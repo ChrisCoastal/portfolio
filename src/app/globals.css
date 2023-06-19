@@ -1,7 +1,7 @@
 @tailwind base;
 
 :root {
-  --primary-color: rgb(87, 218, 155);
+  --primary-color: #d8e3d6;
   --scrollbar-white: rgb(245 245 244);
   --scrollbar-stone-400: #ebe9e5a8;
   --scrollbar-stone-800: #292524;
