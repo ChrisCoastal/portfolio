@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 
+import { CursorTextOptions } from '@/@types/types';
 import cursorTextSvg from '@/constants/cursorTextSvg';
 
 type CursorTextProps = {
   height: string;
   width: string;
-  text: 'click' | 'github' | 'link';
+  text: CursorTextOptions;
   color?: string;
   className?: string;
 };

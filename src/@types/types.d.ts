@@ -8,6 +8,13 @@ export type ProjectId =
   | 'takefive'
   | 'tolowercase';
 
+export type CursorTextOptions =
+  | 'click'
+  | 'github'
+  | 'link'
+  | 'showCode'
+  | 'hideCode';
+
 export type ImageData = { image: StaticImageData; alt: string };
 
 export type CodeSnippet = { code: string; language: string; fileName: string };

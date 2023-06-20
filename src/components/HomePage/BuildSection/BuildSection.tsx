@@ -18,7 +18,6 @@ const FoundationSection = () => {
             creatvity, and aesthetics.
           </p>
         </div>
-        {/* <span className="">◆</span> */}
         <StackGrid />
       </div>
     </Section>

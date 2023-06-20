@@ -19,8 +19,6 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
   className,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const leftCodeIconRef = useRef<SVGSVGElement>(null);
-  const rightCodeIconRef = useRef<SVGSVGElement>(null);
   const dropDownRef = useRef<HTMLDivElement>(null);
   const showCodeRef = useRef<boolean>(show);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -37,7 +35,6 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
   }));
 
   function toggleShowCode() {
-    // const showCode = !showCodeRef.current;
     const showCode = !open;
     animateDropDown.start({
       opacity: showCode ? 1 : 0,
@@ -46,66 +43,45 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
       deg: showCode ? 45 : 0,
     });
     setOpen(showCode);
-    // showCodeRef.current = showCode;
   }
 
   return (
     <div className={`${className}`}>
-      <div className="flex justify-end">
-        <ClickableCursor text="link">
-          {/* <animated.span
-            style={{
-              color: dropDownStyles.fill,
-              backgroundColor: dropDownStyles.bg,
-              transform: `rotate(${dropDownStyles.deg}deg)`,
-            }}
-            onClick={toggleShowCode}
-            className="relative z-50 origin-center"
-            ref={iconRef}
-          >
-            <CodeIcon
-              height="48px"
-              width="48px"
-              color={'currentColor'}
-              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
-              className={`-translate-x-[14px] translate-y-12 border border-stone-400/40 backdrop-blur-[1px] sm:-translate-x-8`}
-            />
-          </animated.span> */}
-          <animated.div
-            style={{
-              transform: `rotate(${dropDownStyles.deg}deg)`,
-            }}
-            onClick={toggleShowCode}
-            className="relative z-50 flex origin-center -translate-x-[14px] translate-y-12  sm:-translate-x-8"
-            ref={iconRef}
-          >
-            <CodeTagIcon
-              height="48px"
-              width="24px"
-              color={'currentColor'}
-              open={open}
-              side="left"
-              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
-              className={`${
-                open ? 'translate-x-5 fill-stone-100' : null
-              } borderbackdrop-blur-[1px] transition-all duration-300`}
-              // ref={leftCodeIconRef}
-            />
-            <CodeTagIcon
-              height="48px"
-              width="24px"
-              color={'currentColor'}
-              open={open}
-              side="right"
-              // className={`mr-[10px] translate-y-8 backdrop-blur-[2px] transition-colors duration-300 sm:mr-[15px]`}
-              className={`${
-                open ? '-translate-x-5 fill-stone-100' : null
-              } borderbackdrop-blur-[1px] rotate-180 transition-all duration-300`}
-              // ref={rightCodeIconRef}
-            />
-          </animated.div>
-        </ClickableCursor>
-      </div>
+      {!show ? (
+        <div className="flex justify-end">
+          <ClickableCursor text={open ? 'hideCode' : 'showCode'}>
+            <animated.div
+              style={{
+                transform: `rotate(${dropDownStyles.deg}deg)`,
+              }}
+              onClick={toggleShowCode}
+              className="relative z-50 flex origin-center -translate-x-[14px] translate-y-12  sm:-translate-x-8"
+              ref={iconRef}
+            >
+              <CodeTagIcon
+                height="48px"
+                width="24px"
+                color={'currentColor'}
+                open={open}
+                side="left"
+                className={`${
+                  open ? 'translate-x-5 fill-stone-100' : null
+                } borderbackdrop-blur-[1px] transition-all duration-300`}
+              />
+              <CodeTagIcon
+                height="48px"
+                width="24px"
+                color={'currentColor'}
+                open={open}
+                side="right"
+                className={`${
+                  open ? '-translate-x-5 fill-stone-100' : null
+                } borderbackdrop-blur-[1px] rotate-180 transition-all duration-300`}
+              />
+            </animated.div>
+          </ClickableCursor>
+        </div>
+      ) : null}
       <animated.div
         style={{
           maxHeight: dropDownStyles.height,

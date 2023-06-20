@@ -1,11 +1,12 @@
 import React, { FC, MouseEvent, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import type { CursorTextOptions } from '@/@types/types';
 import CursorText from '@/components/UI/Cursor/CursorText';
 import { animated, useSpring } from '@react-spring/web';
 
 type ClickableCursorProps = {
-  text: 'link' | 'click' | 'github';
+  text: CursorTextOptions;
   children: React.ReactNode;
 };
 

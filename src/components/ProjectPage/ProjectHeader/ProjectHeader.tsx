@@ -14,15 +14,12 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
   headerImages,
   innerWidth,
 }) => {
+  const maxImages =
+    innerWidth >= breakPoints.lg ? 3 : innerWidth >= breakPoints.sm ? 2 : 1;
+
   return (
     <>
       {headerImages.map((header, i) => {
-        const maxImages =
-          innerWidth >= breakPoints.lg
-            ? 3
-            : innerWidth >= breakPoints.sm
-            ? 2
-            : 1;
         return i < maxImages ? (
           <Image key={uuid()} src={header.image} alt={header.alt} priority />
         ) : null;

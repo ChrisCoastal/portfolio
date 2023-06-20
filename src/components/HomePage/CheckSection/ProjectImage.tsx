@@ -6,8 +6,8 @@ import type { ProjectContent } from '@/@types/types';
 // import { logos } from '@/app/_pageContent/content';
 import { animated, SpringValue } from '@react-spring/web';
 
-import GitHubIcon from '../UI/icons/GitHubIcon/GitHubIcon';
-import LinkIcon from '../UI/icons/LinkIcon/LinkIcon';
+import GitHubIcon from '../../UI/icons/GitHubIcon/GitHubIcon';
+import LinkIcon from '../../UI/icons/LinkIcon/LinkIcon';
 
 export type ScrollImageProps = {
   // image: StaticImageData;

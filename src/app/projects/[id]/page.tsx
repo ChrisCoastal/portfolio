@@ -1,24 +1,21 @@
 'use client';
-import React, { FC, MouseEvent } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { FC } from 'react';
 import { usePathname } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
 
 import projectContent from '@/app/projects/_pageContent';
-import ProjectBottomNav from '@/components/ProjectBottomNav/ProjectBottomNav';
-import ProjectElement from '@/components/ProjectElement/ProjectElement';
-import ProjectGallery from '@/components/ProjectGallery/ProjectGallery';
-import ProjectHeader from '@/components/ProjectHeader/ProjectHeader';
-import ProjectLede from '@/components/ProjectLede/ProjectLede';
-import ProjectLinks from '@/components/ProjectLinks/ProjectLinks';
-import ProjectVideo from '@/components/ProjectVideo/ProjectVideo';
+import ProjectBottomNav from '@/components/ProjectPage/ProjectBottomNav/ProjectBottomNav';
+import ProjectElement from '@/components/ProjectPage/ProjectElement/ProjectElement';
+import ProjectGallery from '@/components/ProjectPage/ProjectGallery/ProjectGallery';
+import ProjectHeader from '@/components/ProjectPage/ProjectHeader/ProjectHeader';
+import ProjectLede from '@/components/ProjectPage/ProjectLede/ProjectLede';
+import ProjectLinks from '@/components/ProjectPage/ProjectLinks/ProjectLinks';
+import ProjectVideo from '@/components/ProjectPage/ProjectVideo/ProjectVideo';
+import ProjectTitle from '@/components/UI/ProjectTitle/ProjectTitle';
 import useResizeWindow from '@/hooks/useResizeWindow';
 
-type Props = {};
-
-const ProjectPage: FC = (props: Props) => {
-  const { windowSize, breakPoints } = useResizeWindow();
+const ProjectPage: FC = () => {
+  const { windowSize } = useResizeWindow();
   const pathId = usePathname().split('/').pop();
   const project = Object.values(projectContent).find(
     (project) => project.id === pathId
@@ -28,8 +25,8 @@ const ProjectPage: FC = (props: Props) => {
     <>
       {project ? (
         <>
-          <div className="mb-8 flex items-center justify-between">
-            <h2>{project.title}</h2>
+          <div className="mb-2 flex items-center justify-between self-end">
+            <ProjectTitle title={project.title} />
             <ProjectLinks
               gitHub={project.links.gitHub}
               site={project.links.site}
@@ -40,8 +37,9 @@ const ProjectPage: FC = (props: Props) => {
               headerImages={project.headerImages}
               innerWidth={windowSize.innerWidth}
             />
-            <ProjectLede lede={project.text.lede} />
           </div>
+          <ProjectLede lede={project.text.lede} />
+
           <div className="mb-36 flex flex-col gap-24">
             <ProjectGallery galleryImages={project.galleryImages} />
             <ProjectVideo video={project.video} />

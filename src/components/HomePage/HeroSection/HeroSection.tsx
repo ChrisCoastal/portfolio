@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import HeroText from '@/components/HeroText/HeroText';
+import HeroText from '@/components/HomePage/HeroSection/HeroText/HeroText';
 import Citation, { CitationProps } from '@/components/UI/Citation/Citation';
 import Section from '@/components/UI/Section/Section';
 import { heroTextRatio, heroTextWidth } from '@/constants/constants';

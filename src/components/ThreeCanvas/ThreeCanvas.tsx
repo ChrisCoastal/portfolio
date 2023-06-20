@@ -1,39 +1,27 @@
 'use client';
 
-import React, {
-  Suspense,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import type { FC, ReactNode, WheelEvent } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
+import type { FC, ReactNode } from 'react';
 
-import AboutSection from '@/components/AboutSection/AboutSection';
-import BuildSection from '@/components/BuildSection/BuildSection';
-import CheckSection from '@/components/CheckSection/CheckSection';
-import HeroIntersects from '@/components/HeroIntersects/HeroIntersects';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import Nav from '@/components/Nav/Nav';
-import ReachSection from '@/components/ReachSection/ReachSection';
+import AboutSection from '@/components/HomePage/AboutSection/AboutSection';
+import BuildSection from '@/components/HomePage/BuildSection/BuildSection';
+import CheckSection from '@/components/HomePage/CheckSection/CheckSection';
+import HeroIntersects from '@/components/HomePage/HeroSection/HeroIntersects/HeroIntersects';
+import HeroSection from '@/components/HomePage/HeroSection/HeroSection';
+import ReachSection from '@/components/HomePage/ReachSection/ReachSection';
+import ThoughtSection from '@/components/HomePage/ThoughtSection/ThoughtSection';
 import ScrollPrompt from '@/components/ScrollPrompt/ScrollPrompt';
-import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
 import SquareModel from '@/components/SquareModel/SquareModel';
-import ThoughtSection from '@/components/ThoughtSection/ThoughtSection';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
 import { useSpring } from '@react-spring/three';
-import { animated, useScroll as useSpringScroll } from '@react-spring/web';
 import {
   Environment,
-  Float,
   Html,
   Scroll,
   ScrollControls,
   useProgress,
 } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-
-import Intersect from '../UI/Intersect/Intersect';
 
 type ThreeCanvasProps = {
   children?: ReactNode;
