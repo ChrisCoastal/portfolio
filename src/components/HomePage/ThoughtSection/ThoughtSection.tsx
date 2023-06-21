@@ -1,9 +1,9 @@
 import React, { FC, forwardRef, LegacyRef, Ref, RefObject } from 'react';
 
 import { mainSections } from '@/app/_pageContent/content';
-import SkillsMarquee from '@/components/SkillsMarquee/SkillsMarquee';
-import Section from '@/components/UI/Section/Section';
-import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
+import Section from '@/components/HomePage/Section/Section';
+import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
+import SkillsMarquee from '@/components/HomePage/ThoughtSection/SkillsMarquee/SkillsMarquee';
 
 const ThoughtSection = forwardRef(function ThoughtSection(
   _,

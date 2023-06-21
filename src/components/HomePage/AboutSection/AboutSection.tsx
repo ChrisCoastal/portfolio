@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 
 import { mainSections } from '@/app/_pageContent/content';
+import Section from '@/components/HomePage/Section/Section';
+import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
 import Paragraph from '@/components/UI/Paragraph/Paragraph';
-import Section from '@/components/UI/Section/Section';
-import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
 
 type Props = {};
 

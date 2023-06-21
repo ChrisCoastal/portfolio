@@ -8,9 +8,9 @@ import { v4 as uuid } from 'uuid';
 import type { ProjectContent } from '@/@types/types';
 import { mainSections } from '@/app/_pageContent/content';
 import projectContent from '@/app/projects/_pageContent';
+import Section from '@/components/HomePage/Section/Section';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
-import Section from '@/components/UI/Section/Section';
-import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
+import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
 
 import CheckProjectImage from './CheckProjectImage';
 

@@ -39,37 +39,29 @@ export const mainSections = {
   },
   buildSection: {
     title: 'build◆ut',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
+    text: [
+      'I like making nice stuff with nice stuff. Employing a core of industry standard tools like React, Typescript, and Tailwind interleaved with a continually expanding selection of what is new / trendy / exciting / best-suited, I design and develop expressive Front End UI that balances elements of usability, creativity, and aesthetics.',
+    ],
   },
   thoughtSection: {
     title: 'thought◆ut',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   projectsSection: {
     title: 'stand◆ut',
-    text: 'Here is a selection of projects that I have worked on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi recusandae quas nulla necessitatibus repellat, asperiores odit et nihil ipsam laudantium, voluptate deleniti vero placeat mollitia molestiae fugit facere exercitationem laborum. -well tested, clean, sit in a space that bridges friendly UI and its translation into clean code',
   },
   aboutSection: {
     title: 'ab◆ut',
     text: [
-      'I have a breadth of experience in professional design, arts, and managerial/ownership roles in hospitality sectors. What it adds up to is someone who not only knows their stuff, but also how that stuff fits into a greater whole.',
-      'Following five years of building and fostering my own business, I made the decision to return to programming and web design, spending 2022 / 2023 updating my front end design and development skillset. These skills buld upon previous freelance experience and being privileged to work as the media Coordinator for the internationally recognized design studio molo in Vancouver.',
-      'Design and programming have been either the focus of or the suppliment to my career for the past 10 years. Regardless of the work I put my focus to, I have found that the core to my approach is accute attention to detail, dedication to excellence, and supporting clients and colleagues to do the same.',
+      'I have a robust background in professional web and print design, fine arts, and team management/ownership roles. The breadth of experience gives me great versatility as a creative who not only knows their stuff visually and contextually, but also how to implement it technically and cooperatively.',
+      'Following six years of building and fostering a successful business, I made the decision to return to programming and web design, spending 2022 / 2023 updating my Front End UI/UX and development skill set. This builds upon my previous experience going back 10 years working in freelance web and illustration, receiving formal art and design training, and holding the position of Media Coordinator for the internationally recognized design studio, molo, in Vancouver.',
+      "My talent is creating thoughtful and visually engaging work. Regardless of the projects I'm focussed on, I have found that core to my approach is acute attention to detail, quick triage / adaptation to changes, and a dedication to excellence.",
     ],
-  },
-  shoutSection: {
-    title: 'shout◆ut',
-    text: 'With thanks to everyone who has inspired',
   },
   reachSection: {
     title: 'reach◆ut',
     text: [
-      'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
+      'Want to make some nice stuff together? I am always interested in getting involved with new projects (big or little), freelance work, or growing into an integral part of an inspiring team.',
     ],
-  },
-  getSection: {
-    title: 'get◆ut',
-    text: 'Have an idea or looking for help creating one? I am always interested in getting involved with new projects and creating nice stuff with inspiring individuals.',
   },
 };
 

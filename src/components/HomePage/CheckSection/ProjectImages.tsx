@@ -1,13 +1,10 @@
-import React, { CSSProperties, FC, useRef, useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import React, { FC } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import projectContent from '@/app/projects/_pageContent';
 import ProjectImage from '@/components/HomePage/CheckSection/ProjectImage';
-import ScrollImage from '@/components/HomePage/CheckSection/ProjectImage';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import type { SpringValue } from '@react-spring/three';
-import { animated, easings, useSprings, useTrail } from '@react-spring/three';
+import { easings, useSprings, useTrail } from '@react-spring/three';
 import { useScroll } from '@react-three/drei';
 
 type ProjectImagesProps = {

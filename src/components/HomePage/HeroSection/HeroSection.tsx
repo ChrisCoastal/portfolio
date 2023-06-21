@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import HeroText from '@/components/HomePage/HeroSection/HeroText/HeroText';
+import Section from '@/components/HomePage/Section/Section';
 import Citation, { CitationProps } from '@/components/UI/Citation/Citation';
-import Section from '@/components/UI/Section/Section';
 import { heroTextRatio, heroTextWidth } from '@/constants/constants';
 
 type HeroSectionProps = {

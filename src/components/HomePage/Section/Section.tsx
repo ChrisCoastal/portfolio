@@ -1,13 +1,6 @@
-import React, {
-  FC,
-  ForwardedRef,
-  forwardRef,
-  LegacyRef,
-  ReactNode,
-  RefObject,
-} from 'react';
+import React, { forwardRef, LegacyRef, ReactNode } from 'react';
 
-import SectionTitle from '@/components/UI/SectionTitle/SectionTitle';
+import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
 
 type SectionProps = {
   title?: string;

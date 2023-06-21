@@ -10,8 +10,8 @@ import ProjectGallery from '@/components/ProjectPage/ProjectGallery/ProjectGalle
 import ProjectHeader from '@/components/ProjectPage/ProjectHeader/ProjectHeader';
 import ProjectLede from '@/components/ProjectPage/ProjectLede/ProjectLede';
 import ProjectLinks from '@/components/ProjectPage/ProjectLinks/ProjectLinks';
+import ProjectTitle from '@/components/ProjectPage/ProjectTitle/ProjectTitle';
 import ProjectVideo from '@/components/ProjectPage/ProjectVideo/ProjectVideo';
-import ProjectTitle from '@/components/UI/ProjectTitle/ProjectTitle';
 import useResizeWindow from '@/hooks/useResizeWindow';
 
 const ProjectPage: FC = () => {

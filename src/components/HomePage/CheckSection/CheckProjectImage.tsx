@@ -6,10 +6,7 @@ import Link from 'next/link';
 import { v4 as uuid } from 'uuid';
 
 import type { ProjectContent } from '@/@types/types';
-import { mainSections } from '@/app/_pageContent/content';
-import projectContent from '@/app/projects/_pageContent';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
-import Section from '@/components/UI/Section/Section';
 
 type CheckProjectImageProps = {
   project: ProjectContent;

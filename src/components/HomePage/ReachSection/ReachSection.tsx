@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { mainSections } from '@/app/_pageContent/content';
+import Section from '@/components/HomePage/Section/Section';
 import Paragraph from '@/components/UI/Paragraph/Paragraph';
-import Section from '@/components/UI/Section/Section';
 
 type ReachSectionProps = {
   screenWidth: number;

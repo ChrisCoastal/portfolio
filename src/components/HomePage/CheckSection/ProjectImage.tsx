@@ -1,19 +1,15 @@
-import React, { CSSProperties, FC } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
+import React, { FC } from 'react';
+import Image from 'next/image';
 
 import type { ProjectContent } from '@/@types/types';
-// import { logos } from '@/app/_pageContent/content';
-import { animated, SpringValue } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 
 import GitHubIcon from '../../UI/icons/GitHubIcon/GitHubIcon';
 import LinkIcon from '../../UI/icons/LinkIcon/LinkIcon';
 
 export type ScrollImageProps = {
-  // image: StaticImageData;
   content: ProjectContent;
   index: number;
-  // alt: string;
   width: number;
   height: number;
   className?: string;
@@ -22,10 +18,8 @@ export type ScrollImageProps = {
 };
 
 const ScrollImage: FC<ScrollImageProps> = ({
-  // image,
   content,
   index,
-  // alt,
   className,
   height,
   width,
@@ -53,8 +47,8 @@ const ScrollImage: FC<ScrollImageProps> = ({
         onMouseLeave={handleMouseLeave}
       >
         <Image
-          src={content.headerImages[0]}
-          alt={content.alt}
+          src={content.thumbnail.image}
+          alt={content.thumbnail.alt}
           width={width}
           height={height}
         />
@@ -73,7 +67,7 @@ const ScrollImage: FC<ScrollImageProps> = ({
         >
           <h4 className="pr-4 text-lg font-bold text-white">{content.title}</h4>
           <span className="rounded-lg bg-white px-2 text-xs text-stone-800 backdrop-blur-md">
-            <p>{content.kind}</p>
+            <p>{content.projectType}</p>
           </span>
           <span className="rounded-lg bg-white px-2 text-xs text-stone-800 backdrop-blur-md">
             <p>{content.year}</p>
@@ -93,28 +87,31 @@ const ScrollImage: FC<ScrollImageProps> = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <span className="rounded-full bg-white/30 p-1 backdrop-blur-md ">
-            <a href={content.link} target="_blank">
-              <LinkIcon
-                width={'28px'}
-                height={'28px'}
-                className="transition-all duration-500 hover:fill-white"
-              />
-            </a>
-          </span>
-          <span className="rounded-full bg-white/30 p-1 backdrop-blur-md">
-            <a href={content.github} target="_blank">
-              <GitHubIcon
-                width={'28px'}
-                height={'28px'}
-                className="transition-all duration-500 hover:fill-white"
-              />
-            </a>
-          </span>
+          {content.links?.site ? (
+            <span className="rounded-full bg-white/30 p-1 backdrop-blur-md ">
+              <a href={content.links.site} target="_blank">
+                <LinkIcon
+                  width={'28px'}
+                  height={'28px'}
+                  className="transition-all duration-500 hover:fill-white"
+                />
+              </a>
+            </span>
+          ) : null}
+          {content.links?.gitHub ? (
+            <span className="rounded-full bg-white/30 p-1 backdrop-blur-md">
+              <a href={content.links.gitHub} target="_blank">
+                <GitHubIcon
+                  width={'28px'}
+                  height={'28px'}
+                  className="transition-all duration-500 hover:fill-white"
+                />
+              </a>
+            </span>
+          ) : null}
         </div>
       )}
     </>
-    // </div>
   );
 };
 

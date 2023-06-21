@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { mainSections } from '@/app/_pageContent/content';
-import StackGrid from '@/components/StackGrid/StackGrid';
-import Section from '@/components/UI/Section/Section';
+import Section from '@/components/HomePage/Section/Section';
+import StackGrid from '@/components/UI/StackGrid/StackGrid';
 
 const FoundationSection = () => {
   return (
