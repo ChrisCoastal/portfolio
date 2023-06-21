@@ -1,6 +1,6 @@
 'use-client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import { animated, useSpring } from '@react-spring/web';
 import { useScroll } from '@react-three/drei';
@@ -9,7 +9,7 @@ import { useFrame } from '@react-three/fiber';
 type Props = {};
 
 const ScrollPrompt = (props: Props) => {
-  const scrollPromptRef = useRef(null);
+  const timerRef = useRef<NodeJS.Timer | null>(null);
   const scrollTopRef = useRef(true);
 
   // note: useScroll does not work when destructured
@@ -30,12 +30,14 @@ const ScrollPrompt = (props: Props) => {
 
     if (scroll.offset === 0 && !scrollTopRef.current) {
       scrollTopRef.current = true;
+      timerRef.current && clearTimeout(timerRef.current);
       const timer = setTimeout(() => {
         api.start({
           from: { opacity: 0 },
           to: { opacity: 1 },
         });
       }, 3000);
+      timerRef.current = timer;
     }
   });
 
