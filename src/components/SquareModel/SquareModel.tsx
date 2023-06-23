@@ -23,50 +23,38 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
   const group = useRef(null);
   // @ts-expect-error useGLTF is mistyped from drei
   const { nodes, materials, animations, scene } = useGLTF(
-    '/assets/nice-stuff.glb'
+    '/render/nice-stuff.glb'
   );
   const { actions, names } = useAnimations(animations, group);
   const depthBuffer = useDepthBuffer({ frames: 1 });
   const scroll = useScroll();
 
-  // const displacement = useLoader(
-  //   THREE.TextureLoader,
-  //   '/assets/displacement-soft-clouds.jpeg'
-  // );
-
   useEffect(() => {
-    // console.log(actions);
-    // const interval = setInterval(() => {
-    //   console.log(scroll.offset);
-    // }, 1000);
-
-    const action = actions[names[0]];
     const actionSquare = actions['CubeAction.005'];
-    // console.log(action, actionSquare);
     if (!actionSquare) return;
     void (actionSquare.play().paused = true);
     void (actionSquare.play().paused = true);
-
-    // return () => clearInterval(interval);
   }, [actions, names, scroll.offset]);
 
   useFrame((state, delta) => {
-    // const action = actions[names[0]];
     const actionCamera = actions['CameraAction'];
     const actionSquare = actions['CubeAction.005'];
-    if (!actionSquare) return;
-    actionSquare.time = THREE.MathUtils.damp(
-      actionSquare.time,
-      actionSquare.getClip().duration * scroll.offset,
-      1000,
-      delta
-    );
-    actionSquare.time = THREE.MathUtils.damp(
-      actionSquare.time,
-      actionSquare.getClip().duration * scroll.offset,
-      1000,
-      delta
-    );
+    if (actionSquare) {
+      actionSquare.time = THREE.MathUtils.damp(
+        actionSquare.time,
+        actionSquare.getClip().duration * scroll.offset,
+        1000,
+        delta
+      );
+    }
+    if (actionCamera) {
+      actionCamera.time = THREE.MathUtils.damp(
+        actionCamera.time,
+        actionCamera.getClip().duration * scroll.offset,
+        1000,
+        delta
+      );
+    }
   });
 
   // const Model = <Clone object={nodes.Cube} />;
@@ -89,14 +77,27 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
         </group>
 
         <Float rotationIntensity={2} speed={0.5}>
+          {/* <Clone object={nodes.Cube} />
           <Clone object={nodes.Cube} />
-          {/* <mesh
+          <Clone object={nodes.Cube} /> */}
+          <mesh
             name="Cube"
+            castShadow
+            receiveShadow
             geometry={nodes.Cube.geometry}
             material={materials['Material.002']}
-            // position={[0.95, 1.75, 1.53]}
-            // rotation={[2.53, -0.57, 1.93]}
-          ></mesh> */}
+            rotation={[0.78, 0, 0]}
+          />
+        </Float>
+        <Float rotationIntensity={6} speed={0.8}>
+          <mesh
+            name="Cube"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube.geometry}
+            material={materials['Material.002']}
+            rotation={[0.78, 0, 0]}
+          />
         </Float>
         {/* <Float rotationIntensity={3} speed={0.3}>
           <Clone object={nodes.Cube} />
@@ -135,4 +136,4 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
 };
 
 export default SquareModel;
-useGLTF.preload('/assets/nice-stuff.glb');
+useGLTF.preload('/render/nice-stuff.glb');

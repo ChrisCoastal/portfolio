@@ -2,8 +2,8 @@ import { SectionsContent } from '@/@types/types';
 
 export const logoIndex = [
   'nextjs',
-  'apollo',
-  'blender',
+  'vite',
+  'graphql',
   'sass',
   'threejs',
   'react', // center
@@ -15,12 +15,12 @@ export const logoIndex = [
   'firebase',
   'git',
   'jsont',
-  'graphql',
+  'xd',
   'html',
   'illustrator',
   'figma',
   'javascript',
-  'xd',
+  'blender',
   'mui',
   '_', // center
   '_', // center
@@ -32,7 +32,7 @@ export const logoIndex = [
   'indesign',
   'css',
   'github',
-  'vite',
+  'apollo',
 ];
 
 export const homeSections: SectionsContent = {

@@ -18,7 +18,7 @@ const AboutSection = (props: Props) => {
         <Paragraph text={homeSections.aboutSection.text} />
         <button className="relative mt-8 flex h-8 w-48 flex-1 items-center self-center">
           <div className="absolute left-0 top-0 h-8 w-48 bg-stone-800" />
-          <div className="static z-10 w-full -translate-y-1 translate-x-1 border border-stone-800/50 bg-stone-100 transition-all duration-700 ease-in-out hover:-translate-y-1 hover:translate-x-1 sm:translate-x-0 sm:translate-y-0">
+          <div className="static z-10 w-full border border-stone-800/50 bg-stone-100 transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:translate-x-0.5 active:-translate-y-0 active:translate-x-0">
             CURRICULUM VITAE
           </div>
         </button>

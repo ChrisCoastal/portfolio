@@ -11,8 +11,8 @@ const projectContent: { [key: string]: ProjectContent } = {
   cribbagemonster,
   rainbeau,
   tolowercase,
-  takefive,
   studioa,
+  takefive,
   focustrap,
 };
 
