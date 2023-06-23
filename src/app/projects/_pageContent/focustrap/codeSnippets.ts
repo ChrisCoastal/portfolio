@@ -1,26 +1,18 @@
 export const code = {
-  modal: `const Modal: FC<ModalProps> = ({ options, children }) => {
-    const modalRoot = document.getElementById('modal-root');
-    
+  modal: `const MyModal = ({ options, children }) => {
     const [show, setShow] = useState(false);
-    
+
     function toggleModal() {
       setShow(!show);
     }
+
+    const modalRoot = document.getElementById('modal-root');
     
     return show && modalRoot
       ? createPortal(
           <div role="dialog">
             <FocusTrap options={options}>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div>
-                  <button
-                    onClick={toggleModal}
-                    X
-                  </button>
-                </div>
-                <div className="flex flex-col items-center gap-4">{children}</div>
-              </div>
+              /* Modal content */
             </FocusTrap>
           </div>,
           modalRoot

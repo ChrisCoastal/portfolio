@@ -4,7 +4,7 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
-import takefive_image from '/public/projects/takefive/images/takefive.jpg';
+import takefive_image from '/public/assets/projects/takefive/images/takefive.jpg';
 
 const takefive: ProjectContent = {
   title: 'Take Five',

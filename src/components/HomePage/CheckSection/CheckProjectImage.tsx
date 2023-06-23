@@ -30,7 +30,7 @@ const CheckProjectImage: FC<CheckProjectImageProps> = ({ project }) => {
         </Link>
       </ClickableCursor>
       <div
-        className={`absolute bottom-0 left-0 top-0 mb-${projectTextY} w-full bg-stone-800`}
+        className={`absolute bottom-0 top-0 mb-${projectTextY} w-full bg-stone-800`}
       />
       <div className={`flex h-${projectTextY} items-center justify-between`}>
         <h4>{project.title}</h4>

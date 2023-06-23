@@ -1,6 +1,6 @@
 import React, { FC, forwardRef, LegacyRef, Ref, RefObject } from 'react';
 
-import { mainSections } from '@/app/_pageContent/content';
+import { homeSections } from '@/app/_pageContent/content';
 import Section from '@/components/HomePage/Section/Section';
 import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
 import SkillsMarquee from '@/components/HomePage/ThoughtSection/SkillsMarquee/SkillsMarquee';
@@ -16,7 +16,7 @@ const ThoughtSection = forwardRef(function ThoughtSection(
         {/* <div className="border border-stone-800 bg-stone-100"> */}
         {/* <SectionTitle
               className="-rotate-45"
-              title={mainSections.thoughtSection.title}
+              title={homeSections.thoughtSection.title}
             /> */}
         {/* </div> */}
 

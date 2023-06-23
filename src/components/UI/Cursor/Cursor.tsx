@@ -75,6 +75,11 @@ const Cursor: FC<CursorProps> = () => {
             aria-hidden
             style={outlineStyles}
             className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full border border-[#271c29] mix-blend-difference invert"
+          />
+          <animated.div
+            aria-hidden
+            style={outlineStyles}
+            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full"
           >
             <span aria-hidden id="cursor" />
           </animated.div>

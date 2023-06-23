@@ -165,7 +165,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
             </Scroll>
           </ScrollControls>
         </Suspense>
-        <Environment files="/assets/clouds.hdr" />
+        <Environment files="/assets/background.hdr" />
       </Canvas>
     </div>
   );

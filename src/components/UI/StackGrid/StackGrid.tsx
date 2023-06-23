@@ -70,7 +70,7 @@ const StackGrid: FC = () => {
   return (
     <div
       ref={observerRef}
-      className="m-24 grid h-64 w-64 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1 xs:h-96 xs:w-96"
+      className="my-32 grid h-64 w-64 origin-center rotate-45 grid-cols-4 grid-rows-4 gap-1 xs:h-96 xs:w-96"
     >
       {entryStyles.map((styles, i) =>
         animatedIndices.includes(i) ? (

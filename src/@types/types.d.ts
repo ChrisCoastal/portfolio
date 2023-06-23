@@ -39,20 +39,26 @@ export type ProjectLinks = {
   nextProject: ProjectId;
 };
 
+export type Section = { title: string; text: string[] };
+
+export type SectionsContent = Record<string, Section>;
+
+export type ProjectList = { intro: string; items: string[] };
+
+export type ProjectText = {
+  lede: string[];
+  upperBody: string[];
+  lowerBody: string[];
+  lists?: ProjectList[];
+};
+
 export type ProjectContent = {
   id: ProjectId;
   title: string;
   thumbnail: ImageData;
   headerImages: ImageData[];
   galleryImages: ImageData[];
-  text: {
-    lede: {
-      first: string;
-      second?: string;
-    };
-    description: string;
-    body?: string[];
-  };
+  text: ProjectText;
   elements?: ProjectElement[];
   projectType: string;
   year: number;

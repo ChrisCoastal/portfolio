@@ -1,24 +1,22 @@
 import React, { FC } from 'react';
+import { v4 as uuid } from 'uuid';
+
+import Paragraph from '@/components/UI/Paragraph/Paragraph';
 
 type ProjectLedeProps = {
-  lede: {
-    first: string;
-    second?: string;
-  };
+  lede: string[];
+  className?: string;
 };
 
-const ProjectLede: FC<ProjectLedeProps> = ({ lede }) => {
+const ProjectLede: FC<ProjectLedeProps> = ({ lede, className }) => {
   return (
-    <>
-      <p className="row-start-2 font-light md:col-start-1 lg:col-start-2">
-        {lede.first}
-      </p>
-      {lede.second && (
-        <p className="row-start-3 font-light md:col-start-2 lg:col-start-3">
-          {lede.second}
-        </p>
-      )}
-    </>
+    <div className="flex justify-center">
+      <Paragraph
+        key={uuid()}
+        className={`${className} row-start-2 md:col-start-1 lg:col-start-2`}
+        text={lede}
+      />
+    </div>
   );
 };
 

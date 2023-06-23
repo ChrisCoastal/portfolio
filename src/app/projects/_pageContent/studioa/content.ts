@@ -4,11 +4,11 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
-import studioa_image from '/public/projects/studioa/images/studioa.jpg';
-import studioa_image_1 from '/public/projects/studioa/images/studioa_1.jpg';
-import studioa_image_2 from '/public/projects/studioa/images/studioa_2.jpg';
-import studioa_image_3 from '/public/projects/studioa/images/studioa_3.jpg';
-import studioa_image_4 from '/public/projects/studioa/images/studioa_4.jpg';
+import studioa_image from '/public/assets/projects/studioa/images/studioa.jpg';
+import studioa_image_1 from '/public/assets/projects/studioa/images/studioa_1.jpg';
+import studioa_image_2 from '/public/assets/projects/studioa/images/studioa_2.jpg';
+import studioa_image_3 from '/public/assets/projects/studioa/images/studioa_3.jpg';
+import studioa_image_4 from '/public/assets/projects/studioa/images/studioa_4.jpg';
 
 const studioa: ProjectContent = {
   title: 'Studio A',

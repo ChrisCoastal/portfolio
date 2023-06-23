@@ -55,7 +55,7 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
                 transform: `rotate(${dropDownStyles.deg}deg)`,
               }}
               onClick={toggleShowCode}
-              className="relative z-50 flex origin-center -translate-x-[14px] translate-y-12  sm:-translate-x-8"
+              className="relative z-10 flex origin-center -translate-x-[14px] translate-y-12  sm:-translate-x-8"
               ref={iconRef}
             >
               <CodeTagIcon

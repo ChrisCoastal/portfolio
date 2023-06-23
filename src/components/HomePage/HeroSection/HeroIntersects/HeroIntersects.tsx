@@ -1,6 +1,5 @@
 import React, { FC, useRef } from 'react';
 
-import { mainSections } from '@/app/_pageContent/content';
 import type { ViewPortPos } from '@/hooks/useIntersectionObserver';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
@@ -22,18 +21,12 @@ const HeroIntersects: FC<HeroIntersectsProps> = ({ animateText }) => {
     callback: animateText,
   });
 
-  const heroText = mainSections.heroSection.title;
-  const heroIntersects = heroText.map((_, i) => (
+  return (
     <div
-      key={i}
       ref={animateRef}
-      className={`pointer-events-none absolute z-40 h-40 w-full top-[${
-        i * 100 + 'vh'
-      }]`}
+      className={`pointer-events-none absolute z-40 h-40 w-full`}
     ></div>
-  ));
-
-  return <>{heroIntersects}</>;
+  );
 };
 
 export default HeroIntersects;

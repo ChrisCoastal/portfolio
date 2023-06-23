@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
 
 import projectContent from '@/app/projects/_pageContent';
+import ProjectBody from '@/components/ProjectPage/ProjectBody/ProjectBody';
 import ProjectBottomNav from '@/components/ProjectPage/ProjectBottomNav/ProjectBottomNav';
 import ProjectElement from '@/components/ProjectPage/ProjectElement/ProjectElement';
 import ProjectGallery from '@/components/ProjectPage/ProjectGallery/ProjectGallery';
@@ -25,27 +26,27 @@ const ProjectPage: FC = () => {
     <>
       {project ? (
         <>
-          <div className="mb-2 flex items-center justify-between self-end">
-            <ProjectTitle title={project.title} />
-            <ProjectLinks
-              gitHub={project.links.gitHub}
-              site={project.links.site}
-            />
-          </div>
-          <div className="mb-24 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
+          {/* <div className="mb-2 flex items-center justify-between self-end"> */}
+          <ProjectTitle title={project.title} />
+          {/* </div> */}
+          <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
             <ProjectHeader
               headerImages={project.headerImages}
               innerWidth={windowSize.innerWidth}
             />
           </div>
+          <ProjectLinks
+            gitHub={project.links.gitHub}
+            site={project.links.site}
+          />
           <ProjectLede lede={project.text.lede} />
-
           <div className="mb-36 flex flex-col gap-24">
             <ProjectGallery galleryImages={project.galleryImages} />
+
+            <ProjectBody body={project.text.upperBody} />
+
             <ProjectVideo video={project.video} />
-            {project.text.description && (
-              <p className="mx-20 font-light">{project.text.description}</p>
-            )}
+            <ProjectBody body={project.text.lowerBody} />
             {project.elements
               ? project.elements.map((element) => (
                   <ProjectElement key={uuid()} element={element} />

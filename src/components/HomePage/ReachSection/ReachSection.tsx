@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { mainSections } from '@/app/_pageContent/content';
+import { homeSections } from '@/app/_pageContent/content';
 import Section from '@/components/HomePage/Section/Section';
 import Paragraph from '@/components/UI/Paragraph/Paragraph';
 
@@ -10,9 +10,9 @@ type ReachSectionProps = {
 
 const ReachSection: FC<ReachSectionProps> = ({ screenWidth }) => {
   return (
-    <Section title={mainSections.reachSection.title} className="relative">
+    <Section title={homeSections.reachSection.title} className="relative">
       <div className="relative z-10 flex flex-col items-center gap-4">
-        <Paragraph text={mainSections.reachSection.text} />
+        <Paragraph text={homeSections.reachSection.text} />
         <div className="flex h-96 w-96 items-center justify-center">
           <div
             className="flex h-[271.5px] w-[271.5px] origin-center rotate-45 

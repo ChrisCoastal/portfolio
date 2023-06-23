@@ -4,10 +4,10 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
-import rainbeau_image_1 from '/public/projects/rainbeau/images/rainbeau_1.jpg';
-import rainbeau_image_2 from '/public/projects/rainbeau/images/rainbeau_2.jpg';
-import rainbeau_image_3 from '/public/projects/rainbeau/images/rainbeau_3.jpg';
-import rainbeau_image_4 from '/public/projects/rainbeau/images/rainbeau_4.jpg';
+import rainbeau_image_1 from '/public/assets/projects/rainbeau/images/rainbeau_1.jpg';
+import rainbeau_image_2 from '/public/assets/projects/rainbeau/images/rainbeau_2.jpg';
+import rainbeau_image_3 from '/public/assets/projects/rainbeau/images/rainbeau_3.jpg';
+import rainbeau_image_4 from '/public/assets/projects/rainbeau/images/rainbeau_4.jpg';
 
 const rainbeau: ProjectContent = {
   id: 'rainbeau',
