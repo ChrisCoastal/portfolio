@@ -64,27 +64,23 @@ const Cursor: FC<CursorProps> = () => {
 
   return (
     <>
-      {size.innerWidth > breakPoints.lg ? (
-        <>
-          <animated.div
-            aria-hidden
-            style={cursorStyles}
-            className="pointer-events-none fixed z-[1000] h-4 w-4 rounded-full bg-stone-100 mix-blend-difference"
-          />
-          <animated.div
-            aria-hidden
-            style={outlineStyles}
-            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full border border-stone-100 mix-blend-difference"
-          >
-            <span aria-hidden id="cursor" />
-          </animated.div>
-          <animated.div
-            aria-hidden
-            style={outlineStyles}
-            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full"
-          ></animated.div>
-        </>
-      ) : null}
+      <animated.div
+        aria-hidden
+        style={cursorStyles}
+        className="pointer-events-none invisible fixed z-[1000] h-4 w-4 rounded-full bg-stone-100 mix-blend-difference md:visible"
+      />
+      <animated.div
+        aria-hidden
+        style={outlineStyles}
+        className="pointer-events-none invisible fixed z-[1000] h-12 w-12 rounded-full border border-stone-100 mix-blend-difference md:visible"
+      >
+        <span aria-hidden id="cursor" />
+      </animated.div>
+      <animated.div
+        aria-hidden
+        style={outlineStyles}
+        className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full"
+      ></animated.div>
     </>
   );
 };
