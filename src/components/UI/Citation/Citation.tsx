@@ -2,7 +2,7 @@ import React, { FC, useRef } from 'react';
 
 import CitationIcon from '@/components/UI/Citation/CitationIcon';
 import CitationText from '@/components/UI/Citation/CitationText';
-import { heroSvgRatio, svgScale } from '@/constants/constants';
+import { heroTextRatio, svgScale } from '@/constants/constants';
 import { animated, useSpring } from '@react-spring/web';
 
 export type CitationProps = {
@@ -27,8 +27,8 @@ const Citation: FC<CitationProps> = ({
 }) => {
   const timerRef = useRef<NodeJS.Timer | null>(null);
   const open = useRef<boolean>(false);
-  const top = pos.top * heroSvgRatio[orientation] * svgScale[orientation].y;
-  const left = pos.left * heroSvgRatio[orientation] * svgScale[orientation].x;
+  const top = pos.top * heroTextRatio[orientation] * svgScale[orientation].y;
+  const left = pos.left * heroTextRatio[orientation] * svgScale[orientation].x;
   const rotation = {
     t: 'rotate-[315deg]',
     r: 'rotate-[45deg]',
