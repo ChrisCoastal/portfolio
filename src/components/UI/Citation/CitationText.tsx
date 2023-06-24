@@ -10,7 +10,7 @@ type CitationIconProps = {
 const CitationIcon: FC<CitationIconProps> = ({
   key,
   size,
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   const { height, width, path } = paths['chris'];

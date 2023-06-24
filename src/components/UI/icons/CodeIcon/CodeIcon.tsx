@@ -12,7 +12,7 @@ const CodeIcon: FC<CodeIconProps> = ({
   height,
   width,
   text = 'code',
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   return (

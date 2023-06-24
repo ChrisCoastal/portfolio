@@ -15,7 +15,7 @@ const CursorText: FC<CursorTextProps> = ({
   height,
   width,
   text,
-  color = '#ff3654',
+  color = '#f5f5f4',
   className,
 }) => {
   return (
@@ -25,7 +25,7 @@ const CursorText: FC<CursorTextProps> = ({
       width={width}
       viewBox="0 0 180 180"
       fill={color}
-      className={`svg ${className} mix-blend-normal`}
+      className={`svg ${className}`}
     >
       {cursorTextSvg[text]}
     </svg>

@@ -12,7 +12,7 @@ const CitationIcon: FC<CitationIconProps> = ({
   number,
   height,
   width,
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   return (

@@ -23,12 +23,7 @@ const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
       {gitHub ? (
         <ClickableCursor text="github">
           <Link href={gitHub} target="_blank">
-            <GitHubIcon
-              height="32px"
-              width="32px"
-              className="inline"
-              color="fff"
-            />
+            <GitHubIcon height="32px" width="32px" className="inline" />
           </Link>
         </ClickableCursor>
       ) : null}

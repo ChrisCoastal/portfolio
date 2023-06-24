@@ -12,7 +12,7 @@ const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
       <div className="flex items-center">
         <Link
           href={`/projects/${prev.link}`}
-          className={`grid h-12 w-12 -rotate-45 grid-cols-3 grid-rows-3 gap-0.5 border sm:h-16 sm:w-16`}
+          className={`grid h-12 w-12 -rotate-45 grid-cols-3 grid-rows-3 gap-0.5 sm:h-16 sm:w-16`}
         >
           <span className="row-start-1 bg-stone-800"></span>
           <span className="row-start-1 bg-stone-800"></span>
@@ -37,7 +37,7 @@ const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
         </Link>
         <Link
           href={`/projects/${next.link}`}
-          className={`grid h-12 w-12 rotate-45 grid-cols-3 grid-rows-3 gap-0.5 border sm:h-16 sm:w-16`}
+          className={`grid h-12 w-12 rotate-45 grid-cols-3 grid-rows-3 gap-0.5 sm:h-16 sm:w-16`}
         >
           <span className="row-start-1 bg-stone-800"></span>
           <span className="row-start-1 bg-stone-800"></span>

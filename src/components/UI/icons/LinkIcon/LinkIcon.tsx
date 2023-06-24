@@ -10,7 +10,7 @@ type LinkIconProps = {
 const LinkIcon: FC<LinkIconProps> = ({
   height,
   width,
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   return (

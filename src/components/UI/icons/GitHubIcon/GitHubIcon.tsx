@@ -10,7 +10,7 @@ type GitHubIconProps = {
 const GitHubIcon: FC<GitHubIconProps> = ({
   height,
   width,
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   return (

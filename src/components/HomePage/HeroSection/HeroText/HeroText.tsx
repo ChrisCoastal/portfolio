@@ -12,7 +12,7 @@ type HeroTextProps = {
 const HeroText: FC<HeroTextProps> = ({
   orientation,
   width,
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   const height = width * heroTextRatio[orientation];

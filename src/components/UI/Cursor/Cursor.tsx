@@ -69,20 +69,20 @@ const Cursor: FC<CursorProps> = () => {
           <animated.div
             aria-hidden
             style={cursorStyles}
-            className="pointer-events-none fixed z-[1000] h-4 w-4 rounded-full bg-stone-800 mix-blend-difference invert"
+            className="pointer-events-none fixed z-[1000] h-4 w-4 rounded-full bg-stone-100 mix-blend-difference"
           />
           <animated.div
             aria-hidden
             style={outlineStyles}
-            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full border border-stone-800 mix-blend-difference invert"
-          />
+            className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full border border-stone-100 mix-blend-difference"
+          >
+            <span aria-hidden id="cursor" />
+          </animated.div>
           <animated.div
             aria-hidden
             style={outlineStyles}
             className="pointer-events-none fixed z-[1000] h-12 w-12 rounded-full"
-          >
-            <span aria-hidden id="cursor" />
-          </animated.div>
+          ></animated.div>
         </>
       ) : null}
     </>

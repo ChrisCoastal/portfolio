@@ -17,7 +17,7 @@ const CodeTagIcon: FC<CodeTagIconProps> = ({
   width,
   open,
   text = 'code',
-  color = '#000',
+  color = '#292524',
   className,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);

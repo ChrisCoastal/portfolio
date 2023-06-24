@@ -96,7 +96,7 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
             receiveShadow
             geometry={nodes.Cube.geometry}
             material={materials['Material.002']}
-            rotation={[0.78, 0, 0]}
+            rotation={[0, -6, 0]}
           />
         </Float>
         {/* <Float rotationIntensity={3} speed={0.3}>
