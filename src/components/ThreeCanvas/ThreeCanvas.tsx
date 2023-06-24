@@ -122,8 +122,6 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log(thoughtSectionRef);
-
   return (
     <div
       style={{ height: '100vh', width: '100vw' }}

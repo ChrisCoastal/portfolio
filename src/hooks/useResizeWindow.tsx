@@ -18,8 +18,8 @@ const useResizeWindow = (callback?: () => any) => {
     innerHeight: number;
     innerWidth: number;
   }>({
-    innerHeight: window.innerHeight,
-    innerWidth: window.innerWidth,
+    innerHeight: 0,
+    innerWidth: 0,
   });
 
   useEffect(() => {
@@ -34,7 +34,8 @@ const useResizeWindow = (callback?: () => any) => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [callback]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { windowSize, breakPoints };
 };
