@@ -1,5 +1,11 @@
 import type { ProjectContent } from '@/@types/types';
 
+import cribbagemonster_image from '../public/assets/projects/cribbagemonster/images/cribbagemonster.jpg';
+import cribbagemonster_image_1 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_1.jpg';
+import cribbagemonster_image_2 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_2.jpg';
+import cribbagemonster_image_3 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_3.jpg';
+import cribbagemonster_image_4 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_4.jpg';
+
 import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
@@ -10,27 +16,18 @@ const cribbagemonster: ProjectContent = {
   projectType: 'web',
   year: 2023,
   thumbnail: {
-    image: '/assets/projects/cribbagemonster/images/cribbagemonster.jpg',
+    image: cribbagemonster_image,
     alt: 'Cribbage Monster - Are you a Monster?',
   },
   text,
   headerImages: [
-    {
-      image: '/assets/projects/cribbagemonster/images/cribbagemonster_1.jpg',
-      alt: 'a cribbage board',
-    },
-    {
-      image: '/assets/projects/cribbagemonster/images/cribbagemonster_2.jpg',
-      alt: 'a cribbage board',
-    },
-    {
-      image: '/assets/projects/cribbagemonster/images/cribbagemonster_3.jpg',
-      alt: 'a cribbage board',
-    },
+    { image: cribbagemonster_image_1, alt: 'a cribbage board' },
+    { image: cribbagemonster_image_2, alt: 'a cribbage board' },
+    { image: cribbagemonster_image_3, alt: 'a cribbage board' },
   ],
   galleryImages: [
     {
-      image: '/assets/projects/cribbagemonster/images/cribbagemonster_4.jpg',
+      image: cribbagemonster_image_4,
       alt: 'screenshot of the game dashboard',
     },
   ],

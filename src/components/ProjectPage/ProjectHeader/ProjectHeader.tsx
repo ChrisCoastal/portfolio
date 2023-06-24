@@ -21,7 +21,13 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
     <>
       {headerImages.map((header, i) => {
         return i < maxImages ? (
-          <Image key={uuid()} src={header.image} alt={header.alt} priority />
+          <Image
+            key={uuid()}
+            width={500}
+            src={header.image}
+            alt={header.alt}
+            priority
+          />
         ) : null;
       })}
     </>
