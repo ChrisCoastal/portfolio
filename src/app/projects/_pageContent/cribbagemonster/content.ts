@@ -31,12 +31,13 @@ const cribbagemonster: ProjectContent = {
       alt: 'screenshot of the game dashboard',
     },
   ],
-  video: '/projects/cribbagemonster/video/cribbagemonster-demo',
+  video: '/assets/projects/cribbagemonster/video/cribbagemonster-demo',
   elements: [
     {
       title: 'player interface',
       media: {
-        video: '/projects/cribbagemonster/video/cribbagemonster-cardPlay',
+        video:
+          '/assets/projects/cribbagemonster/video/cribbagemonster-cardPlay',
         alt: '',
       },
       snippets: [

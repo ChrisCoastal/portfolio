@@ -27,7 +27,7 @@ const tolowercase: ProjectContent = {
   galleryImages: [
     { image: tolowercase_image_4, alt: 'screenshot of tolowercase app' },
   ],
-  video: '/projects/tolowercase/video/tolowercase-demo',
+  video: '/assets/projects/tolowercase/video/tolowercase-demo',
   links,
 };
 

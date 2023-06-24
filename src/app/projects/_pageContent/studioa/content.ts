@@ -23,7 +23,7 @@ const studioa: ProjectContent = {
     { image: studioa_image_3, alt: 'screenshot of studioa app' },
   ],
   galleryImages: [],
-  video: '/projects/studioa/video/studioa-demo',
+  video: '/assets/projects/studioa/video/studioa-demo',
   elements: [
     {
       title: 'landing page',

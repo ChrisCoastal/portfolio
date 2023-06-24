@@ -28,7 +28,10 @@ const rainbeau: ProjectContent = {
   elements: [
     {
       title: 'loading spinner',
-      media: { video: '/projects/rainbeau/video/rainbeau-spinner', alt: '' },
+      media: {
+        video: '/assets/projects/rainbeau/video/rainbeau-spinner',
+        alt: '',
+      },
       snippets: [
         {
           language: 'tsx',
