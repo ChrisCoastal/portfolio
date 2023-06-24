@@ -11,9 +11,12 @@ export type ProjectId =
 export type CursorTextOptions =
   | 'click'
   | 'github'
+  | 'vitae'
   | 'link'
   | 'showCode'
-  | 'hideCode';
+  | 'hideCode'
+  | 'prev'
+  | 'next';
 
 export type ImageData = { image: StaticImageData; alt: string };
 

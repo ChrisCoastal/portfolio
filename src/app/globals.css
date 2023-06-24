@@ -16,6 +16,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-white) var(--scrollbar-stone-800);
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 .invert-scrollbar {
