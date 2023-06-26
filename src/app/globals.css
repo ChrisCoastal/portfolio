@@ -8,15 +8,10 @@
   --transparent: 'transparent';
 }
 
-/* @media (min-width: 420px) { */
-/* SCROLL BAR */
-/* Firefox */
-
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-white) var(--scrollbar-stone-800);
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 .invert-scrollbar {
@@ -27,29 +22,24 @@
 *::-webkit-scrollbar {
   height: 12px;
   width: 14px;
-  /* transform: translateX(-300%); */
 }
 
 *::-webkit-scrollbar-track {
   background: var(--scrollbar-white);
-  /* border-radius: 5px; */
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-stone-800);
-  /* border-radius: 14px; */
   border: 3px solid var(--scrollbar-white);
 }
 /* } */
 
 .invert-scrollbar::-webkit-scrollbar-track {
   background: var(--scrollbar-stone-800);
-  /* border-radius: 5px; */
 }
 
 .invert-scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-white);
-  /* border-radius: 14px; */
   border: 3px solid var(--scrollbar-stone-800);
 }
 
@@ -57,6 +47,12 @@
   *::-webkit-scrollbar {
     height: 10px;
     width: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  * {
+    cursor: none;
   }
 }
 

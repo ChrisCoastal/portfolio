@@ -26,9 +26,7 @@ const ProjectPage: FC = () => {
     <>
       {project ? (
         <>
-          {/* <div className="mb-2 flex items-center justify-between self-end"> */}
           <ProjectTitle title={project.title} />
-          {/* </div> */}
           <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
             <ProjectHeader
               headerImages={project.headerImages}
