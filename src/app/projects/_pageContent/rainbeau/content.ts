@@ -4,35 +4,25 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
+import rainbeau_image_1 from '/public/assets/projects/rainbeau/images/rainbeau_1.jpg';
+import rainbeau_image_2 from '/public/assets/projects/rainbeau/images/rainbeau_2.jpg';
+import rainbeau_image_3 from '/public/assets/projects/rainbeau/images/rainbeau_3.jpg';
+import rainbeau_image_4 from '/public/assets/projects/rainbeau/images/rainbeau_4.jpg';
+
 const rainbeau: ProjectContent = {
   id: 'rainbeau',
   title: 'Rainbeau',
   projectType: 'web',
   year: 2022,
   text,
-  thumbnail: {
-    image: '/assets/projects/rainbeau/images/rainbeau_1.jpg',
-    alt: 'a man with curly hair',
-  },
+  thumbnail: { image: rainbeau_image_1, alt: 'a man with curly hair' },
   headerImages: [
-    {
-      image: '/assets/projects/rainbeau/images/rainbeau_1.jpg',
-      alt: 'a man with curly hair',
-    },
-    {
-      image: '/assets/projects/rainbeau/images/rainbeau_2.jpg',
-      alt: 'a man with curly hair',
-    },
-    {
-      image: '/assets/projects/rainbeau/images/rainbeau_3.jpg',
-      alt: 'rainbeau app palette marker icon',
-    },
+    { image: rainbeau_image_1, alt: 'a man with curly hair' },
+    { image: rainbeau_image_2, alt: 'a man with curly hair' },
+    { image: rainbeau_image_3, alt: 'rainbeau app palette marker icon' },
   ],
   galleryImages: [
-    {
-      image: '/assets/projects/rainbeau/images/rainbeau_4.jpg',
-      alt: 'a screenshot of rainbeau app',
-    },
+    { image: rainbeau_image_4, alt: 'a screenshot of rainbeau app' },
   ],
   video: '/projects/rainbeau/video/rainbeau-demo',
   elements: [
@@ -45,7 +35,7 @@ const rainbeau: ProjectContent = {
       snippets: [
         {
           language: 'tsx',
-          code: code.spinner,
+          code: `const lorem = 'lorem ipsum dolor sit amet'`,
           fileName: 'file.tsx',
         },
       ],

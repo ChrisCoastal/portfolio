@@ -4,35 +4,23 @@ import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
 
+import takefive_image_1 from '/public/assets/projects/takefive/images/takefive_1.jpg';
+import takefive_image_2 from '/public/assets/projects/takefive/images/takefive_2.jpg';
+import takefive_image_3 from '/public/assets/projects/takefive/images/takefive_3.jpg';
+import takefive_image_4 from '/public/assets/projects/takefive/images/takefive_4.jpg';
+
 const takefive: ProjectContent = {
   title: 'Take Five',
   id: 'takefive',
   projectType: 'library',
   year: 2022,
   text,
-  thumbnail: {
-    image: '/assets/projects/takefive/images/takefive_2.jpg',
-    alt: 'Take Five wordmark',
-  },
-  galleryImages: [
-    {
-      image: '/assets/projects/takefive/images/takefive_4.jpg',
-      alt: 'wireframe UI iterations',
-    },
-  ],
+  thumbnail: { image: takefive_image_2, alt: 'Take Five wordmark' },
+  galleryImages: [{ image: takefive_image_4, alt: 'wireframe UI iterations' }],
   headerImages: [
-    {
-      image: '/assets/projects/takefive/images/takefive_1.jpg',
-      alt: 'abstracted playing cards',
-    },
-    {
-      image: '/assets/projects/takefive/images/takefive_2.jpg',
-      alt: 'Take Five wordmark',
-    },
-    {
-      image: '/assets/projects/takefive/images/takefive_3.jpg',
-      alt: 'number 5',
-    },
+    { image: takefive_image_1, alt: 'abstracted playing cards' },
+    { image: takefive_image_2, alt: 'Take Five wordmark' },
+    { image: takefive_image_3, alt: 'number 5' },
   ],
   links,
 };
