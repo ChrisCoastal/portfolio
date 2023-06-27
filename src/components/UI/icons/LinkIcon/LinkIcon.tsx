@@ -23,6 +23,7 @@ const LinkIcon: FC<LinkIconProps> = ({
       viewBox="0 0 180 180"
       fill={color}
       className={`svg ${className}`}
+      shape-rendering="crispEdges"
     >
       {line === 'thin' ? (
         <g>

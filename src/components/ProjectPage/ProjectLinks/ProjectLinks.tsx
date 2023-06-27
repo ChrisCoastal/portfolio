@@ -4,26 +4,30 @@ import Link from 'next/link';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import GitHubIcon from '@/components/UI/icons/GitHubIcon/GitHubIcon';
 import LinkIcon from '@/components/UI/icons/LinkIcon/LinkIcon';
+import { breakPoints } from '@/constants/constants';
 
 type ProjectLinksProps = {
   gitHub?: string;
   site?: string;
+  innerWidth: number;
 };
 
-const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
+const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, innerWidth, site }) => {
+  const size = innerWidth < breakPoints.md ? '48px' : '38px';
+
   return (
-    <div className="flex items-center justify-end gap-4">
+    <div className="mb-6 flex items-center justify-end gap-6 md:mb-0 md:gap-4">
       {site ? (
         <ClickableCursor text="link">
           <Link href={site} target="_blank">
-            <LinkIcon height="32px" width="32px" className="inline" />
+            <LinkIcon height={size} width={size} className="inline" />
           </Link>
         </ClickableCursor>
       ) : null}
       {gitHub ? (
         <ClickableCursor text="github">
           <Link href={gitHub} target="_blank">
-            <GitHubIcon height="32px" width="32px" className="inline" />
+            <GitHubIcon height={size} width={size} className="inline" />
           </Link>
         </ClickableCursor>
       ) : null}
