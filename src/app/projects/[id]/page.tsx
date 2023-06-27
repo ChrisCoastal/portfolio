@@ -36,6 +36,7 @@ const ProjectPage: FC = () => {
           <ProjectLinks
             gitHub={project.links.gitHub}
             site={project.links.site}
+            innerWidth={windowSize.innerWidth}
           />
           <ProjectLede lede={project.text.lede} />
           <div className="mb-36 flex flex-col gap-24">
