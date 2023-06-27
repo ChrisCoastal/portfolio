@@ -1,10 +1,11 @@
 import type { ProjectContent } from '@/@types/types';
 
-import cribbagemonster_image from './public/assets/projects/cribbagemonster/images/cribbagemonster.jpg';
-import cribbagemonster_image_1 from './public/assets/projects/cribbagemonster/images/cribbagemonster_1.jpg';
-import cribbagemonster_image_2 from './public/assets/projects/cribbagemonster/images/cribbagemonster_2.jpg';
-import cribbagemonster_image_3 from './public/assets/projects/cribbagemonster/images/cribbagemonster_3.jpg';
-import cribbagemonster_image_4 from './public/assets/projects/cribbagemonster/images/cribbagemonster_4.jpg';
+import cribbagemonster_image from '../public/assets/projects/cribbagemonster/images/cribbagemonster.jpg';
+import cribbagemonster_image_1 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_1.jpg';
+import cribbagemonster_image_2 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_2.jpg';
+import cribbagemonster_image_3 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_3.jpg';
+import cribbagemonster_image_4 from '../public/assets/projects/cribbagemonster/images/cribbagemonster_4.jpg';
+
 import { code } from './codeSnippets';
 import { links } from './links';
 import { text } from './text';
