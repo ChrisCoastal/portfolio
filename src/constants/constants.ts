@@ -39,6 +39,13 @@ export const rows = [
   'row-start-8',
 ];
 
+// required so that the tailwindcss compiler will
+// bundle classes written dynamically in the project
+const tailwindDynamicClasses = {
+  height: ['h-6'],
+  margin: ['mb-6'],
+};
+
 export const heroTextWidth = 80;
 export const heroTextRatio = { landscape: 0.5, portrait: 0.877777 };
 export const svgScale = {

@@ -16,7 +16,8 @@ export type CursorTextOptions =
   | 'showCode'
   | 'hideCode'
   | 'prev'
-  | 'next';
+  | 'next'
+  | 'hello';
 
 export type ImageData = { image: StaticImageData; alt: string };
 

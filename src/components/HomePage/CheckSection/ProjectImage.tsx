@@ -49,6 +49,7 @@ const ScrollImage: FC<ScrollImageProps> = ({
         <Image
           src={content.thumbnail.image}
           alt={content.thumbnail.alt}
+          placeholder="blur"
           width={width}
           height={height}
         />

@@ -26,6 +26,7 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
             width={500}
             src={header.image}
             alt={header.alt}
+            placeholder="blur"
             priority
           />
         ) : null;

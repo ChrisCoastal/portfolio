@@ -16,6 +16,7 @@ const ProjectGallery: FC<ProjectGalleryProps> = ({ galleryImages }) => {
           key={uuid()}
           src={gallery.image}
           alt={gallery.alt}
+          placeholder="blur"
           priority={i === 0 ? true : false}
         />
       ))}

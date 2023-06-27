@@ -17,7 +17,11 @@ const ProjectElement: FC<ProjectElementProps> = ({ element }) => {
         {element?.media?.image || element?.media?.video ? (
           <div className="mx-10 mt-10 flex justify-center">
             {element?.media?.image && (
-              <Image src={element.media.image} alt={element.media.alt} />
+              <Image
+                src={element.media.image}
+                alt={element.media.alt}
+                placeholder="blur"
+              />
             )}
             {element?.media?.video && (
               <div>
