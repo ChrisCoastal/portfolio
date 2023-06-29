@@ -97,9 +97,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     function updatePages(): NodeJS.Timeout | void {
       timeoutRef.current && clearTimeout(timeoutRef.current);
       const scrollContainerHeight = scrollContainerRef.current?.clientHeight;
-      // this size ref is setup as a fix for mobile browsers
-      // as vh always includes the browser address bar
-      const visibleHeight = sizeRef.current?.clientHeight || window.innerHeight;
+      const visibleHeight = window.innerHeight;
       if (!scrollContainerHeight) {
         return (timeoutRef.current = setTimeout(() => {
           return updatePages();
@@ -118,7 +116,10 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       console.log(
         window.innerHeight,
         document.documentElement.clientHeight,
-        sizeRef.current?.clientHeight
+        sizeRef.current?.clientHeight,
+        window.visualViewport,
+        window.screen.availHeight,
+        'vh'
       );
       updatePages();
       updateScreen();

@@ -86,7 +86,7 @@ const StackGrid: FC = () => {
           >
             <div
               style={{ backfaceVisibility: 'hidden' }}
-              className="flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
+              className="relative z-10 flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
             >
               <StackLogo
                 height="72px"
@@ -100,7 +100,7 @@ const StackGrid: FC = () => {
                 transform: `rotate3d(0.5, 0.5, 0, 180deg)`,
                 backfaceVisibility: 'hidden',
               }}
-              className="flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
+              className="relative z-10 flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
             >
               <StackLogo
                 height="72px"
