@@ -36,7 +36,7 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const thoughtSectionRef = useRef<HTMLElement>(null);
-  // const positionRef = useRef(0);
+  const sizeRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
 
   function Loader() {
@@ -97,11 +97,14 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     function updatePages(): NodeJS.Timeout | void {
       timeoutRef.current && clearTimeout(timeoutRef.current);
       const scrollContainerHeight = scrollContainerRef.current?.clientHeight;
+      // this size ref is setup as a fix for mobile browsers
+      // as vh always includes the browser address bar
+      const visibleHeight = sizeRef.current?.clientHeight || window.innerHeight;
       if (!scrollContainerHeight) {
         return (timeoutRef.current = setTimeout(() => {
           return updatePages();
         }, 40));
-      } else setPages(scrollContainerHeight / window.innerHeight);
+      } else setPages(scrollContainerHeight / visibleHeight);
     }
 
     function updateScreen() {
@@ -112,6 +115,11 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
     }
 
     function handleResize() {
+      console.log(
+        window.innerHeight,
+        document.documentElement.clientHeight,
+        sizeRef.current?.clientHeight
+      );
       updatePages();
       updateScreen();
     }
@@ -127,6 +135,11 @@ const ThreeCanvas: FC<ThreeCanvasProps> = ({ children }) => {
       style={{ height: '100vh', width: '100vw' }}
       className="relative bg-stone-100"
     >
+      <div
+        aria-hidden
+        ref={sizeRef}
+        className="fixed h-full w-full bg-pink-500"
+      ></div>
       {/* <animated.div
         // prettier-ignore
         // @ts-expect-error
