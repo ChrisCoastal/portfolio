@@ -13,18 +13,18 @@ const useResizeWindow = () => {
 
   useEffect(() => {
     const handleSize = () => {
-      const { innerHeight, innerWidth } = window as Window;
+      const { clientHeight, clientWidth } = document.documentElement;
       setWindowSize({
-        innerHeight,
-        innerWidth,
+        innerHeight: clientHeight,
+        innerWidth: clientWidth,
       });
     };
 
-    window.addEventListener('resize', handleSize);
+    document.addEventListener('resize', handleSize);
 
     // set initial size
     handleSize();
-    return () => window.removeEventListener('resize', handleSize);
+    return () => document.removeEventListener('resize', handleSize);
   }, []);
 
   return { windowSize, breakPoints };

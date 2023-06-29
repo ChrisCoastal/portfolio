@@ -15,7 +15,7 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
   innerWidth,
 }) => {
   const maxImages =
-    innerWidth >= breakPoints.lg ? 3 : innerWidth >= breakPoints.sm ? 2 : 1;
+    innerWidth <= breakPoints.lg ? 2 : innerWidth <= breakPoints.sm ? 1 : 3;
 
   return (
     <>

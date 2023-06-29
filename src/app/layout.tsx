@@ -1,10 +1,9 @@
-import { anton, redHat, vollkorn } from '@/app/fonts';
-import Cursor from '@/components/UI/Cursor/Cursor';
+import { redHat } from '@/app/fonts';
 
 import './globals.css';
 
 export const metadata = {
-  title: 'Christopher Allen | Frontend Developer Portfolio',
+  title: 'Christopher Allen | Front End Developer Portfolio',
   description: 'I like making nice stuff. | GitHub @ChrisCoastal',
 };
 

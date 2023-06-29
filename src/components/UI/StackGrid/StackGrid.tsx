@@ -82,17 +82,17 @@ const StackGrid: FC = () => {
               perspective: '800px',
               transformStyle: 'preserve-3d',
             }}
-            className="relative flex h-[4rem] w-[4rem] place-content-center bg-stone-800 xs:h-24 xs:w-24"
+            className="grid h-[4rem] w-[4rem] grid-cols-1 grid-rows-1 place-content-center bg-stone-800 xs:h-24 xs:w-24"
           >
             <div
               style={{ backfaceVisibility: 'hidden' }}
-              className="absolute flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
+              className="flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
             >
               <StackLogo
                 height="72px"
                 width="72px"
                 logo={logoIndex[i]}
-                className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
+                className="h-12 w-12 -rotate-45 self-center justify-self-center xs:h-20 xs:w-20"
               />
             </div>
             <div
@@ -100,13 +100,13 @@ const StackGrid: FC = () => {
                 transform: `rotate3d(0.5, 0.5, 0, 180deg)`,
                 backfaceVisibility: 'hidden',
               }}
-              className="absolute flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
+              className="flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
             >
               <StackLogo
                 height="72px"
                 width="72px"
                 logo={logoIndex[i + 16]}
-                className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
+                className="h-12 w-12 -rotate-45 self-center justify-self-center xs:h-20 xs:w-20"
               />
             </div>
           </animated.div>
