@@ -15,7 +15,7 @@ const StackLogo: FC<StackLogoProps> = ({
   height,
   width,
   logo,
-  color = '#fff',
+  color,
   style,
   className,
 }) => {
@@ -26,7 +26,7 @@ const StackLogo: FC<StackLogoProps> = ({
       width={width}
       viewBox="0 0 180 180"
       fill={color}
-      className={`svg ${className}`}
+      className={`svg ${className} fill-stone-800`}
       style={{ ...style, backfaceVisibility: 'hidden' }}
     >
       {paths[logo as keyof typeof paths]}

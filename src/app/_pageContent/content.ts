@@ -39,7 +39,7 @@ export const homeSections: SectionsContent = {
   buildSection: {
     title: 'build◆ut',
     text: [
-      'I like making nice stuff with nice stuff. Employing a core of industry standard tools like React, Typescript, and Tailwind to support a constantly expanding selection of exciting / scalable / trendy / best-suited Front End tech, I design and develop expressive UI/UX that balances elements of usability, creativity, and aesthetics.',
+      'I like making nice stuff with nice stuff. Building around a core of industry standard tools like React, Typescript, and Tailwind to support a constantly expanding selection of exciting / scalable / trendy / best-suited Front End tech, I design and develop expressive UI/UX that balances elements of usability, creativity, and aesthetics.',
     ],
   },
   projectsSection: {
