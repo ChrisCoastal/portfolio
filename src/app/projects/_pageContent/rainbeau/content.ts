@@ -24,7 +24,7 @@ const rainbeau: ProjectContent = {
   galleryImages: [
     { image: rainbeau_image_4, alt: 'a screenshot of rainbeau app' },
   ],
-  video: '/projects/rainbeau/video/rainbeau-demo',
+  video: '/assets/projects/rainbeau/video/rainbeau-demo',
   elements: [
     {
       title: 'loading spinner',

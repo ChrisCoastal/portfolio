@@ -27,12 +27,12 @@ const ProjectPage: FC = () => {
       {project ? (
         <>
           <ProjectTitle title={project.title} />
-          <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
-            <ProjectHeader
-              headerImages={project.headerImages}
-              innerWidth={windowSize.innerWidth}
-            />
-          </div>
+
+          <ProjectHeader
+            headerImages={project.headerImages}
+            innerWidth={windowSize.innerWidth}
+          />
+
           <ProjectLinks
             gitHub={project.links.gitHub}
             site={project.links.site}

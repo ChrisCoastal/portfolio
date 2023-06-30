@@ -14,24 +14,40 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
   headerImages,
   innerWidth,
 }) => {
-  const maxImages =
-    innerWidth <= breakPoints.lg ? 2 : innerWidth <= breakPoints.sm ? 1 : 3;
+  // const maxImages =
+  //   innerWidth <= breakPoints.lg ? 2 : innerWidth <= breakPoints.sm ? 1 : 3;
+  const imageVisible = [
+    {
+      base: 'hidden',
+      sm: 'block',
+      lg: 'block',
+    },
+    {
+      base: 'block',
+      sm: 'block',
+      lg: 'block',
+    },
+    {
+      base: 'hidden',
+      sm: 'hidden',
+      lg: 'block',
+    },
+  ];
 
   return (
-    <>
-      {headerImages.map((header, i) => {
-        return i < maxImages ? (
-          <Image
-            key={uuid()}
-            width={500}
-            src={header.image}
-            alt={header.alt}
-            placeholder="blur"
-            priority
-          />
-        ) : null;
-      })}
-    </>
+    <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
+      {headerImages.map((header, i) => (
+        <Image
+          key={uuid()}
+          width={500}
+          src={header.image}
+          alt={header.alt}
+          placeholder="blur"
+          className={`sm:${imageVisible[i]['sm']} lg:${imageVisible[i]['lg']}`}
+          priority
+        />
+      ))}
+    </div>
   );
 };
 

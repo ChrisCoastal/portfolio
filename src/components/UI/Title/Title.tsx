@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import type { FC } from 'react';
 
 type TitleProps = {
-  title: string;
+  children: ReactNode;
   className?: string;
 };
 
-const Title: FC<TitleProps> = ({ title, className }) => {
+const Title: FC<TitleProps> = ({ children, className }) => {
   return (
     <h2 className={`${className} text-xl font-light tracking-wide `}>
-      {title}
+      {children}
     </h2>
   );
 };
