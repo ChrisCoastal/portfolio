@@ -35,7 +35,7 @@ const StackGrid: FC = () => {
     from: {
       transform: `rotate3d(0, 0, 0, 0deg)`,
     },
-    loop: true,
+    // loop: true,
     config: { delay: 1200, duration: 1400, easing: easings.easeOutCubic },
   }));
 
@@ -54,7 +54,7 @@ const StackGrid: FC = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     const interval = setInterval(() => {
       rotationAnimation.start((index) => {
-        const curRotation = rotationRefs.current[index] || 0;
+        const curRotation = rotationRefs.current[index] ?? 0;
         if (index === indexRef.current) {
           const rotateTo = curRotation + 180;
           rotationRefs.current[index] = rotateTo;
@@ -82,38 +82,28 @@ const StackGrid: FC = () => {
               perspective: '800px',
               transformStyle: 'preserve-3d',
             }}
-            className="grid h-[4rem] w-[4rem] grid-cols-1 grid-rows-1 place-content-center bg-stone-800 xs:h-24 xs:w-24"
+            className="w- grid h-16 w-16 grid-cols-1 grid-rows-1 place-content-center xs:h-24 xs:w-24"
           >
-            <div
-              style={{ backfaceVisibility: 'hidden' }}
-              className="relative z-10 flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24 "
-            >
-              <StackLogo
-                height="72px"
-                width="72px"
-                logo={logoIndex[i]}
-                className="h-12 w-12 -rotate-45 self-center justify-self-center xs:h-20 xs:w-20"
-              />
-            </div>
-            <div
-              style={{
-                transform: `rotate3d(0.5, 0.5, 0, 180deg)`,
-                backfaceVisibility: 'hidden',
-              }}
-              className="relative z-10 flex h-[4rem] w-[4rem] place-content-center xs:h-24 xs:w-24"
-            >
-              <StackLogo
-                height="72px"
-                width="72px"
-                logo={logoIndex[i + 16]}
-                className="h-12 w-12 -rotate-45 self-center justify-self-center xs:h-20 xs:w-20"
-              />
-            </div>
+            <StackLogo
+              height="72px"
+              width="72px"
+              logo={logoIndex[i]}
+              color="black"
+              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center xs:h-24 xs:w-24"
+            />
+            <StackLogo
+              height="72px"
+              width="72px"
+              logo={logoIndex[i + 16]}
+              color="black"
+              style={{ transform: `rotate3d(0.5, 0.5, 0, 180deg)` }}
+              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center xs:h-24 xs:w-24"
+            />
           </animated.div>
         ) : (
           <div
             key={i}
-            className="flex h-[4rem] w-[4rem] scale-[102%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
+            className="flex h-16 w-16 scale-[102%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
           >
             <StackLogo
               height="72px"
