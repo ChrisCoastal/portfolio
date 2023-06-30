@@ -103,7 +103,7 @@ const StackGrid: FC = () => {
         ) : (
           <div
             key={i}
-            className="flex h-16 w-16 scale-[102%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
+            className="flex h-16 w-16 scale-[103%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
           >
             <StackLogo
               height="72px"
