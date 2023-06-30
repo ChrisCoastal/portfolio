@@ -19,14 +19,14 @@ const CheckProjectImage: FC<CheckProjectImageProps> = ({ project }) => {
   return (
     <div key={uuid()} className="relative">
       <ClickableCursor text="click">
-        <Link href={`/projects/${project.id}`} className="relative z-10">
+        <Link href={`/projects/${project.id}`}>
           <Image
             src={project.thumbnail.image}
             alt={project.thumbnail.alt}
             placeholder="blur"
             width={size}
             height={size}
-            className="transition-all duration-700 ease-in-out hover:-translate-y-2 hover:translate-x-2 focus:-translate-y-2 focus:translate-x-2"
+            className="relative !z-30 transition-all duration-700 ease-in-out hover:-translate-y-2 hover:translate-x-2 focus:-translate-y-2 focus:translate-x-2"
           />
         </Link>
       </ClickableCursor>

@@ -25,7 +25,7 @@ const ProjectElement: FC<ProjectElementProps> = ({ element }) => {
             )}
             {element?.media?.video && (
               <div>
-                <video muted autoPlay loop>
+                <video muted autoPlay loop playsInline>
                   <source
                     src={`${element.media.video}.webm`}
                     type="video/webm"
