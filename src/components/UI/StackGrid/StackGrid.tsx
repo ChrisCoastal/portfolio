@@ -110,7 +110,7 @@ const StackGrid: FC = () => {
               width="72px"
               logo={logoIndex[i]}
               color="black"
-              className="h-12 w-12 -rotate-45 self-center xs:h-20 xs:w-20"
+              className="h-16 w-16 self-center  xs:h-24 xs:w-24"
             />
           </div>
         )
