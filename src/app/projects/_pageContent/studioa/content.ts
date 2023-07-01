@@ -18,9 +18,17 @@ const studioa: ProjectContent = {
   text,
   thumbnail: { image: studioa_image, alt: 'screenshot of studioa app' },
   headerImages: [
-    { image: studioa_image_1, alt: 'screenshot of studioa app' },
-    { image: studioa_image_2, alt: 'screenshot of studioa app' },
-    { image: studioa_image_3, alt: 'screenshot of studioa app' },
+    { image: studioa_image_1, alt: 'screenshot of studioa app', zIndex: 'z-0' },
+    {
+      image: studioa_image_2,
+      alt: 'screenshot of studioa app',
+      zIndex: 'z-20',
+    },
+    {
+      image: studioa_image_3,
+      alt: 'screenshot of studioa app',
+      zIndex: 'z-10',
+    },
   ],
   galleryImages: [],
   video: '/assets/projects/studioa/video/studioa-demo',

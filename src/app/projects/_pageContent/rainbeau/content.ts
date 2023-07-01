@@ -17,9 +17,13 @@ const rainbeau: ProjectContent = {
   text,
   thumbnail: { image: rainbeau_image_1, alt: 'a man with curly hair' },
   headerImages: [
-    { image: rainbeau_image_1, alt: 'a man with curly hair' },
-    { image: rainbeau_image_2, alt: 'a man with curly hair' },
-    { image: rainbeau_image_3, alt: 'rainbeau app palette marker icon' },
+    { image: rainbeau_image_1, alt: 'a man with curly hair', zIndex: 'z-0' },
+    { image: rainbeau_image_2, alt: 'a man with curly hair', zIndex: 'z-20' },
+    {
+      image: rainbeau_image_3,
+      alt: 'rainbeau app palette marker icon',
+      zIndex: 'z-10',
+    },
   ],
   galleryImages: [
     { image: rainbeau_image_4, alt: 'a screenshot of rainbeau app' },

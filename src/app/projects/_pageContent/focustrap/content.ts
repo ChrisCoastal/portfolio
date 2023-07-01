@@ -16,12 +16,21 @@ const focustrap: ProjectContent = {
     alt: 'Admiral Ackbar gazing into the distance',
   },
   headerImages: [
-    { image: focustrap_image_1, alt: 'abstract squiggly light rings' },
+    {
+      image: focustrap_image_1,
+      alt: 'abstract squiggly light rings',
+      zIndex: 'z-10',
+    },
     {
       image: focustrap_image_2,
       alt: 'Admiral Ackbar gazing into the distance',
+      zIndex: 'z-20',
     },
-    { image: focustrap_image_3, alt: 'abstract concentric light rings' },
+    {
+      image: focustrap_image_3,
+      alt: 'abstract concentric light rings',
+      zIndex: 'z-0',
+    },
   ],
   galleryImages: [
     {

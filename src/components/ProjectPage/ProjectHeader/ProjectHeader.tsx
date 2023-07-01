@@ -3,39 +3,30 @@ import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
 import { ImageData } from '@/@types/types';
+import ProjectLinks from '@/components/ProjectPage/ProjectLinks/ProjectLinks';
 import { breakPoints } from '@/constants/constants';
 
 type ProjectHeaderProps = {
-  headerImages: ImageData[];
+  headerImages: (ImageData & { zIndex: string })[];
   innerWidth: number;
+  gitHubLink: string | undefined;
+  siteLink: string | undefined;
 };
 
 const ProjectHeader: FC<ProjectHeaderProps> = ({
   headerImages,
   innerWidth,
+  gitHubLink,
+  siteLink,
 }) => {
-  // const maxImages =
-  //   innerWidth <= breakPoints.lg ? 2 : innerWidth <= breakPoints.sm ? 1 : 3;
   const imageVisible = [
-    {
-      base: 'hidden',
-      sm: 'block',
-      lg: 'block',
-    },
-    {
-      base: 'block',
-      sm: 'block',
-      lg: 'block',
-    },
-    {
-      base: 'hidden',
-      sm: 'hidden',
-      lg: 'block',
-    },
+    'col-start-1 row-start-1 sm:col-start-1 sm:row-start-1 lg:col-start-1 lg:row-start-1',
+    'col-start-1 row-start-1 sm:col-start-2 sm:row-start-1 lg:col-start-2 lg:row-start-1',
+    'col-start-1 row-start-1 sm:col-start-1 sm:row-start-1 lg:col-start-3 lg:row-start-1',
   ];
 
   return (
-    <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mb-2 grid grid-cols-1 gap-x-2 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
       {headerImages.map((header, i) => (
         <Image
           key={uuid()}
@@ -43,10 +34,15 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
           src={header.image}
           alt={header.alt}
           placeholder="blur"
-          className={`sm:${imageVisible[i]['sm']} lg:${imageVisible[i]['lg']}`}
+          className={`${imageVisible[i]} ${header.zIndex} justify-self-center`}
           priority
         />
       ))}
+      <ProjectLinks
+        gitHub={gitHubLink}
+        site={siteLink}
+        innerWidth={innerWidth}
+      />
     </div>
   );
 };

@@ -18,9 +18,13 @@ const takefive: ProjectContent = {
   thumbnail: { image: takefive_image_2, alt: 'Take Five wordmark' },
   galleryImages: [{ image: takefive_image_4, alt: 'wireframe UI iterations' }],
   headerImages: [
-    { image: takefive_image_1, alt: 'abstracted playing cards' },
-    { image: takefive_image_2, alt: 'Take Five wordmark' },
-    { image: takefive_image_3, alt: 'number 5' },
+    {
+      image: takefive_image_1,
+      alt: 'abstracted playing cards',
+      zIndex: 'z-20',
+    },
+    { image: takefive_image_2, alt: 'Take Five wordmark', zIndex: 'z-10' },
+    { image: takefive_image_3, alt: 'number 5', zIndex: 'z-0' },
   ],
   links,
 };

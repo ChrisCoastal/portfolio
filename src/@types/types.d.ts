@@ -60,7 +60,7 @@ export type ProjectContent = {
   id: ProjectId;
   title: string;
   thumbnail: ImageData;
-  headerImages: ImageData[];
+  headerImages: (ImageData & { zIndex: string })[];
   galleryImages: ImageData[];
   text: ProjectText;
   elements?: ProjectElement[];

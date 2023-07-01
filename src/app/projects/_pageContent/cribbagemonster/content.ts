@@ -21,9 +21,9 @@ const cribbagemonster: ProjectContent = {
   },
   text,
   headerImages: [
-    { image: cribbagemonster_image_1, alt: 'a cribbage board' },
-    { image: cribbagemonster_image_2, alt: 'a cribbage board' },
-    { image: cribbagemonster_image_3, alt: 'a cribbage board' },
+    { image: cribbagemonster_image_1, alt: 'a cribbage board', zIndex: 'z-20' },
+    { image: cribbagemonster_image_2, alt: 'a cribbage board', zIndex: 'z-10' },
+    { image: cribbagemonster_image_3, alt: 'a cribbage board', zIndex: 'z-0' },
   ],
   galleryImages: [
     {

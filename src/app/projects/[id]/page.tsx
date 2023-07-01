@@ -30,14 +30,11 @@ const ProjectPage: FC = () => {
 
           <ProjectHeader
             headerImages={project.headerImages}
+            gitHubLink={project.links.gitHub}
+            siteLink={project.links.site}
             innerWidth={windowSize.innerWidth}
           />
 
-          <ProjectLinks
-            gitHub={project.links.gitHub}
-            site={project.links.site}
-            innerWidth={windowSize.innerWidth}
-          />
           <ProjectLede lede={project.text.lede} />
           <div className="mb-36 flex flex-col gap-24">
             <ProjectGallery galleryImages={project.galleryImages} />

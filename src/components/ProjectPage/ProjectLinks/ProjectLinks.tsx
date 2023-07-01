@@ -12,11 +12,11 @@ type ProjectLinksProps = {
   innerWidth: number;
 };
 
-const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, innerWidth, site }) => {
+const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
   const size = innerWidth < breakPoints.md ? '48px' : '38px';
 
   return (
-    <div className="mb-6 flex items-center justify-end gap-6 md:mb-0 md:gap-4">
+    <div className="col-span-3 mb-6 flex items-center justify-end gap-6 self-start md:mb-0 md:gap-4">
       {site ? (
         <ClickableCursor text="link">
           <Link href={site} target="_blank">

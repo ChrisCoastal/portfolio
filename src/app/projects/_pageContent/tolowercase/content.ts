@@ -20,9 +20,21 @@ const tolowercase: ProjectContent = {
     alt: 'screenshot of tolowercase app',
   },
   headerImages: [
-    { image: tolowercase_image_1, alt: 'tolowercase staircase logo' },
-    { image: tolowercase_image_3, alt: 'tolowercase staircase logo' },
-    { image: tolowercase_image_2, alt: 'screenshot of tolowercase app' },
+    {
+      image: tolowercase_image_1,
+      alt: 'tolowercase staircase logo',
+      zIndex: 'z-20',
+    },
+    {
+      image: tolowercase_image_3,
+      alt: 'tolowercase staircase logo',
+      zIndex: 'z-0',
+    },
+    {
+      image: tolowercase_image_2,
+      alt: 'screenshot of tolowercase app',
+      zIndex: 'z-10',
+    },
   ],
   galleryImages: [
     { image: tolowercase_image_4, alt: 'screenshot of tolowercase app' },
