@@ -53,7 +53,7 @@ const StackGrid: FC = () => {
     }));
     if (intervalRef.current) clearInterval(intervalRef.current);
     const interval = setInterval(() => {
-      rotationAnimation.start((index) => {
+      rotationAnimation.start((index: number) => {
         const curRotation = rotationRefs.current[index] ?? 0;
         if (index === indexRef.current) {
           const rotateTo = curRotation + 180;

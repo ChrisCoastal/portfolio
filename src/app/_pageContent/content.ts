@@ -29,7 +29,7 @@ export const logoIndex = [
   '_', // center
   '_', // center
   'docker',
-  'indesign',
+  'router',
   'css',
   'github',
   'apollo',

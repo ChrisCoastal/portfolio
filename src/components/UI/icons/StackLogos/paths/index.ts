@@ -20,6 +20,7 @@ import nextjs from './nextjs';
 import nodejs from './nodejs';
 import photoshop from './photoshop';
 import react from './react';
+import router from './router';
 import sass from './sass';
 import tailwind from './tailwind';
 import threejs from './threejs';
@@ -50,6 +51,7 @@ export const paths = {
   nodejs,
   photoshop,
   react,
+  router,
   sass,
   tailwind,
   threejs,

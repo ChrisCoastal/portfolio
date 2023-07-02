@@ -9,7 +9,7 @@ type ProjectTitleProps = {
 
 const ProjectTitle: FC<ProjectTitleProps> = ({ title, className }) => {
   return (
-    <Title className={`${className} static z-20 w-full !font-medium`}>
+    <Title className={`${className} static z-20 mb-2 w-full !font-medium`}>
       {title}
     </Title>
   );
