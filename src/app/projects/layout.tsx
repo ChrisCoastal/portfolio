@@ -10,9 +10,9 @@ type ProjectsLayoutProps = {
 const ProjectsLayout: FC<ProjectsLayoutProps> = ({ children }) => {
   return (
     <div className="bg-white">
-      <HomeButton />
-      <div className="mx-6 flex justify-center pb-12 pt-20 sm:mx-8 sm:pb-24 sm:pt-28">
-        <div className="max-w-[72rem] ">{children}</div>
+      {/* <HomeButton /> */}
+      <div className="mx-6 flex justify-center pb-12 pt-20 sm:mx-8 sm:pb-24">
+        <div className="max-w-[72rem]">{children}</div>
       </div>
     </div>
   );

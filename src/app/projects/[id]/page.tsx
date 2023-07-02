@@ -10,9 +10,9 @@ import ProjectElement from '@/components/ProjectPage/ProjectElement/ProjectEleme
 import ProjectGallery from '@/components/ProjectPage/ProjectGallery/ProjectGallery';
 import ProjectHeader from '@/components/ProjectPage/ProjectHeader/ProjectHeader';
 import ProjectLede from '@/components/ProjectPage/ProjectLede/ProjectLede';
-import ProjectLinks from '@/components/ProjectPage/ProjectLinks/ProjectLinks';
 import ProjectTitle from '@/components/ProjectPage/ProjectTitle/ProjectTitle';
 import ProjectVideo from '@/components/ProjectPage/ProjectVideo/ProjectVideo';
+import HomeButton from '@/components/UI/HomeButton/HomeButton';
 import useResizeWindow from '@/hooks/useResizeWindow';
 
 const ProjectPage: FC = () => {
@@ -20,14 +20,14 @@ const ProjectPage: FC = () => {
   const pathId = usePathname().split('/').pop();
   const project = Object.values(projectContent).find(
     (project) => project.id === pathId
-  )!;
+  );
 
   return (
     <>
       {project ? (
         <>
+          <HomeButton />
           <ProjectTitle title={project.title} />
-
           <ProjectHeader
             headerImages={project.headerImages}
             gitHubLink={project.links.gitHub}
@@ -35,8 +35,8 @@ const ProjectPage: FC = () => {
             innerWidth={windowSize.innerWidth}
           />
 
-          <ProjectLede lede={project.text.lede} />
-          <div className="mb-36 flex flex-col gap-24">
+          <div className="mb-36 mt-16 flex flex-col gap-24">
+            <ProjectLede lede={project.text.lede} />
             <ProjectGallery galleryImages={project.galleryImages} />
 
             <ProjectBody body={project.text.upperBody} />

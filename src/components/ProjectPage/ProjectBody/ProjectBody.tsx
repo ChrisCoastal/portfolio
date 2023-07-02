@@ -8,9 +8,13 @@ type ProjectBodyProps = {
 
 const ProjectBody: FC<ProjectBodyProps> = ({ body }) => {
   return (
-    <div className="flex justify-center">
-      <Paragraph key={uuid()} text={body} />
-    </div>
+    <>
+      {body.length ? (
+        <div className="flex justify-center">
+          <Paragraph key={uuid()} text={body} />
+        </div>
+      ) : null}
+    </>
   );
 };
 
