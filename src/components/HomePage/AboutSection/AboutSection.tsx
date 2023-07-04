@@ -1,15 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
 
 import { homeSections } from '@/app/_pageContent/content';
 import Section from '@/components/HomePage/Section/Section';
-import SectionTitle from '@/components/HomePage/SectionTitle/SectionTitle';
 import ClickableCursor from '@/components/UI/Cursor/ClickableCursor';
 import Paragraph from '@/components/UI/Paragraph/Paragraph';
 
-type Props = {};
-
-const AboutSection = (props: Props) => {
+const AboutSection = () => {
   return (
     <Section
       title={homeSections.aboutSection.title}

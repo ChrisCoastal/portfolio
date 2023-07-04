@@ -38,9 +38,9 @@ const rainbeau: ProjectContent = {
       },
       snippets: [
         {
-          language: 'tsx',
-          code: `const lorem = 'lorem ipsum dolor sit amet'`,
-          fileName: 'file.tsx',
+          language: 'css',
+          code: code.spinner,
+          fileName: 'LoadingSpinner.styles.tsx',
         },
       ],
     },

@@ -42,7 +42,7 @@ const cribbagemonster: ProjectContent = {
       },
       snippets: [
         {
-          language: 'tsx',
+          language: 'javascript',
           code: code.playerDisplay,
           fileName: 'PlayerDisplay.tsx',
         },

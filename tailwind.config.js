@@ -26,6 +26,7 @@ module.exports = {
       },
       screens: {
         xs: '420px',
+        canHover: { raw: '(hover: hover)' },
       },
       animation: {
         'spin-slow': 'spin-slow 4s linear infinite',

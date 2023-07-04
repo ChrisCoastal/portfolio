@@ -13,7 +13,7 @@ type CheckProjectImageProps = {
 };
 
 const CheckProjectImage: FC<CheckProjectImageProps> = ({ project }) => {
-  const size = 320;
+  const size = 340;
   const projectTextY = 6;
 
   return (
