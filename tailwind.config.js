@@ -30,8 +30,8 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin-slow 4s linear infinite',
-        'marquee-rl': 'marquee 80s linear infinite',
-        'marquee-lr': 'marquee 80s linear infinite reverse',
+        'marquee-rl': 'marquee 110s linear infinite',
+        'marquee-lr': 'marquee 110s linear infinite reverse',
         'rotate3d-45': 'rotate3d-45 1s ease-in-out',
       },
       keyframes: {
