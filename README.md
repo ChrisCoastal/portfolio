@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ChrisCoastal/portfolio">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">project_title</h3>
@@ -49,11 +49,11 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## ChrisCoastal Portfolio
+## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Thanks for looking at my portfolio. This site has been a pleasure to build and I hope you enjoy it. Feel free to leave a star if you've dropped by. 🙏🌊
+Thanks for looking at my portfolio. This site has been a great learning experience and pleasure to build. Feel free to leave a star if you've dropped by or say 'hey!' at hello@chriscoastal.com. 🙏🌊
 
 Sincerely,
 Chris
@@ -84,20 +84,16 @@ Chris
   - [x] refine / sync scene with scroll
   - [ ] render final scene
 - [x] connect Three canvas with glb render
-- [x] first commit
-- [ ] future tasks
-  - [ ] layout of html elements
-  - [ ] ... etc
-
-See the [open issues](https://github.com/ChrisCoastal/portfolio/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+  - [x] import scene
+  - [x] connect scene animation to scroll gesture
+- [x] dynamically define main page height
+  - [x] add useCalcPages hook
+- [x] add app routing
+- [x] project page layout
+  - [x] gather project image/video assets
+- [x] add cv
+  - [x] design and layout
+  - [x] links
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -105,9 +101,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-I'm currently looking for new work. If you think I would be a good fit, please reach out. I'd love to hear from you.
-
-ChrisCoastal: contactchriscoastal@gmail.com 🌊
+I'm currently looking for new work and new projects to contribute to. If you think I would be a good fit, please reach out to me at hello@chriscoastal.com. I'd love to hear from you.
 
 Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/ChrisCoastal/portfolio)
 
@@ -117,8 +111,8 @@ Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/Chr
 
 ## Acknowledgments
 
-- Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible. 🙏
-- Thanks as always to the authors of the innumerable articles, Stack Overflow answers, and other resources that were life savers. ⛑
+- Thanks to Paul, <a href="https://github.com/isEvrythngTkn" target="_blank">@isEvrythngTkn</a>, for his guidance, support, mentorship, and collaboration.
+- Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible, notably the team at <a href="https://github.com/pmndrs" target="_blank">Poimandres</a>. 🙏
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
