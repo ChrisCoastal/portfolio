@@ -23,6 +23,7 @@ import react from './react';
 import router from './router';
 import sass from './sass';
 import tailwind from './tailwind';
+import testinglib from './testinglib';
 import threejs from './threejs';
 import typescript from './typescript';
 import vite from './vite';
@@ -54,6 +55,7 @@ export const paths = {
   router,
   sass,
   tailwind,
+  testinglib,
   threejs,
   typescript,
   vite,

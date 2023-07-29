@@ -28,7 +28,7 @@ export const logoIndex = [
   'nodejs',
   '_', // center
   '_', // center
-  'docker',
+  'testinglib',
   'router',
   'css',
   'github',

@@ -82,28 +82,32 @@ const StackGrid: FC = () => {
               perspective: '800px',
               transformStyle: 'preserve-3d',
             }}
-            className="w- grid h-16 w-16 grid-cols-1 grid-rows-1 place-content-center xs:h-24 xs:w-24"
+            className="grid h-16 w-16 grid-cols-1 grid-rows-1 place-content-center will-change-transform xs:h-24 xs:w-24"
           >
             <StackLogo
               height="72px"
               width="72px"
+              style={{ backfaceVisibility: 'hidden' }}
               logo={logoIndex[i]}
               color="black"
-              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center xs:h-24 xs:w-24"
+              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center will-change-transform xs:h-24 xs:w-24"
             />
             <StackLogo
               height="72px"
               width="72px"
+              style={{
+                backfaceVisibility: 'hidden',
+                transform: `rotate3d(0.5, 0.5, 0, 180deg)`,
+              }}
               logo={logoIndex[i + 16]}
               color="black"
-              style={{ transform: `rotate3d(0.5, 0.5, 0, 180deg)` }}
-              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center xs:h-24 xs:w-24"
+              className="col-start-1 row-start-1 h-16 w-16 self-center justify-self-center will-change-transform xs:h-24 xs:w-24"
             />
           </animated.div>
         ) : (
           <div
             key={i}
-            className="flex h-16 w-16 scale-[103%] place-content-center border border-stone-800 xs:h-24 xs:w-24"
+            className="flex h-16 w-16 scale-[103%] place-content-center border border-stone-800 will-change-transform xs:h-24 xs:w-24"
           >
             <StackLogo
               height="72px"
