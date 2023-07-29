@@ -32,7 +32,6 @@
   background-color: var(--scrollbar-stone-800);
   border: 3px solid var(--scrollbar-white);
 }
-/* } */
 
 .invert-scrollbar::-webkit-scrollbar-track {
   background: var(--scrollbar-stone-800);

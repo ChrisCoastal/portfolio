@@ -10,24 +10,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ChrisCoastal/portfolio">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://chriscoastal.com" target="_blank">
+    <img src="https://github.com/ChrisCoastal/portfolio/blob/readme/readme-header.jpg" alt="I lIKE MAKING NICE STUFF.">
   </a>
-
-<h3 align="center">project_title</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/ChrisCoastal/portfolio"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ChrisCoastal/portfolio">View Demo</a>
-    ·
-    <a href="https://github.com/ChrisCoastal/portfolio/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ChrisCoastal/portfolio/issues">Request Feature</a>
-  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -35,7 +20,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -49,14 +34,10 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## ChrisCoastal Portfolio
+## About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Thanks for looking at my portfolio. This site has been a pleasure to build and I hope you enjoy it. Feel free to leave a star if you've dropped by. 🙏🌊
-
-Sincerely,
-Chris
+Thanks for taking a look at my portfolio. This site has been fun to build and showcases some of what I'm currently enjoying creating with.
+Please leave a star if you've dropped by or say 'hey!' at hello@chriscoastal.com. 🙏🌊
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -84,20 +65,16 @@ Chris
   - [x] refine / sync scene with scroll
   - [ ] render final scene
 - [x] connect Three canvas with glb render
-- [x] first commit
-- [ ] future tasks
-  - [ ] layout of html elements
-  - [ ] ... etc
-
-See the [open issues](https://github.com/ChrisCoastal/portfolio/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+  - [x] import scene
+  - [x] connect scene animation to scroll gesture
+- [x] dynamically define main page height
+  - [x] add useCalcPages hook
+- [x] add app routing
+- [x] project page layout
+  - [x] gather project image/video assets
+- [x] add cv
+  - [x] design and layout
+  - [x] links
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -105,9 +82,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-I'm currently looking for new work. If you think I would be a good fit, please reach out. I'd love to hear from you.
+I'm currently looking for new projects to work on, or an inspiring team to join for longer term. If you think we would be a good fit (or if you just want to say 'hey'), I'm happy to hear from you!
 
-ChrisCoastal: contactchriscoastal@gmail.com 🌊
+ChrisCoastal: hello@chriscoastal.com 🌊
 
 Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/ChrisCoastal/portfolio)
 
@@ -117,8 +94,8 @@ Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/Chr
 
 ## Acknowledgments
 
-- Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible. 🙏
-- Thanks as always to the authors of the innumerable articles, Stack Overflow answers, and other resources that were life savers. ⛑
+- Thanks to Paul, <a href="https://github.com/isEvrythngTkn" target="_blank">@isEvrythngTkn</a>, for his guidance, support, mentorship, and collaboration.
+- Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible, notably the team at <a href="https://github.com/pmndrs" target="_blank">Poimandres</a>. 🙏
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
