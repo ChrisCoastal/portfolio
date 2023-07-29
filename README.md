@@ -13,8 +13,6 @@
   <a href="https://chriscoastal.com" target="_blank">
     <img src="https://github.com/ChrisCoastal/portfolio/blob/readme/readme-header.jpg" alt="I lIKE MAKING NICE STUFF.">
   </a>
-
-<h3 align="center">Christopher Allen | Portfolio Site</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -22,7 +20,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -36,9 +34,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+## About
 
 Thanks for taking a look at my portfolio. This site has been fun to build and showcases some of what I'm currently enjoying creating with.
 Please leave a star if you've dropped by or say 'hey!' at hello@chriscoastal.com. 🙏🌊
@@ -100,7 +96,6 @@ Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/Chr
 
 - Thanks to Paul, <a href="https://github.com/isEvrythngTkn" target="_blank">@isEvrythngTkn</a>, for his guidance, support, mentorship, and collaboration.
 - Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible, notably the team at <a href="https://github.com/pmndrs" target="_blank">Poimandres</a>. 🙏
-- S/O to <a href="https://mckltype.com/" target="_blank">MCKL Type Foundary</a> for Red Hat Display 🖋
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
