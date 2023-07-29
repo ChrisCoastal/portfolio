@@ -10,24 +10,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ChrisCoastal/portfolio">
-    <img src="public/images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://chriscoastal.com" target="_blank">
+    <img src="https://github.com/ChrisCoastal/portfolio/blob/readme/readme-header.jpg" alt="I lIKE MAKING NICE STUFF.">
   </a>
 
-<h3 align="center">project_title</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/ChrisCoastal/portfolio"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ChrisCoastal/portfolio">View Demo</a>
-    ·
-    <a href="https://github.com/ChrisCoastal/portfolio/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ChrisCoastal/portfolio/issues">Request Feature</a>
-  </p>
+<h3 align="center">Christopher Allen | Portfolio Site</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -53,10 +40,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Thanks for looking at my portfolio. This site has been a great learning experience and pleasure to build. Feel free to leave a star if you've dropped by or say 'hey!' at hello@chriscoastal.com. 🙏🌊
-
-Sincerely,
-Chris
+Thanks for taking a look at my portfolio. This site has been fun to build and showcases some of what I'm currently enjoying creating with.
+Please leave a star if you've dropped by or say 'hey!' at hello@chriscoastal.com. 🙏🌊
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -101,7 +86,9 @@ Chris
 
 ## Contact
 
-I'm currently looking for new work and new projects to contribute to. If you think I would be a good fit, please reach out to me at hello@chriscoastal.com. I'd love to hear from you.
+I'm currently looking for new projects to work on, or an inspiring team to join for longer term. If you think we would be a good fit (or if you just want to say 'hey'), I'm happy to hear from you!
+
+ChrisCoastal: hello@chriscoastal.com 🌊
 
 Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/ChrisCoastal/portfolio)
 
@@ -113,6 +100,7 @@ Project Link: [https://github.com/ChrisCoastal/portfolio](https://github.com/Chr
 
 - Thanks to Paul, <a href="https://github.com/isEvrythngTkn" target="_blank">@isEvrythngTkn</a>, for his guidance, support, mentorship, and collaboration.
 - Thank you to everyone responsible for the libraries, packages, and other code that has made this project possible, notably the team at <a href="https://github.com/pmndrs" target="_blank">Poimandres</a>. 🙏
+- S/O to <a href="https://mckltype.com/" target="_blank">MCKL Type Foundary</a> for Red Hat Display 🖋
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
