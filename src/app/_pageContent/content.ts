@@ -50,7 +50,7 @@ export const homeSections: SectionsContent = {
     title: 'ab',
     text: [
       'I have a robust background in professional web and print design, fine arts, and team management/business ownership. My breadth of experience gives me great versatility as a creative who not only knows their stuff visually and contextually, but also how to implement it technically and cooperatively.',
-      'Following six years of starting and fostering a successful business, I made the decision to return to programming and web design, spending 2022 / 2023 updating my knowledge of UI/UX and adding to my Front End development skill set. This new learning builds upon previous experience going back 10 years working in freelance web design and illustration, receiving a BFA degree in printmaking and digital design, and proudly holding the position of Media Coordinator for the internationally recognized design studio, molo, in Vancouver.',
+      'Following six years of starting and fostering a successful business, I made the decision to return to programming and web design, spending 2022 / 2023 updating my knowledge of UI/UX and adding to my Front End development skill set. This builds upon previous experience going back 10 years working in freelance web design and illustration, receiving a BFA degree in printmaking and digital design, and proudly holding the position of Media Coordinator for the internationally recognized design studio, molo, in Vancouver.',
       'My talent is creating thoughtful and visually engaging work. Throughout all of the projects I put my focus on, core to my approach has been - and continues to be - acute attention to detail, quick triage / adaptation to changing demands, and a dedication to excellence in my work.',
     ],
   },

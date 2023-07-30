@@ -1,6 +1,6 @@
 'use client';
-import React, { FC } from 'react';
-import { usePathname } from 'next/navigation';
+import React, { FC, useEffect } from 'react';
+import { notFound, usePathname, useRouter } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
 
 import projectContent from '@/app/projects/_pageContent';
@@ -18,9 +18,14 @@ import useResizeWindow from '@/hooks/useResizeWindow';
 const ProjectPage: FC = () => {
   const { windowSize } = useResizeWindow();
   const pathId = usePathname().split('/').pop();
+  const route = useRouter();
   const project = Object.values(projectContent).find(
     (project) => project.id === pathId
   );
+
+  useEffect(() => {
+    if (!project) notFound();
+  }, [project]);
 
   return (
     <>
