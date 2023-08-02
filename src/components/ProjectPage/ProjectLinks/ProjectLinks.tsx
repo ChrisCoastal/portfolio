@@ -13,7 +13,7 @@ type ProjectLinksProps = {
 };
 
 const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
-  const size = innerWidth < breakPoints.md ? '48px' : '38px';
+  const size = innerWidth < breakPoints.md ? '36px' : '32px';
 
   return (
     <div className="col-span-3 mb-4 flex items-center justify-end gap-8 self-start md:gap-6">

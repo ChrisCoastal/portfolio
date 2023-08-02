@@ -1,6 +1,6 @@
 'use client';
-import React, { FC } from 'react';
-import { usePathname } from 'next/navigation';
+import React, { FC, useEffect } from 'react';
+import { notFound, usePathname } from 'next/navigation';
 import { v4 as uuid } from 'uuid';
 
 import projectContent from '@/app/projects/_pageContent';
@@ -21,6 +21,10 @@ const ProjectPage: FC = () => {
   const project = Object.values(projectContent).find(
     (project) => project.id === pathId
   );
+
+  useEffect(() => {
+    if (!project) notFound();
+  }, [project]);
 
   return (
     <>
