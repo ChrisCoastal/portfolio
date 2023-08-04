@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useCallback, useEffect, useRef } from 'react';
 
 import useResizeWindow from '@/hooks/useResizeWindow';
