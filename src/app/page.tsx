@@ -1,5 +1,3 @@
-'use client';
-
 import ThreeCanvas from '@/components/ThreeCanvas/ThreeCanvas';
 
 export default function Home() {
