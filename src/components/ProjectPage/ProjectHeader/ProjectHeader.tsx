@@ -8,14 +8,12 @@ import { breakPoints } from '@/constants/constants';
 
 type ProjectHeaderProps = {
   headerImages: (ImageData & { zIndex: string })[];
-  innerWidth: number;
   gitHubLink: string | undefined;
   siteLink: string | undefined;
 };
 
 const ProjectHeader: FC<ProjectHeaderProps> = ({
   headerImages,
-  innerWidth,
   gitHubLink,
   siteLink,
 }) => {
@@ -38,11 +36,7 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
           priority
         />
       ))}
-      <ProjectLinks
-        gitHub={gitHubLink}
-        site={siteLink}
-        innerWidth={innerWidth}
-      />
+      <ProjectLinks gitHub={gitHubLink} site={siteLink} />
     </div>
   );
 };

@@ -13,10 +13,8 @@ import ProjectLede from '@/components/ProjectPage/ProjectLede/ProjectLede';
 import ProjectTitle from '@/components/ProjectPage/ProjectTitle/ProjectTitle';
 import ProjectVideo from '@/components/ProjectPage/ProjectVideo/ProjectVideo';
 import HomeButton from '@/components/UI/HomeButton/HomeButton';
-import useResizeWindow from '@/hooks/useResizeWindow';
 
 const ProjectPage: FC = () => {
-  const { windowSize } = useResizeWindow();
   const pathId = usePathname().split('/').pop();
   const project = Object.values(projectContent).find(
     (project) => project.id === pathId
@@ -36,7 +34,6 @@ const ProjectPage: FC = () => {
             headerImages={project.headerImages}
             gitHubLink={project.links.gitHub}
             siteLink={project.links.site}
-            innerWidth={windowSize.innerWidth}
           />
 
           <div className="mb-36 mt-16 flex flex-col gap-24">

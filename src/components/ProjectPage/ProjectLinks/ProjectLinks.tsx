@@ -9,11 +9,10 @@ import { breakPoints } from '@/constants/constants';
 type ProjectLinksProps = {
   gitHub?: string;
   site?: string;
-  innerWidth: number;
 };
 
 const ProjectLinks: FC<ProjectLinksProps> = ({ gitHub, site }) => {
-  const size = innerWidth < breakPoints.md ? '36px' : '32px';
+  const size = '32px';
 
   return (
     <div className="col-span-3 mb-4 flex items-center justify-end gap-8 self-start md:gap-6">
