@@ -24,15 +24,15 @@ const CodeBlock: FC<CodeBlockProps> = ({
 
   return (
     <div className="bg-stone-800">
-      <div className="ml-2">
+      <div className="ml-2 overflow-x-hidden">
         {fileName ? (
           <h4 className="!text-xs text-white sm:!text-sm">{fileName}</h4>
         ) : null}
         <div
-          className={`language-${language} invert-scrollbar !m-0 !rounded-none border border-stone-400/40 !bg-stone-800 text-sm`}
+          className={`language-${language} invert-scrollbar !m-0 overflow-x-scroll !rounded-none border border-stone-400/40 !bg-stone-800 text-sm`}
         >
           <code
-            className={`${className} language-${language} !m-0 overflow-x-scroll !whitespace-pre !bg-stone-800 !text-2xs sm:!text-sm`}
+            className={`${className} language-${language} !m-0 !whitespace-pre !bg-stone-800 !text-2xs sm:!text-sm`}
           >
             {children}
           </code>
