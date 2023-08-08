@@ -15,7 +15,7 @@ const ProjectNav = () => {
   //     ? (windowSize.innerWidth - PROJECT_CONTAINER_WIDTH) / 2 + 1
   //     : 10;
 
-  const top = !scroll.isDown || scroll.pos === 0 ? 24 : -32;
+  const top = !scroll.isDown || scroll.pos < 20 ? 24 : -48;
 
   return (
     <div className="relative z-[500] flex justify-end">

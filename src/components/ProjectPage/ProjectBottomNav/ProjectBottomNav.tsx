@@ -10,7 +10,7 @@ type ProjectBottomNavProps = {
 
 const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
   return (
-    <div className="flex justify-between">
+    <div className="mx-4 flex justify-between">
       <div className="flex items-center">
         <ClickableCursor text="prev">
           <Link
@@ -27,7 +27,7 @@ const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
         <ClickableCursor text="prev">
           <Link
             href={`/projects/${prev.link}`}
-            className="-translate-x-4 text-sm sm:text-base"
+            className="text-sm sm:text-base"
           >
             {prev.title}
           </Link>
@@ -38,7 +38,7 @@ const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ prev, next }) => {
         <ClickableCursor text="next">
           <Link
             href={`/projects/${next.link}`}
-            className="translate-x-4 text-sm sm:text-base"
+            className="text-right text-sm sm:text-base"
           >
             {next.title}
           </Link>

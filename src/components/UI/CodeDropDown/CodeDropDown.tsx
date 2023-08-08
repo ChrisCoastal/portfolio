@@ -85,7 +85,7 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
       <animated.div
         style={{
           maxHeight: dropDownStyles.height,
-          width: '96vw',
+          width: '90vw',
           maxWidth: '72rem',
           opacity: dropDownStyles.opacity,
         }}
@@ -98,7 +98,6 @@ const CodeDropDown: FC<CodeDropDownProps> = ({
             key={snippet.fileName}
             language={snippet.language}
             fileName={snippet.fileName}
-            code={snippet.code}
           >
             {snippet.code}
           </CodeBlock>
