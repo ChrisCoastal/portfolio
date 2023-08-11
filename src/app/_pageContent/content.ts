@@ -65,7 +65,6 @@ export const homeSections: SectionsContent = {
 export const marqueeText = {
   lr: [
     'intricate',
-    'optimized',
     'plain',
     'method',
     'thought out',
@@ -94,7 +93,6 @@ export const marqueeText = {
     'progressive',
     'detailed',
     'adventurous',
-    'accessible',
     'distinctive',
     'engaging',
   ],
