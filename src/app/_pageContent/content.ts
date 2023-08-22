@@ -1,7 +1,7 @@
 import { SectionsContent } from '@/@types/types';
 
 export const logoIndex = [
-  'nextjs',
+  'jest',
   'vite',
   'graphql',
   'sass',
@@ -11,7 +11,7 @@ export const logoIndex = [
   'photoshop',
   'emotion',
   'typescript', // center
-  'jest', // center
+  'nextjs', // center
   'firebase',
   'git',
   'jsont',
