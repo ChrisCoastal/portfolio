@@ -49,11 +49,5 @@
   }
 }
 
-@media (min-width: 768px) {
-  * {
-    cursor: none;
-  }
-}
-
 @tailwind components;
 @tailwind utilities;

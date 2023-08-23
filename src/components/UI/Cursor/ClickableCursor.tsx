@@ -38,7 +38,7 @@ const ClickableCursor: FC<ClickableCursorProps> = ({ text, children }) => {
         ? createPortal(
             <animated.div
               style={textStyles}
-              className={`absolute -left-[50%] -top-[52%] z-20 flex h-24 w-24 items-center justify-center overflow-visible`}
+              className={`absolute -left-[58%] -top-[52%] z-20 flex h-24 w-24 items-center justify-center overflow-visible`}
             >
               <CursorText
                 height="180px"
