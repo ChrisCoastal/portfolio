@@ -2,24 +2,16 @@ import React, { FC, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 import {
-  Clone,
   Float,
-  MeshReflectorMaterial,
-  MeshTransmissionMaterial,
   PerspectiveCamera,
   useAnimations,
   useDepthBuffer,
   useGLTF,
   useScroll,
-  useTexture,
 } from '@react-three/drei';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 
-type SquareModelProps = {
-  position?: [number, number, number];
-};
-
-const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
+const SquareModel: FC = () => {
   const group = useRef(null);
   // @ts-expect-error useGLTF is mistyped from drei
   const { nodes, materials, animations, scene } = useGLTF(
@@ -57,7 +49,6 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
     }
   });
 
-  // const Model = <Clone object={nodes.Cube} />;
   return (
     <group ref={group} dispose={null}>
       <group name="Scene">
@@ -77,9 +68,6 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
         </group>
 
         <Float rotationIntensity={2} speed={0.5}>
-          {/* <Clone object={nodes.Cube} />
-          <Clone object={nodes.Cube} />
-          <Clone object={nodes.Cube} /> */}
           <mesh
             name="Cube"
             castShadow
@@ -99,39 +87,8 @@ const SquareModel: FC<SquareModelProps> = ({ position = [0, 0, 0.79] }) => {
             rotation={[0, -6, 0]}
           />
         </Float>
-        {/* <Float rotationIntensity={3} speed={0.3}>
-          <Clone object={nodes.Cube} />
-        </Float> */}
       </group>
     </group>
-
-    // <group ref={group} {...props} dispose={null}>
-    //   <group name="Scene">
-    //     <group
-    //       name="Camera"
-    //       position={[7.36, 4.96, 6.93]}
-    //       rotation={[1.24, 0.33, -0.76]}
-    //     >
-    //       <PerspectiveCamera
-    //         name="Camera_Orientation"
-    //         // must be false for drei Float; true for using camera animation from gltf
-    //         makeDefault={false}
-    //         far={100}
-    //         near={0.1}
-    //         fov={22.9}
-    //         rotation={[-Math.PI / 2, 0, 0]}
-    //       />
-    //     </group>
-    //     <mesh
-    //       name="Cube"
-    //       castShadow
-    //       receiveShadow
-    //       geometry={nodes.Cube.geometry}
-    //       material={materials.Material}
-    //       rotation={[0.78, 0, 0]}
-    //     />
-    //   </group>
-    // </group>
   );
 };
 

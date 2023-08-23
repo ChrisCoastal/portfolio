@@ -3,16 +3,16 @@ import { redHat } from '@/app/fonts';
 import './globals.css';
 
 export const metadata = {
-  title: 'Christopher Allen | Front End Developer Portfolio',
-  siteName: 'Christopher Allen | Front End Developer Portfolio',
-  url: 'https://chriscoastal.com',
+  title: 'Christopher Allen | Front End Developer + Designer',
   referrer: 'origin-when-cross-origin',
   keywords: [
     'front end',
     'portfolio',
     'developer',
     'designer',
+    'UI/UX',
     'React',
+    'Next.js',
     'Typescript',
   ],
   description: 'I like making nice stuff. | GitHub @ChrisCoastal',
