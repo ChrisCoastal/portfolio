@@ -18,14 +18,7 @@ type Props = {};
 
 const ProjectsSection = (props: Props) => {
   const projects = Object.values(projectContent);
-
-  // TODO:
-  // function handleClick(event: MouseEvent, projectKey: string) {
-  //   console.log(event);
-  //   mouseClickXY.current = { x: event.clientX, y: event.clientY };
-  //   setActiveProject(projectContent[projectKey]);
-  // }
-
+  
   return (
     <Section title={homeSections.projectsSection.title}>
       <div className="mx-auto mt-16 grid w-fit grid-cols-1 gap-y-14 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3 lg:gap-x-10">
