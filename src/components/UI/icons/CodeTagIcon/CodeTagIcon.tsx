@@ -42,9 +42,6 @@ const CodeTagIcon: FC<CodeTagIconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       height={height}
       width={width}
-      // style={{
-      //   transform: `translateX(${iconStyles.x}px)`,
-      // }}
       viewBox="0 0 24 48"
       fill={color}
       className={`svg ${className}`}

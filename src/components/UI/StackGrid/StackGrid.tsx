@@ -35,7 +35,6 @@ const StackGrid: FC = () => {
     from: {
       transform: `rotate3d(0, 0, 0, 0deg)`,
     },
-    // loop: true,
     config: { delay: 1200, duration: 1400, easing: easings.easeOutCubic },
   }));
 

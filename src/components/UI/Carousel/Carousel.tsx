@@ -20,7 +20,6 @@ type CarouselProps = {
   };
   clickable?: boolean;
   className?: string;
-  // children: ReactNode;
 };
 
 const Carousel: FC<CarouselProps> = ({
@@ -51,8 +50,6 @@ const Carousel: FC<CarouselProps> = ({
   return (
     <div className={`${className}`} onClick={clickHandler}>
       {transitions((style, item) => {
-        // FIXME: type any
-        // const Slide: any = slides[i];
         return <animated.div style={style}>{slides[item]}</animated.div>;
       })}
     </div>
